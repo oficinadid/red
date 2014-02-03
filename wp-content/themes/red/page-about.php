@@ -2,7 +2,7 @@
 
         <div class="stream wrap">
 
-            <h3>Ideas y Acciones</h3>
+            <h3>About</h3>
 
             <div class="post">
                 <div class="top">
