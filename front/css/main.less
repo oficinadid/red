@@ -57,7 +57,7 @@
 }
 
 //Estilos Generales
-body {margin:0; padding:0; text-align:center; font-family:'Colaborate', Arial, sans-serif;}
+body {margin:0; padding:0; text-align:center; font-family:'Colaborate', Arial, sans-serif; position:relative;}
 .cf:after{content: "."; display: block; height: 0; clear: both; visibility: hidden;}
 a {text-decoration:none; cursor:pointer; color:inherit; .transition(0.1s);}
 menu, ol, ul, li {margin:0; padding:0; list-style:none;}
@@ -71,13 +71,77 @@ h1, h2, h3, h4, h5, h6 {margin:0;}
     margin:0 auto;
 }
 
+nav#side {
+    position:fixed;
+    right:-430px;
+    top:0;
+    bottom:0;
+    background:@darkgrey;
+    z-index:999;
+    color:@pale;
+    font-weight:300;
+    font-size:15px;
+    text-align:left;
+    .transition(0.2s);
+    overflow-y:scroll;
+    &.hidden  {
+        right:-430px;
+    }
+    h3 {
+        font-size:19px;
+        font-weight:300;
+        padding:13px 0 13px 70px;
+        background:#2d2d2d;
+        strong {
+            font-weight:500;
+        }
+    }
+    h4 {
+        font-size:19px;
+        font-weight:500;
+        color:#545454;
+        padding:10px 0 10px 70px;
+    }
+    ul {
+        li {
+            a {
+                padding:0 10px 0 0;
+                display:block;
+                padding:10px 0 10px 70px;
+                span {
+                    display:inline-block;
+                    &.name {
+                        min-width:290px;
+                        margin:0 10px;
+                    }
+                    &.count {
+                        margin:0 15px 0 0;
+                        text-align:right;
+                        width:25px;
+                    }
+                }
+                &:hover {
+                    background:#2d2d2d;
+                }
+            }
+        }
+        &.medios {
+            li {
+                a {
+                    font-size:19px;
+                    font-weight:500;
+                }
+            }
+        }
+    }
+}
+
 header {
     height:470px;
     background-image:url(../img/header-bg.jpg);
     background-size:100% auto;
     background-attachment:fixed;
-    //background-size:cover;
-    menu {
+    menu#main {
         background:rgba(255,0,0,0.9);
         color:#fff;
         position:fixed;
@@ -103,7 +167,7 @@ header {
                     display:block;
                 }
             }
-            &.main {
+            &.nav {
                 margin:11px 0 0 55px;
                 li {
                     a {
@@ -118,7 +182,7 @@ header {
                     }
                 }
             }
-            &.side {
+            &.aux {
                 float:right;
                 li {
                     margin:0 0 0 1px;
@@ -135,7 +199,7 @@ header {
                         &.search {
                             background-position:-72px 0;
                         }
-                        &.menu {
+                        &.menuside-trigger {
                             background-position:-110px 0;
                             width:55px;
                         }

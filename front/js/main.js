@@ -2,7 +2,7 @@ function fadelogo() {
 
     var fadestart = 200;
     var fadeend = 380;
-    var fadeelement = $('menu a.logo');
+    var fadeelement = $('menu#main a.logo');
     var totop = $(document).scrollTop();
 
     if (totop < fadestart) {
@@ -18,9 +18,21 @@ function fadelogo() {
     fadeelement.css('opacity',opacity);
 }
 
+function sidemenu() {
+
+
+}
+
 $(document).ready(function() {
 
 	fadelogo();
+    sidemenu();
+
+    $('a.menuside-trigger').bigSlide({
+        menu: ('#side'),
+        side: 'right',
+        menuWidth: 430
+    });
 
 	$('.post .autor .autores-trigger').click(function() {
 		$(this).children('span.trigger').fadeToggle(150);
@@ -28,7 +40,7 @@ $(document).ready(function() {
 		$('ul.autores').fadeToggle(150);
 	});
 
-    $('menu .side a.search').click(function() {
+    $('menu#main .aux a.search').click(function() {
         $(this).toggleClass('on');
         $('#searchbox').fadeToggle(100);
         $('#searchbox input#field').select();
@@ -39,5 +51,6 @@ $(document).ready(function() {
 $(window).bind('scroll', function(){
 
 	fadelogo();
+    sidemenu();
 
 });
