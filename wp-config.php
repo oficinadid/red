@@ -80,6 +80,9 @@ define('WPLANG', 'es_ES');
  */
 define('WP_DEBUG', false);
 
+/* Multisite */
+
+
 /* ¡Eso es todo, deja de editar! Feliz blogging */
 
 /** WordPress absolute path to the Wordpress directory. */
