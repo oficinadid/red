@@ -20,14 +20,14 @@ function fadelogo() {
 
 function sidenav() {
     var sidedif = $('#side').width() - (($(window).width() - $('.wrap').width())/2);
-    console.log(sidedif);
     $('a.menuside-trigger').click(function(){
         $('#side').toggleClass('moved');
+        $(this).toggleClass('on');
         if ($('#side').hasClass('moved') == true) {
-            $('body').css('right', sidedif);
+            $('body').css('right', sidedif).css('overflow', 'hidden');
         }
         else {
-            $('body').css('right', 0);
+            $('body').css('right', 0).css('overflow', 'auto');
         }
     });
 }
@@ -57,8 +57,11 @@ $(window).bind('scroll', function(){
 
 });
 
-$( window ).resize(function() {
+$(window).resize(function() {
 
-    sidenav();
+    if ($('#side').hasClass('moved') == true) {
+        var sidedif = $('#side').width() - (($(window).width() - $('.wrap').width())/2) - 3;
+        $('body').css('right', sidedif).css('overflow', 'hidden');
+    }
 
 });

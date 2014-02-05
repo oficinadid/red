@@ -11,12 +11,13 @@
         <link href='http://fonts.googleapis.com/css?family=Pathway+Gothic+One' rel='stylesheet' type='text/css'>
 
         <script src="http://code.jquery.com/jquery-1.10.2.min.js"></script>
-        <script src="<?php bloginfo('template_url'); ?>/js/jquery.sidr.min.js"></script>
-        <script src="<?php bloginfo('template_url'); ?>/js/main.min.js"></script>
+        <script src="<?php bloginfo('template_url'); ?>/js/main.js"></script>
 
     </head>
 
     <body <?php body_class(); ?>>
+
+        <a class="menuside-trigger"></a>
 
         <nav id="side" class="panel" role="navigation">
             <h3>Bienvenido a <strong>RED</strong></h3>
@@ -55,14 +56,13 @@
                     <ul class="nav">
                         <li><a href="#">About</a></li>
                         <li><a href="#">Colaboradores</a></li>
-                        <li><a href="#">Ideas y Acciones</a></li>
+                        <li><a href="#">Ideas y Proyectos</a></li>
                     </ul>
 
                     <ul class="aux">
                         <li><a href="#" class="facebook"></a></li>
                         <li><a href="#" class="twitter"></a></li>
                         <li><a class="search"></a></li>
-                        <li><a class="menuside-trigger"></a></li>
                     </ul>
 
                 </div>
