@@ -1,7 +1,7 @@
 @import url(normalize.min.css);
 @charset "UTF-8";
 .pathway{font-family:'Pathway Gothic One',sans-serif}
-@font-face{font-family:'Colaborate';src:url('../fonts/ColabThi-webfont.eot');src:url('../fonts/ColabThi-webfont.eot?#iefix') format('embedded-opentype'),url('../fonts/ColabThi-webfont.woff') format('woff'),url('../fonts/ColabThi-webfont.ttf') format('truetype'),url('../fonts/ColabThi-webfont.svg#CreativeBlockBBBold') format('svg');font-weight:300;font-style:normal}@font-face{font-family:'Colaborate';src:url('../fonts/ColabReg-webfont.eot');src:url('../fonts/ColabReg-webfont.eot?#iefix') format('embedded-opentype'),url('../fonts/ColabReg-webfont.woff') format('woff'),url('../fonts/ColabReg-webfont.ttf') format('truetype'),url('../fonts/ColabReg-webfont.svg#CreativeBlockBBBold') format('svg');font-weight:500;font-style:normal}@font-face{font-family:'Colaborate';src:url('../fonts/ColabMed-webfont.eot');src:url('../fonts/ColabMed-webfont.eot?#iefix') format('embedded-opentype'),url('../fonts/ColabMed-webfont.woff') format('woff'),url('../fonts/ColabMed-webfont.ttf') format('truetype'),url('../fonts/ColabMed-webfont.svg#CreativeBlockBBBold') format('svg');font-weight:700;font-style:normal}body{margin:0;padding:0;text-align:center;font-family:'Colaborate',Arial,sans-serif}
+@font-face{font-family:'Colaborate';src:url('../fonts/ColabThi-webfont.eot');src:url('../fonts/ColabThi-webfont.eot?#iefix') format('embedded-opentype'),url('../fonts/ColabThi-webfont.woff') format('woff'),url('../fonts/ColabThi-webfont.ttf') format('truetype'),url('../fonts/ColabThi-webfont.svg#CreativeBlockBBBold') format('svg');font-weight:300;font-style:normal}@font-face{font-family:'Colaborate';src:url('../fonts/ColabReg-webfont.eot');src:url('../fonts/ColabReg-webfont.eot?#iefix') format('embedded-opentype'),url('../fonts/ColabReg-webfont.woff') format('woff'),url('../fonts/ColabReg-webfont.ttf') format('truetype'),url('../fonts/ColabReg-webfont.svg#CreativeBlockBBBold') format('svg');font-weight:500;font-style:normal}@font-face{font-family:'Colaborate';src:url('../fonts/ColabMed-webfont.eot');src:url('../fonts/ColabMed-webfont.eot?#iefix') format('embedded-opentype'),url('../fonts/ColabMed-webfont.woff') format('woff'),url('../fonts/ColabMed-webfont.ttf') format('truetype'),url('../fonts/ColabMed-webfont.svg#CreativeBlockBBBold') format('svg');font-weight:700;font-style:normal}body{margin:0;padding:0;text-align:center;font-family:'Colaborate',Arial,sans-serif;position:relative}
 .cf:after{content:".";display:block;height:0;clear:both;visibility:hidden}
 a{text-decoration:none;cursor:pointer;color:inherit;-webkit-transition:.1s;-moz-transition:.1s;-o-transition:.1s;-ms-transition:.1s;transition:.1s}
 menu,ol,ul,li{margin:0;padding:0;list-style:none}
@@ -9,15 +9,23 @@ h1,h2,h3,h4,h5,h6{margin:0}
 *:focus{outline:none}
 *{resize:none;box-sizing:border-box}
 .wrap{width:790px;margin:0 auto}
-header{height:470px;background-image:url(../img/header-bg.jpg);background-size:100% auto;background-attachment:fixed}header menu{background:rgba(255,0,0,0.9);color:#fff;position:fixed;top:0;left:0;right:0;height:48px;z-index:9999}header menu a.logo{display:block;width:101px;height:43px;background:url(../img/red-logo-small.png) no-repeat;float:left;margin:7px 0 0;-webkit-transition:0;-moz-transition:0;-o-transition:0;-ms-transition:0;transition:0}
-header menu ul{float:left}header menu ul li{float:left}header menu ul li a{display:block}
-header menu ul.main{margin:11px 0 0 55px}header menu ul.main li a{font-size:14px;text-transform:uppercase;margin:0 25px;padding:5px 0;border-bottom:1px solid transparent}header menu ul.main li a:hover{border-bottom:1px solid #fff}
-header menu ul.side{float:right}header menu ul.side li{margin:0 0 0 1px}header menu ul.side li a{width:36px;height:48px;background:url(../img/menu-side-sprite.png)}header menu ul.side li a.facebook{background-position:0 0}
-header menu ul.side li a.twitter{background-position:-36px 0}
-header menu ul.side li a.search{background-position:-72px 0}
-header menu ul.side li a.menu{background-position:-110px 0;width:55px}
-header menu ul.side li a:hover{background-color:#bf1b1b}
-header menu ul.side li a.on{background-color:rgba(35,35,35,0.9)}
+body{right:0;-webkit-transition:.2s;-moz-transition:.2s;-o-transition:.2s;-ms-transition:.2s;transition:.2s}
+nav#side{position:fixed;right:-430px;top:48px;bottom:0;background:#333332;z-index:9999;color:#f2f2f2;font-weight:300;font-size:15px;text-align:left;overflow-y:scroll;-webkit-transition:.2s;-moz-transition:.2s;-o-transition:.2s;-ms-transition:.2s;transition:.2s}nav#side.moved{right:0}
+nav#side h3{font-size:19px;font-weight:300;padding:13px 0 13px 30px;background:#2d2d2d}nav#side h3 strong{font-weight:500}
+nav#side h4{font-size:19px;font-weight:500;color:#545454;padding:10px 0 10px 30px}
+nav#side ul li a{padding:0 10px 0 0;display:block;padding:10px 0 10px 30px}nav#side ul li a span{display:inline-block}nav#side ul li a span.name{min-width:290px;margin:0 10px}
+nav#side ul li a span.count{margin:0 15px 0 0;text-align:right;width:25px}
+nav#side ul li a:hover{background:#2d2d2d}
+nav#side ul.medios li a{font-size:19px;font-weight:500}
+header{height:470px;background-image:url(../img/header-bg.jpg);background-size:100% auto}header menu#main{background:rgba(255,0,0,0.9);color:#fff;position:fixed;top:0;left:0;right:0;height:48px;z-index:9999}header menu#main a.logo{display:block;width:101px;height:43px;background:url(../img/red-logo-small.png) no-repeat;float:left;margin:7px 0 0;-webkit-transition:0;-moz-transition:0;-o-transition:0;-ms-transition:0;transition:0}
+header menu#main ul{float:left}header menu#main ul li{float:left}header menu#main ul li a{display:block}
+header menu#main ul.nav{margin:11px 0 0 55px}header menu#main ul.nav li a{font-size:14px;text-transform:uppercase;margin:0 25px;padding:5px 0;border-bottom:1px solid transparent}header menu#main ul.nav li a:hover{border-bottom:1px solid #fff}
+header menu#main ul.aux{float:right}header menu#main ul.aux li{margin:0 0 0 1px}header menu#main ul.aux li a{width:36px;height:48px;background:url(../img/menu-side-sprite.png)}header menu#main ul.aux li a.facebook{background-position:0 0}
+header menu#main ul.aux li a.twitter{background-position:-36px 0}
+header menu#main ul.aux li a.search{background-position:-72px 0}
+header menu#main ul.aux li a.menuside-trigger{background-position:-110px 0;width:55px}
+header menu#main ul.aux li a:hover{background-color:#bf1b1b}
+header menu#main ul.aux li a.on{background-color:rgba(35,35,35,0.9)}
 header #searchbox{position:fixed;top:48px;width:100%;display:none;text-align:left;z-index:999}header #searchbox form{width:100%;background:rgba(35,35,35,0.9);padding:20px 30px}header #searchbox form input#field{border:none;background:none;height:60px;font-size:56px;font-weight:300;color:#fff;text-transform:uppercase}
 header h1#logo-main{width:720px;height:123px;display:inline-block;background:url(../img/red-logo-main.png) no-repeat center;margin:180px auto 0}
 .stream{margin:-40px auto 0;background:#fff;padding:35px 80px 40px;text-align:left}.stream h3{font-weight:300;color:#57656d;text-transform:uppercase;font-size:18px;margin:0 auto 20px}
@@ -43,6 +51,13 @@ header h1#logo-main{width:720px;height:123px;display:inline-block;background:url
 #participacion{padding:40px 0 100px;width:630px;margin:0 auto}#participacion h2{font-weight:300;color:#57656d;font-size:18px;margin:0 auto 60px;text-transform:uppercase}#participacion h2 strong{font-weight:700;color:#5eb19e}
 #participacion h1{color:#333332;font-weight:32px;font-weight:300;margin:0 auto 30px}
 #participacion a.respuesta{display:block;margin:0 auto;width:400px;height:55px;background:#1d5b9e;color:#f2f2f2;text-align:center;padding:15px 0;text-transform:uppercase;font-size:21px;font-weight:700;letter-spacing:1px}
+body.single header{height:190px;background-image:url(../img/header-single-bg.jpg)}body.single header h1#logo-main{display:none;visibility:hidden}
+body.single .post#main{margin:0 auto 35px;padding:0 0 20px;border-bottom:1px solid #d5d8da}body.single .post#main .sep{border-bottom:1px solid #d5d8da;margin:0 auto 10px}
+body.single .post#main .tags{margin:0 auto 20px}
+body.single .post#main a.download{display:inline-block;color:#f00;margin:0 auto 50px;font-size:13px;background:url(../img/download-bg.png) no-repeat left center;padding:0 0 0 15px}
+body.single .post#main .texto{margin:0 auto}body.single .post#main .texto p{font-weight:300;font-size:20px;line-height:140%;margin:0 auto 40px}
+body.single .post#main .texto blockquote{display:inline-block;float:right;margin:50px -150px 50px 40px}body.single .post#main .texto blockquote p{font-weight:700;font-size:30px;line-height:120%;width:310px;margin:0 auto}
+body.single a.more{margin:60px 0 20px;font-weight:700;font-size:35px;float:left;text-decoration:underline;color:#57656d}
 footer{padding:50px 0 70px;background:#a3b3b8;text-align:left;color:#f2f2f2}footer .wrap{width:630px}
 footer .columna{float:left;margin:0 80px 0 0}footer .columna h4{font-size:28px;font-weight:700;margin:0 auto 20px}
 footer .columna ul li{margin:0 0 15px}footer .columna ul li a{color:#57656d;font-weight:300;font-size:18px}

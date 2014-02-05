@@ -57,7 +57,7 @@
 }
 
 //Estilos Generales
-body {margin:0; padding:0; text-align:center; font-family:'Colaborate', Arial, sans-serif;}
+body {margin:0; padding:0; text-align:center; font-family:'Colaborate', Arial, sans-serif; position:relative;}
 .cf:after{content: "."; display: block; height: 0; clear: both; visibility: hidden;}
 a {text-decoration:none; cursor:pointer; color:inherit; .transition(0.1s);}
 menu, ol, ul, li {margin:0; padding:0; list-style:none;}
@@ -71,13 +71,82 @@ h1, h2, h3, h4, h5, h6 {margin:0;}
     margin:0 auto;
 }
 
+body {
+    right:0;
+    .transition(0.2s);
+}
+
+nav#side {
+    position:fixed;
+    right:-430px;
+    top:48px;
+    bottom:0;
+    background:@darkgrey;
+    z-index:9999;
+    color:@pale;
+    font-weight:300;
+    font-size:15px;
+    text-align:left;
+    overflow-y:scroll;
+    .transition(0.2s);
+    &.moved {
+        right:0;
+    }
+    h3 {
+        font-size:19px;
+        font-weight:300;
+        padding:13px 0 13px 30px;
+        background:#2d2d2d;
+        strong {
+            font-weight:500;
+        }
+    }
+    h4 {
+        font-size:19px;
+        font-weight:500;
+        color:#545454;
+        padding:10px 0 10px 30px;
+    }
+    ul {
+        li {
+            a {
+                padding:0 10px 0 0;
+                display:block;
+                padding:10px 0 10px 30px;
+                span {
+                    display:inline-block;
+                    &.name {
+                        min-width:290px;
+                        margin:0 10px;
+                    }
+                    &.count {
+                        margin:0 15px 0 0;
+                        text-align:right;
+                        width:25px;
+                    }
+                }
+                &:hover {
+                    background:#2d2d2d;
+                }
+            }
+        }
+        &.medios {
+            li {
+                a {
+                    font-size:19px;
+                    font-weight:500;
+                }
+            }
+        }
+    }
+}
+
 header {
     height:470px;
     background-image:url(../img/header-bg.jpg);
     background-size:100% auto;
-    background-attachment:fixed;
-    //background-size:cover;
-    menu {
+    //background-attachment:fixed;
+    menu#main {
         background:rgba(255,0,0,0.9);
         color:#fff;
         position:fixed;
@@ -103,7 +172,7 @@ header {
                     display:block;
                 }
             }
-            &.main {
+            &.nav {
                 margin:11px 0 0 55px;
                 li {
                     a {
@@ -118,7 +187,7 @@ header {
                     }
                 }
             }
-            &.side {
+            &.aux {
                 float:right;
                 li {
                     margin:0 0 0 1px;
@@ -135,7 +204,7 @@ header {
                         &.search {
                             background-position:-72px 0;
                         }
-                        &.menu {
+                        &.menuside-trigger {
                             background-position:-110px 0;
                             width:55px;
                         }
@@ -438,6 +507,66 @@ header {
         font-size:21px;
         font-weight:700;
         letter-spacing:1px;
+    }
+}
+
+body.single {
+    header {
+        height:190px;
+        background-image:url(../img/header-single-bg.jpg);
+        h1#logo-main {
+            display:none;
+            visibility:hidden;
+        }
+    }
+    .post#main {
+        margin:0 auto 35px;
+        padding:0 0 20px;
+        border-bottom:1px solid #d5d8da;
+        .sep {
+            border-bottom:1px solid #d5d8da;
+            margin:0 auto 10px;
+        }
+        .tags {
+            margin:0 auto 20px;
+        }
+        a.download {
+            display:inline-block;
+            color:@red;
+            margin:0 auto 50px;
+            font-size:13px;
+            background:url(../img/download-bg.png) no-repeat left center;
+            padding:0 0 0 15px;
+        }
+        .texto {
+            margin:0 auto;
+            p {
+                font-weight:300;
+                font-size:20px;
+                line-height:140%;
+                margin:0 auto 40px;
+            }
+            blockquote {
+                display:inline-block;
+                float:right;
+                margin:50px -150px 50px 40px;
+                p {
+                    font-weight:700;
+                    font-size:30px;
+                    line-height:120%;
+                    width:310px;
+                    margin:0 auto;
+                }
+            }
+        }
+    }
+    a.more {
+        margin:60px 0 20px;
+        font-weight:700;
+        font-size:35px;
+        float:left;
+        text-decoration:underline;
+        color:@grey;
     }
 }
 
