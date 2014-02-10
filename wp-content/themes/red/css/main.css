@@ -1,7 +1,12 @@
 @import url(normalize.min.css);
 @charset "UTF-8";
-.pathway{font-family:'Pathway Gothic One',sans-serif}
-@font-face{font-family:'Colaborate';src:url('../fonts/ColabThi-webfont.eot');src:url('../fonts/ColabThi-webfont.eot?#iefix') format('embedded-opentype'),url('../fonts/ColabThi-webfont.woff') format('woff'),url('../fonts/ColabThi-webfont.ttf') format('truetype'),url('../fonts/ColabThi-webfont.svg#CreativeBlockBBBold') format('svg');font-weight:300;font-style:normal}@font-face{font-family:'Colaborate';src:url('../fonts/ColabReg-webfont.eot');src:url('../fonts/ColabReg-webfont.eot?#iefix') format('embedded-opentype'),url('../fonts/ColabReg-webfont.woff') format('woff'),url('../fonts/ColabReg-webfont.ttf') format('truetype'),url('../fonts/ColabReg-webfont.svg#CreativeBlockBBBold') format('svg');font-weight:500;font-style:normal}@font-face{font-family:'Colaborate';src:url('../fonts/ColabMed-webfont.eot');src:url('../fonts/ColabMed-webfont.eot?#iefix') format('embedded-opentype'),url('../fonts/ColabMed-webfont.woff') format('woff'),url('../fonts/ColabMed-webfont.ttf') format('truetype'),url('../fonts/ColabMed-webfont.svg#CreativeBlockBBBold') format('svg');font-weight:700;font-style:normal}body{margin:0;padding:0;text-align:center;font-family:'Colaborate',Arial,sans-serif;position:relative}
+@media only screen and (max-width:790px){.wrap{width:100% !important} header h1#logo-main{width:90%;background-size:100% auto} .stream .post .top{width:75%} #dc .wrap{width:100%} #participacion{width:100%}}::-webkit-input-placeholder{color:inherit}
+:-moz-placeholder{color:inherit}
+::-moz-placeholder{color:inherit}
+:-ms-input-placeholder{color:inherit}
+@font-face{font-family:'Colaborate';src:url('../fonts/ColabThi-webfont.eot');src:url('../fonts/ColabThi-webfont.eot?#iefix') format('embedded-opentype'),url('../fonts/ColabThi-webfont.woff') format('woff'),url('../fonts/ColabThi-webfont.ttf') format('truetype'),url('../fonts/ColabThi-webfont.svg#CreativeBlockBBBold') format('svg');font-weight:300;font-style:normal}@font-face{font-family:'Colaborate';src:url('../fonts/ColabReg-webfont.eot');src:url('../fonts/ColabReg-webfont.eot?#iefix') format('embedded-opentype'),url('../fonts/ColabReg-webfont.woff') format('woff'),url('../fonts/ColabReg-webfont.ttf') format('truetype'),url('../fonts/ColabReg-webfont.svg#CreativeBlockBBBold') format('svg');font-weight:500;font-style:normal}@font-face{font-family:'Colaborate';src:url('../fonts/ColabMed-webfont.eot');src:url('../fonts/ColabMed-webfont.eot?#iefix') format('embedded-opentype'),url('../fonts/ColabMed-webfont.woff') format('woff'),url('../fonts/ColabMed-webfont.ttf') format('truetype'),url('../fonts/ColabMed-webfont.svg#CreativeBlockBBBold') format('svg');font-weight:700;font-style:normal}.pathway{font-family:'Pathway Gothic One',sans-serif}
+.colaborate{font-family:'Colaborate',Arial,sans-serif}
+body{margin:0;padding:0;text-align:center;position:relative;font-family:'Colaborate',Arial,sans-serif}
 .cf:after{content:".";display:block;height:0;clear:both;visibility:hidden}
 a{text-decoration:none;cursor:pointer;color:inherit;-webkit-transition:.1s;-moz-transition:.1s;-o-transition:.1s;-ms-transition:.1s;transition:.1s}
 menu,ol,ul,li{margin:0;padding:0;list-style:none}
@@ -12,24 +17,26 @@ h1,h2,h3,h4,h5,h6{margin:0}
 body{right:0;-webkit-transition:.2s;-moz-transition:.2s;-o-transition:.2s;-ms-transition:.2s;transition:.2s}
 a.menuside-trigger{display:block;height:48px;width:55px;position:fixed;top:0;right:0;background-image:url(../img/menu-side-sprite.png);background-position:-110px 0;z-index:999999}a.menuside-trigger:hover{background-color:#bf1b1b}
 a.menuside-trigger.on{background-color:#333332}
-nav#side{position:fixed;right:-380px;top:48px;bottom:0;background:#333332;z-index:99999;color:#f2f2f2;font-weight:300;font-size:15px;text-align:left;overflow-y:scroll;-webkit-transition:.2s;-moz-transition:.2s;-o-transition:.2s;-ms-transition:.2s;transition:.2s}nav#side.moved{right:0}
+nav#side{position:fixed;right:-380px;top:48px;bottom:0;background:#333332;z-index:9;color:#f2f2f2;font-weight:300;font-size:15px;text-align:left;overflow-y:scroll;-webkit-transition:.2s;-moz-transition:.2s;-o-transition:.2s;-ms-transition:.2s;transition:.2s}nav#side.moved{right:0}
 nav#side h3{font-size:19px;font-weight:300;padding:14px 0 13px 30px;background:#2d2d2d}nav#side h3 strong{font-weight:500}
 nav#side h4{font-size:19px;font-weight:500;color:#545454;padding:10px 0 10px 30px}
 nav#side ul li a{padding:0 10px 0 0;display:block;padding:10px 0 10px 30px}nav#side ul li a span{display:inline-block}nav#side ul li a span.name{min-width:290px;margin:0 10px}
 nav#side ul li a span.count{margin:0 15px 0 0;text-align:right;width:25px}
 nav#side ul li a:hover{background:#2d2d2d}
 nav#side ul.medios li a{font-size:19px;font-weight:500}
-header{height:470px;background-image:url(../img/header-bg.jpg);background-size:auto 100%;background-position:center}header menu#main{background:rgba(255,0,0,0.9);color:#fff;position:fixed;top:0;left:0;right:0;height:48px;z-index:9999;-webkit-transition:.2s;-moz-transition:.2s;-o-transition:.2s;-ms-transition:.2s;transition:.2s}header menu#main a.logo{display:block;width:101px;height:43px;background:url(../img/red-logo-small.png) no-repeat;float:left;margin:7px 0 0;-webkit-transition:0;-moz-transition:0;-o-transition:0;-ms-transition:0;transition:0}
-header menu#main ul{float:left}header menu#main ul li{float:left}header menu#main ul li a{display:block}
-header menu#main ul.nav{margin:11px 0 0 55px}header menu#main ul.nav li a{font-size:14px;text-transform:uppercase;margin:0 25px;padding:5px 0;border-bottom:1px solid transparent}header menu#main ul.nav li a:hover{border-bottom:1px solid #fff}
-header menu#main ul.aux{float:right}header menu#main ul.aux li{margin:0 0 0 1px}header menu#main ul.aux li a{width:36px;height:48px;background:url(../img/menu-side-sprite.png)}header menu#main ul.aux li a.facebook{background-position:0 0}
-header menu#main ul.aux li a.twitter{background-position:-36px 0}
-header menu#main ul.aux li a.search{background-position:-72px 0}
-header menu#main ul.aux li a:hover{background-color:#bf1b1b}
-header menu#main ul.aux li a.on{background-color:rgba(35,35,35,0.9)}
-header #searchbox{position:fixed;top:48px;width:100%;display:none;text-align:left;z-index:999}header #searchbox form{width:100%;background:rgba(35,35,35,0.9);padding:20px 30px}header #searchbox form input#field{border:none;background:none;height:60px;font-size:56px;font-weight:300;color:#fff;text-transform:uppercase}
-header h1#logo-main{width:720px;height:123px;display:inline-block;background:url(../img/red-logo-main.png) no-repeat center;margin:180px auto 0}
-.stream{margin:-40px auto 0;background:#fff;padding:35px 80px 40px;text-align:left}.stream h3{font-weight:300;color:#57656d;text-transform:uppercase;font-size:18px;margin:0 auto 20px}
+#toplayer{position:relative;z-index:10}#toplayer menu#main{background:rgba(255,0,0,0.9);color:#fff;position:fixed;top:0;left:0;right:0;height:48px}#toplayer menu#main a.logo{display:block;width:101px;height:43px;background:url(../img/red-logo-small.png) no-repeat;float:left;margin:7px 0 0;-webkit-transition:0;-moz-transition:0;-o-transition:0;-ms-transition:0;transition:0}
+#toplayer menu#main ul{float:left}#toplayer menu#main ul li{float:left}#toplayer menu#main ul li a{display:block}
+#toplayer menu#main ul.nav{margin:11px 0 0 55px}#toplayer menu#main ul.nav li a{font-size:14px;text-transform:uppercase;margin:0 25px;padding:5px 0;border-bottom:1px solid transparent}#toplayer menu#main ul.nav li a:hover{border-bottom:1px solid #fff}
+#toplayer menu#main ul.aux{float:right}#toplayer menu#main ul.aux li{margin:0 0 0 1px}#toplayer menu#main ul.aux li a{width:36px;height:48px;background:url(../img/menu-side-sprite.png)}#toplayer menu#main ul.aux li a.facebook{background-position:0 0}
+#toplayer menu#main ul.aux li a.twitter{background-position:-36px 0}
+#toplayer menu#main ul.aux li a.search{background-position:-72px 0}
+#toplayer menu#main ul.aux li a:hover{background-color:#bf1b1b}
+#toplayer menu#main ul.aux li a.on{background-color:rgba(35,35,35,0.9)}
+#toplayer #main-shadow{background:url(../img/main-shadow-bg.png) no-repeat center top;position:fixed;top:48px;left:0;right:0;height:22px}
+#toplayer #searchbox{position:fixed;top:48px;width:100%;display:none;text-align:left}#toplayer #searchbox form{width:100%;background:rgba(35,35,35,0.9);padding:20px 30px}#toplayer #searchbox form input#field{border:none;background:none;height:60px;font-size:56px;font-weight:300;color:#fff;text-transform:uppercase}
+header{height:470px;background-image:url(../img/header-bg.jpg);background-size:auto 100%;background-position:center;position:relative;z-index:0}header h1#logo-main{width:720px;height:123px;display:inline-block;background:url(../img/red-logo-main.png) no-repeat center;margin:180px auto 0}
+header #header-shadow{background:url(../img/header-shadow-bg.png) repeat-x center bottom;position:absolute;bottom:0;left:0;right:0;height:200px;z-index:9999}
+.stream{margin:-40px auto 0;background:#fff;padding:35px 80px 40px;text-align:left;position:relative;z-index:1}.stream h3{font-weight:300;color:#57656d;text-transform:uppercase;font-size:18px;margin:0 auto 20px}
 .stream .post{margin:30px auto}.stream .post .top{width:490px;float:left}.stream .post .top h2{letter-spacing:-1px;font-size:28px;font-weight:700;color:#333332}
 .stream .post .top .meta{font-size:20px;font-weight:300;color:#57656d;margin:10px 0 35px}.stream .post .top .meta a{font-weight:500}.stream .post .top .meta a:hover{text-decoration:underline}
 .stream .post .autor{float:right;position:relative}.stream .post .autor a{display:block;float:right;margin:0 0 0 10px}.stream .post .autor a img{border-radius:50%;float:left}
@@ -65,4 +72,14 @@ footer .columna{float:left;margin:0 80px 0 0}footer .columna h4{font-size:28px;f
 footer .columna ul li{margin:0 0 15px}footer .columna ul li a{color:#57656d;font-weight:300;font-size:18px}
 footer .columna#redes ul li a{background:url(../img/footer-social-sprite.png) no-repeat;height:29px;display:block;padding:5px 0 0 40px}footer .columna#redes ul li a.facebook{background-position:0 0}
 footer .columna#redes ul li a.twitter{background-position:0 -29px}
-@media only screen and (max-width:790px){.wrap{width:100% !important} header h1#logo-main{width:90%;background-size:100% auto} .stream .post .top{width:75%} #dc .wrap{width:100%} #participacion{width:100%}}
+body.page-template-page-dceducacion-php a.menuside-trigger:hover{background-color:#333332}
+body.page-template-page-dceducacion-php #toplayer menu#main{background:#57656d}body.page-template-page-dceducacion-php #toplayer menu#main ul.aux li a:hover{background-color:#333332}
+body.page-template-page-dceducacion-php #toplayer menu#secondary{position:absolute;top:385px;left:0;right:0;height:43px;background:#5eb19e;overflow:hidden}body.page-template-page-dceducacion-php #toplayer menu#secondary.fixed{position:fixed;top:48px}body.page-template-page-dceducacion-php #toplayer menu#secondary.fixed .wrap{border-top:1px solid transparent}
+body.page-template-page-dceducacion-php #toplayer menu#secondary.fixed h2#logo-dc{width:131px}
+body.page-template-page-dceducacion-php #toplayer menu#secondary.fixed .search input{width:0 !important;padding:0 !important;display:none}
+body.page-template-page-dceducacion-php #toplayer menu#secondary .wrap{border-top:1px solid #81c5b7;-webkit-transition:.2s;-moz-transition:.2s;-o-transition:.2s;-ms-transition:.2s;transition:.2s}
+body.page-template-page-dceducacion-php #toplayer menu#secondary h2#logo-dc{width:0;height:41px;float:left;margin:5px 21px 0 0;-webkit-transition:.5s;-moz-transition:.5s;-o-transition:.5s;-ms-transition:.5s;transition:.5s}body.page-template-page-dceducacion-php #toplayer menu#secondary h2#logo-dc a{display:block;width:100%;height:100%;background:url(../img/secondary-logo-bg.png) no-repeat}
+body.page-template-page-dceducacion-php #toplayer menu#secondary ul.nav{padding:9px 0 0;float:left}body.page-template-page-dceducacion-php #toplayer menu#secondary ul.nav li{float:left}body.page-template-page-dceducacion-php #toplayer menu#secondary ul.nav li a{margin:0 29px;padding:6px 0 2px;display:block;text-transform:uppercase;font-weight:700;font-size:14px;text-align:center;color:#57656d;border-bottom:1px solid transparent}body.page-template-page-dceducacion-php #toplayer menu#secondary ul.nav li a:hover{border-bottom:1px solid #57656d}
+body.page-template-page-dceducacion-php #toplayer menu#secondary .search{float:right;overflow:hidden;width:236px;margin:10px 0 0}body.page-template-page-dceducacion-php #toplayer menu#secondary .search input{background:#509684;height:24px;border:none;display:block;margin:0 2px;float:left;-webkit-transition:.2s;-moz-transition:.2s;-o-transition:.2s;-ms-transition:.2s;transition:.2s}body.page-template-page-dceducacion-php #toplayer menu#secondary .search input#query{width:205px;padding:0 5px;color:#57656d;font-size:15px;font-weight:300;font-family:'Colaborate',Arial,sans-serif}
+body.page-template-page-dceducacion-php #toplayer menu#secondary .search input#button{width:23px}
+body.page-template-page-dceducacion-php header{background-image:none;background:#5eb19e}body.page-template-page-dceducacion-php header h1#logo-main{background:url(../img/dc-educacion-logo-main.png) no-repeat center;width:475px;height:187px;margin:150px auto 0}

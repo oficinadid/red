@@ -3,7 +3,7 @@
     <head>
         <meta charset="utf-8">
         <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
-        <title>RED</title>
+        <title><?php bloginfo('name'); ?></title>
         <meta name="description" content="">
         <meta name="viewport" content="width=device-width">
 
@@ -77,12 +77,32 @@
                 </div>
             </div>
 
+            <menu id="secondary">
+                <div class="wrap">
+
+                    <h2 id="logo-dc"><a href="#"></a></h2>
+                    
+                    <ul class="nav">
+                        <li><a href="#">About</a></li>
+                        <li><a href="#">Participación</a></li>
+                        <li><a href="#">Noticias</a></li>
+                        <li><a href="#">Documentos</a></li>
+                    </ul>
+
+                    <div class="search">
+                        <input id="query" type="text" placeholder="Búsqueda en Diálogos... ">
+                        <input id="button" type="submit" value="">
+                    </div>
+
+                    <div class="cf"></div>
+
+                </div>
+            </menu>
+
         </div>
 
         <header>
 
             <h1 id="logo-main"></h1>
-
-            <div id="header-shadow"></div>
 
         </header>

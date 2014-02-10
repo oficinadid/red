@@ -25,21 +25,21 @@ body {
 }
 
 a.menuside-trigger {
-	display:block;
-	height:48px;
-	width:55px;
-	position:fixed;
-	top:0;
-	right:0;
-	background-image:url(../img/menu-side-sprite.png);
-	background-position:-110px 0;
-	z-index:999999;
-	&:hover {
-		background-color:@redhover;
-	}
-	&.on {
-		background-color:@darkgrey;
-	}
+    display:block;
+    height:48px;
+    width:55px;
+    position:fixed;
+    top:0;
+    right:0;
+    background-image:url(../img/menu-side-sprite.png);
+    background-position:-110px 0;
+    z-index:999999;
+    &:hover {
+        background-color:@redhover;
+    }
+    &.on {
+        background-color:@darkgrey;
+    }
 }
 
 nav#side {
@@ -48,7 +48,7 @@ nav#side {
     top:48px;
     bottom:0;
     background:@darkgrey;
-    z-index:9;
+    z-index:11;
     color:@pale;
     font-weight:300;
     font-size:15px;
@@ -185,6 +185,10 @@ nav#side {
         left:0;
         right:0;
         height:22px;
+        .transition(0.1s);
+        &.down {
+            top:90px;
+        }
 
     }
     #searchbox {
@@ -498,21 +502,21 @@ header {
 }
 
 #breadcrumbs {
-	margin:0 0 50px;
-	ul {
-		li {
-			float:left;
-			margin:0 5px 0 0;
-			font-size:18px;
-			font-weight:300;
-			color:@grey;
-			a {
-				&:hover {
-					text-decoration:underline;
-				}
-			}
-		}
-	}
+    margin:0 0 50px;
+    ul {
+        li {
+            float:left;
+            margin:0 5px 0 0;
+            font-size:18px;
+            font-weight:300;
+            color:@grey;
+            a {
+                &:hover {
+                    text-decoration:underline;
+                }
+            }
+        }
+    }
 }
 
 body.single {
@@ -622,124 +626,122 @@ footer {
     }
 }
 
-body.page-template-page-dceducacion-php {
-    a.menuside-trigger {
-        &:hover {
-            background-color:@darkgrey;
+a.menuside-trigger {
+    &:hover {
+        background-color:@darkgrey;
+    }
+}
+#toplayer {
+    menu#main {
+        background:@grey;
+        ul.aux {
+            li {
+                a {
+                    &:hover {
+                        background-color:@darkgrey;
+                    }
+                }
+            }
         }
     }
-    #toplayer {
-        menu#main {
-            background:@grey;
-            ul.aux {
-                li {
-                    a {
-                        &:hover {
-                            background-color:@darkgrey;
-                        }
-                    }
-                }
-            }
-        }
-        menu#secondary {
-            position:absolute;
-            top:385px;
-            left:0;
-            right:0;
-            height:43px;
-            background:@teal;
-            overflow:hidden;
-            &.fixed {
-                position:fixed;
-                top:48px;
-                .wrap {
-                    border-top:1px solid transparent;
-                }
-                h2#logo-dc {
-                    width:131px;
-                }
-                .search {
-                    input {
-                        width:0 !important;
-                        padding:0 !important;
-                        display:none;
-                    }
-                }
-            }
+    menu#secondary {
+        position:absolute;
+        top:385px;
+        left:0;
+        right:0;
+        height:43px;
+        background:@teal;
+        overflow:hidden;
+        &.fixed {
+            position:fixed;
+            top:48px;
             .wrap {
-                border-top:1px solid #81c5b7;
-                .transition(0.2s);
+                border-top:1px solid transparent;
             }
             h2#logo-dc {
-                width:0px;
-                height:41px;
-                float:left;
-                margin:5px 21px 0 0;
-                .transition(0.5s);
-                a {
-                    display:block;
-                    width:100%;
-                    height:100%;
-                    background:url(../img/secondary-logo-bg.png) no-repeat;
-                }
-            }
-            ul.nav {
-                padding:9px 0 0;
-                float:left;
-                li {
-                    float:left;
-                    a {
-                        margin:0 29px;
-                        padding:6px 0 2px;
-                        display:block;
-                        text-transform:uppercase;
-                        font-weight:700;
-                        font-size:14px;
-                        text-align:center;
-                        color:@grey;
-                        border-bottom:1px solid transparent;
-                        &:hover {
-                            border-bottom:1px solid @grey;
-                        }
-                    }
-                }
+                width:131px;
             }
             .search {
-                float:right;
-                overflow:hidden;
-                width:236px;
-                margin:10px 0 0;
                 input {
-                    background:#509684;
-                    height:24px;
-                    border:none;
+                    width:0 !important;
+                    padding:0 !important;
+                    display:none;
+                }
+            }
+        }
+        .wrap {
+            border-top:1px solid #81c5b7;
+            .transition(0.2s);
+        }
+        h2#logo-dc {
+            width:0px;
+            height:41px;
+            float:left;
+            margin:5px 21px 0 0;
+            .transition(0.5s);
+            a {
+                display:block;
+                width:100%;
+                height:100%;
+                background:url(../img/secondary-logo-bg.png) no-repeat;
+            }
+        }
+        ul.nav {
+            padding:9px 0 0;
+            float:left;
+            li {
+                float:left;
+                a {
+                    margin:0 29px;
+                    padding:6px 0 2px;
                     display:block;
-                    margin:0 2px;
-                    float:left;
-                    .transition(0.2s);
-                    &#query {
-                        width:205px;
-                        padding:0 5px;
-                        color:@grey;
-                        font-size:15px;
-                        font-weight:300;
-                        .colaborate;
+                    text-transform:uppercase;
+                    font-weight:700;
+                    font-size:14px;
+                    text-align:center;
+                    color:@grey;
+                    border-bottom:1px solid transparent;
+                    &:hover {
+                        border-bottom:1px solid @grey;
                     }
-                    &#button {
-                        width:23px;
-                    }
+                }
+            }
+        }
+        .search {
+            float:right;
+            overflow:hidden;
+            width:236px;
+            margin:10px 0 0;
+            input {
+                background:#509684;
+                height:24px;
+                border:none;
+                display:block;
+                margin:0 2px;
+                float:left;
+                .transition(0.2s);
+                &#query {
+                    width:205px;
+                    padding:0 5px;
+                    color:@grey;
+                    font-size:15px;
+                    font-weight:300;
+                    .colaborate;
+                }
+                &#button {
+                    width:23px;
                 }
             }
         }
     }
-    header {
-        background-image:none;
-        background:@teal;
-        h1#logo-main {
-            background:url(../img/dc-educacion-logo-main.png) no-repeat center;
-            width:475px;
-            height:187px;
-            margin:150px auto 0;
-        }
+}
+header {
+    background-image:none;
+    background:@teal;
+    h1#logo-main {
+        background:url(../img/dc-educacion-logo-main.png) no-repeat center;
+        width:475px;
+        height:187px;
+        margin:150px auto 0;
     }
 }

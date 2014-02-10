@@ -57,9 +57,11 @@ $(window).bind('scroll', function(){
 
     if ($(document).scrollTop() > 336) {
         $('menu#secondary').addClass('fixed');
+        $('#main-shadow').addClass('down');
     }
     else {
         $('menu#secondary').removeClass('fixed');
+        $('#main-shadow').removeClass('down');
     }
 
 });

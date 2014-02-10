@@ -1,0 +1,71 @@
+
+
+// Variables
+.transition (@s) {
+    -webkit-transition:@s;
+    -moz-transition:@s;
+    -o-transition:@s;
+    -ms-transition:@s;
+    transition:@s; 
+}
+@red: #f00;
+@redhover: #bf1b1b;
+@grey: #57656d;
+@darkgrey: #333332;
+@teal: #5eb19e;
+@blue: #1d5b9e;
+@pale: #f2f2f2;
+
+::-webkit-input-placeholder {
+   color: inherit;
+}
+:-moz-placeholder { /* Firefox 18- */
+   color: inherit;  
+}
+::-moz-placeholder {  /* Firefox 19+ */
+   color: inherit;  
+}
+:-ms-input-placeholder {  
+   color: inherit;  
+}
+
+// Fonts
+@font-face {
+    font-family:'Colaborate';
+    src: url('../fonts/ColabThi-webfont.eot');
+    src: url('../fonts/ColabThi-webfont.eot?#iefix') format('embedded-opentype'),
+         url('../fonts/ColabThi-webfont.woff') format('woff'),
+         url('../fonts/ColabThi-webfont.ttf') format('truetype'),
+         url('../fonts/ColabThi-webfont.svg#CreativeBlockBBBold') format('svg');
+    font-weight:300;
+    font-style:normal;
+}
+
+@font-face {
+    font-family:'Colaborate';
+    src: url('../fonts/ColabReg-webfont.eot');
+    src: url('../fonts/ColabReg-webfont.eot?#iefix') format('embedded-opentype'),
+         url('../fonts/ColabReg-webfont.woff') format('woff'),
+         url('../fonts/ColabReg-webfont.ttf') format('truetype'),
+         url('../fonts/ColabReg-webfont.svg#CreativeBlockBBBold') format('svg');
+    font-weight:500;
+    font-style:normal;
+}
+
+@font-face {
+    font-family:'Colaborate';
+    src: url('../fonts/ColabMed-webfont.eot');
+    src: url('../fonts/ColabMed-webfont.eot?#iefix') format('embedded-opentype'),
+         url('../fonts/ColabMed-webfont.woff') format('woff'),
+         url('../fonts/ColabMed-webfont.ttf') format('truetype'),
+         url('../fonts/ColabMed-webfont.svg#CreativeBlockBBBold') format('svg');
+    font-weight:700;
+    font-style:normal;
+}
+
+.pathway {
+    font-family: 'Pathway Gothic One', sans-serif;
+}
+.colaborate {
+    font-family:'Colaborate', Arial, sans-serif;
+}
