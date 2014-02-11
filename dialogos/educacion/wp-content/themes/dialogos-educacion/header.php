@@ -90,7 +90,7 @@
                     </ul>
 
                     <div class="search">
-                        <input id="query" type="text" placeholder="Búsqueda en Diálogos... ">
+                        <input id="query" type="text" placeholder="| Búsqueda en Diálogos... ">
                         <input id="button" type="submit" value="">
                     </div>
 

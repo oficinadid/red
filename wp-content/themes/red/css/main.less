@@ -345,18 +345,6 @@ header {
                 margin:0 auto;
             }
         }
-        .tags {
-            a {
-                display:inline-block;
-                margin:0 9px 9px 0;
-                padding:3px 10px;
-                background:@red;
-                color:#fff;
-                font-size:18px;
-                text-transform:uppercase;
-                .pathway;
-            }
-        }
     }
     a.more {
         color:@red;
@@ -515,6 +503,115 @@ header {
 	}
 }
 
+.tags {
+    a {
+        display:inline-block;
+        margin:0 9px 9px 0;
+        padding:3px 10px;
+        color:#fff;
+        font-size:18px;
+        text-transform:uppercase;
+        .pathway;
+        background:@red;
+        &.all {
+            background:#57656d;
+            &:hover {
+                background:#414e54;
+            }
+        }
+        &.educacion {
+            background:#5eb09d;
+            &:hover {
+                background:#419985;
+            }
+        }
+        &.constitucion {
+            background:#545f7d;
+            &:hover {
+                background:#424d66;
+            }
+        }
+        &.tributario {
+            background:#a7a447;
+            &:hover {
+                background:#8c8637;
+            }
+        }
+        &.desarrollo {
+            background:#454153;
+            &:hover {
+                background:#3a3848;
+            }
+        }
+        &.desigualdad {
+            background:#798bb3;
+            &:hover {
+                background:#596886;
+            }
+        }
+        &.salud {
+            background:#5abdca;
+            &:hover {
+                background:#439ba2;
+            }
+        }
+        &.trabajo {
+            background:#da654d;
+            &:hover {
+                background:#b04e3e;
+            }
+        }
+        &.energia {
+            background:#5666a5;
+            &:hover {
+                background:#3d4c7b;
+            }
+        }
+        &.comunicaciones {
+            background:#4f8a95;
+            &:hover {
+                background:#42747b;
+            }
+        }
+        &.ciudad {
+            background:#7f5f8a;
+            &:hover {
+                background:#5a4464;
+            }
+        }
+        &.genero {
+            background:#bd725e;
+            &:hover {
+                background:#a85340;
+            }
+        }
+        &.derechos {
+            background:#9b8a9a;
+            &:hover {
+                background:#7b5c7a;
+            }
+        }
+        &.ciencias {
+            background:#455b3d;
+            &:hover {
+                background:#37492f;
+            }
+        }
+        &.cultura {
+            background:#c699c6;
+            &:hover {
+                background:#946b96;
+            }
+        }
+        &.participacion {
+            background:#85b5a2;
+            &:hover {
+                background:#5a8270;
+            }
+        }
+    }
+}
+
 body.single {
     header {
         height:190px;
@@ -533,7 +630,7 @@ body.single {
             margin:0 auto 10px;
         }
         .tags {
-            margin:0 auto 20px;
+            margin:0 auto 10px;
         }
         a.download {
             display:inline-block;
@@ -566,12 +663,17 @@ body.single {
         }
     }
     a.more {
-        margin:60px 0 20px;
-        font-weight:700;
-        font-size:35px;
-        float:left;
-        text-decoration:underline;
-        color:@grey;
+        display:block;
+        float:right;
+        width:240px;
+        height:40px;
+        color:@red;
+        border:1px solid @red;
+        text-align:center;
+        padding:9px 0px;
+        margin:10px 0 0;
+        font-size:17px;
+        font-weight:300;
     }
 }
 
@@ -622,132 +724,11 @@ footer {
     }
 }
 
-body.page-template-page-dceducacion-php {
-    a.menuside-trigger {
-        &:hover {
-            background-color:@darkgrey;
-        }
-    }
-    #toplayer {
-        menu#main {
-            background:@grey;
-            ul.aux {
-                li {
-                    a {
-                        &:hover {
-                            background-color:@darkgrey;
-                        }
-                    }
-                }
-            }
-        }
-        menu#secondary {
-            position:absolute;
-            top:385px;
-            left:0;
-            right:0;
-            height:43px;
-            background:@teal;
-            overflow:hidden;
-            &.fixed {
-                position:fixed;
-                top:48px;
-                .wrap {
-                    border-top:1px solid transparent;
-                }
-                h2#logo-dc {
-                    width:131px;
-                }
-                .search {
-                    input {
-                        width:0 !important;
-                        padding:0 !important;
-                        display:none;
-                    }
-                }
-            }
-            .wrap {
-                border-top:1px solid #81c5b7;
-                .transition(0.2s);
-            }
-            h2#logo-dc {
-                width:0px;
-                height:41px;
-                float:left;
-                margin:5px 21px 0 0;
-                .transition(0.5s);
-                a {
-                    display:block;
-                    width:100%;
-                    height:100%;
-                    background:url(../img/secondary-logo-bg.png) no-repeat;
-                }
-            }
-            ul.nav {
-                padding:9px 0 0;
-                float:left;
-                li {
-                    float:left;
-                    a {
-                        margin:0 29px;
-                        padding:6px 0 2px;
-                        display:block;
-                        text-transform:uppercase;
-                        font-weight:700;
-                        font-size:14px;
-                        text-align:center;
-                        color:@grey;
-                        border-bottom:1px solid transparent;
-                        &:hover {
-                            border-bottom:1px solid @grey;
-                        }
-                    }
-                }
-            }
-            .search {
-                float:right;
-                overflow:hidden;
-                width:236px;
-                margin:10px 0 0;
-                input {
-                    background:#509684;
-                    height:24px;
-                    border:none;
-                    display:block;
-                    margin:0 2px;
-                    float:left;
-                    .transition(0.2s);
-                    &#query {
-                        width:205px;
-                        padding:0 5px;
-                        color:@grey;
-                        font-size:15px;
-                        font-weight:300;
-                        .colaborate;
-                    }
-                    &#button {
-                        width:23px;
-                    }
-                }
-            }
-        }
-    }
-    header {
-        background-image:none;
-        background:@teal;
-        h1#logo-main {
-            background:url(../img/dc-educacion-logo-main.png) no-repeat center;
-            width:475px;
-            height:187px;
-            margin:150px auto 0;
-        }
-    }
-}
-
 body.page-template-page-about-php {
     header {
-        //background-image:url(../img/about-bg.jpg) no-repeat center;
-        background-size:100% auto;
+        background-image:url(../img/about-bg.jpg);
+        background-size:auto 100%;
+        background-repeat:no-repeat;
         height:193px;
         h1#logo-main {
             .hidden;
@@ -856,7 +837,7 @@ body.page-template-page-about-php {
             li {
                 float:left;
                 width:300px;
-                height:60px;
+                height:90px;
                 margin:0 0 40px;
                 .pic {
                     float:left;
@@ -871,11 +852,13 @@ body.page-template-page-about-php {
                     }
                 }
                 .datos {
+                    width:225px;
                     float:left;
                     h4 {
                         font-size:28px;
                         font-weight:700;
                         margin:0 0 5px;
+                        letter-spacing:-1px;
                     }
                     h5 {
                         font-size:20px;
@@ -950,6 +933,139 @@ body.page-template-page-about-php {
             text-transform:uppercase;
             margin:0 auto;
             padding:12px 0;
+        }
+    }
+}
+
+body.page-template-page-colaboradores-php {
+    header {
+        background-image:url(../img/about-bg.jpg);
+        background-size:auto 100%;
+        background-repeat:no-repeat;
+        height:193px;
+        h1#logo-main {
+            .hidden;
+        }
+    }
+    text-align:left;
+    .colaboradores {
+        margin:-40px auto 0;
+        position:relative;
+        background:#fff;
+        padding:35px 80px 50px;
+        h3 {
+            font-weight:300;
+            color:@grey;
+            text-transform:uppercase;
+            font-size:18px;
+            margin:12px auto 50px;
+            float:left;
+        }
+        a.listado-trigger {
+            display:block;
+            float:right;
+            width:227px;
+            height:32px;
+            border:1px solid #a2b2b7;
+            color:@grey;
+            text-align:center;
+            padding:8px 0;
+            text-transform:uppercase;
+            font-size:14px;
+            font-weight:300;
+        }
+        .persona {
+            margin:30px auto;
+            .top {
+                width:490px;
+                float:left;
+                h2 {
+                    letter-spacing:-1px;
+                    font-size:28px;
+                    font-weight:700;
+                    color:@darkgrey;
+                }
+                .profesion {
+                    font-size:20px;
+                    font-weight:300;
+                    color:@grey;
+                    margin:5px 0 35px;
+                }
+            }
+            .foto {
+                float:right;
+                position:relative;
+                a {
+                    display:block;
+                    float:right;
+                    margin:0 0 0 10px;
+                    img {
+                        border-radius:50%;
+                        float:left;
+                    }
+                }
+            }
+            .texto {
+                display:block;
+                clear:both;
+                color:@grey;
+                font-weight:300;
+                font-size:18px;
+                line-height:140%;
+                margin:0 auto 25px;
+                a.more {
+                    color:@red;
+                    font-weight:500;
+                    font-size:13px;
+                    margin:0 0 0 5px;
+                }
+            }
+            a.pubs {
+                font-size:18px;
+                color:@red;
+            }
+        }
+        > a.more {
+            display:block;
+            float:right;
+            width:250px;
+            height:40px;
+            color:@red;
+            border:1px solid @red;
+            text-align:center;
+            padding:9px 0px;
+            margin:10px 0 0;
+        }
+    }
+    .header-dc {
+        background:#e8e8e8 url(../img/colaboradores-dc.png) no-repeat top center;
+        height:433px;
+        padding:275px 0 0;
+        text-align:center;
+        .elements {
+            margin:0 0 0 310px;
+            text-align:left;
+            a.ir {
+                display:block;
+                margin:0;
+                width:320px;
+                height:45px;
+                background:@teal;
+                color:@pale;
+                text-align:center;
+                padding:12px 0;
+                text-transform:uppercase;
+                font-size:21px;
+                font-weight:700;
+                letter-spacing:1px;
+            }
+            span {
+                color:@grey;
+                display:block;
+                margin:10px auto 0;
+                font-size:20px;
+                font-weight:300;
+            }
         }
     }
 }

@@ -16,8 +16,8 @@
                     <p>Chile está enfrentando y enfrentará en los próximos años. RED es un proyecto para pensar en el tipo de país y desarrollo que queremos y así transformar. RED es un proyecto para pensar en el tipo de país y desarrollo que queremos y así transformar Chile en una sociedad más justa, igualitaria y democrática.</p>
                 </div>
                 <div class="tags">
-                    <a href="#">Educación</a>
-                    <a href="#">Modelo de Desarrollo y Política Industrial</a>
+                    <a class="educacion" href="#">Educación</a>
+                    <a class="desarrollo" href="#">Modelo de Desarrollo y Política Industrial</a>
                 </div>
             </div>
 
@@ -62,8 +62,8 @@
                     <p>Chile está enfrentando y enfrentará en los próximos años. RED es un proyecto para pensar en el tipo de país y desarrollo que queremos y así transformar. RED es un proyecto para pensar en el tipo de país y desarrollo que queremos y así transformar Chile en una sociedad más justa, igualitaria y democrática.</p>
                 </div>
                 <div class="tags">
-                    <a href="#">Educación</a>
-                    <a href="#">Modelo de Desarrollo y Política Industrial</a>
+                    <a class="genero" href="#">Educación</a>
+                    <a class="derechos" href="#">Modelo de Desarrollo y Política Industrial</a>
                 </div>
             </div>
 
@@ -81,8 +81,8 @@
                     <p>Chile está enfrentando y enfrentará en los próximos años. RED es un proyecto para pensar en el tipo de país y desarrollo que queremos y así transformar. RED es un proyecto para pensar en el tipo de país y desarrollo que queremos y así transformar Chile en una sociedad más justa, igualitaria y democrática.</p>
                 </div>
                 <div class="tags">
-                    <a href="#">Educación</a>
-                    <a href="#">Modelo de Desarrollo y Política Industrial</a>
+                    <a class="cultura" href="#">Educación</a>
+                    <a class="ciencias" href="#">Modelo de Desarrollo y Política Industrial</a>
                 </div>
             </div>
 
@@ -100,8 +100,8 @@
                     <p>Chile está enfrentando y enfrentará en los próximos años. RED es un proyecto para pensar en el tipo de país y desarrollo que queremos y así transformar. RED es un proyecto para pensar en el tipo de país y desarrollo que queremos y así transformar Chile en una sociedad más justa, igualitaria y democrática.</p>
                 </div>
                 <div class="tags">
-                    <a href="#">Educación</a>
-                    <a href="#">Modelo de Desarrollo y Política Industrial</a>
+                    <a class="ciudad" href="#">Educación</a>
+                    <a class="comunicaciones" href="#">Modelo de Desarrollo y Política Industrial</a>
                 </div>
             </div>
 

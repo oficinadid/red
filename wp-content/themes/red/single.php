@@ -7,7 +7,7 @@
                     <li>Estás en:</li>
                     <li><a href="#">Home</a></li>
                     <li>></li>
-                    <li><a href="#">Ideas y Acciones</a></li>
+                    <li><a href="#">Ideas y Proyectos</a></li>
                     <li>></li>
                     <li>Nueva versión disponible del Barómetro de Política...</li>
                 </ul>
@@ -19,15 +19,15 @@
                 <div class="post" id="main">
                     <div class="top">
                         <h2 class="title"><?php the_title(); ?></h2>
-                        <div class="meta">Diciembre 12, 2013 en categoría <a href="#">Papers</a> por <a href="#">Gonzalo Durán</a>.</div>
+                        <div class="meta">Diciembre 12, 2013 Paper por <a href="#">Gonzalo Durán</a>.</div>
                     </div>
                     <div class="autor">
                         <a href="#"><img src="<?php bloginfo('template_url'); ?>/img/autor1.jpg"></a>
                     </div>
                     <div class="sep"><div class="cf"></div></div>
                     <div class="tags">
-                        <a href="#">Educación</a>
-                        <a href="#">Modelo de Desarrollo y Política Industrial</a>
+                        <a class="educacion" href="#">Educación</a>
+                        <a class="tributario" href="#">Modelo de Desarrollo y Política Industrial</a>
                     </div>
                     <a class="download" href="#">Descargar Paper</a>
                     <div class="texto"><?php the_content(); ?></div>
@@ -36,12 +36,12 @@
             <?php endwhile; else : endif; ?>
 
 
-            <h3>Más Ideas y Acciones</h3>
+            <h3><strong>Más Ideas y Proyectos</strong></h3>
 
             <div class="post">
                 <div class="top">
                     <h2 class="title"><a href="#">Nueva versión disponible del Barómetro de Política y Equidad.</a></h2>
-                    <div class="meta">Diciembre 12, 2013 en categoría <a href="#">Papers</a> por <a href="#">Gonzalo Durán</a>.</div>
+                    <div class="meta">Diciembre 12, 2013 Paper por <a href="#">Gonzalo Durán</a>.</div>
                 </div>
                 <div class="autor">
                     <a href="#"><img src="<?php bloginfo('template_url'); ?>/img/autor1.jpg"></a>
@@ -50,8 +50,8 @@
                     <p>Chile está enfrentando y enfrentará en los próximos años. RED es un proyecto para pensar en el tipo de país y desarrollo que queremos y así transformar. RED es un proyecto para pensar en el tipo de país y desarrollo que queremos y así transformar Chile en una sociedad más justa, igualitaria y democrática.</p>
                 </div>
                 <div class="tags">
-                    <a href="#">Educación</a>
-                    <a href="#">Modelo de Desarrollo y Política Industrial</a>
+                    <a class="educacion" href="#">Educación</a>
+                    <a class="tributario" href="#">Modelo de Desarrollo y Política Industrial</a>
                 </div>
             </div>
 
@@ -60,7 +60,7 @@
             <div class="post">
                 <div class="top">
                     <h2 class="title"><a href="#">Nueva versión disponible del Barómetro de Política y Equidad.</a></h2>
-                    <div class="meta">Diciembre 12, 2013 en categoría <a href="#">Papers</a> por <a href="#">Gonzalo Durán</a>.</div>
+                    <div class="meta">Diciembre 12, 2013 Paper por <a href="#">Gonzalo Durán</a>.</div>
                 </div>
                 <div class="autor">
                     <a class="autores-trigger">
@@ -96,8 +96,8 @@
                     <p>Chile está enfrentando y enfrentará en los próximos años. RED es un proyecto para pensar en el tipo de país y desarrollo que queremos y así transformar. RED es un proyecto para pensar en el tipo de país y desarrollo que queremos y así transformar Chile en una sociedad más justa, igualitaria y democrática.</p>
                 </div>
                 <div class="tags">
-                    <a href="#">Educación</a>
-                    <a href="#">Modelo de Desarrollo y Política Industrial</a>
+                    <a class="educacion" href="#">Educación</a>
+                    <a class="tributario" href="#">Modelo de Desarrollo y Política Industrial</a>
                 </div>
             </div>
 
@@ -106,7 +106,7 @@
             <div class="post">
                 <div class="top">
                     <h2 class="title"><a href="#">Nueva versión disponible del Barómetro de Política y Equidad.</a></h2>
-                    <div class="meta">Diciembre 12, 2013 en categoría <a href="#">Papers</a> por <a href="#">Gonzalo Durán</a>.</div>
+                    <div class="meta">Diciembre 12, 2013 Paper por <a href="#">Gonzalo Durán</a>.</div>
                 </div>
                 <div class="autor">
                     <a href="#"><img src="<?php bloginfo('template_url'); ?>/img/autor1.jpg"></a>
@@ -115,8 +115,8 @@
                     <p>Chile está enfrentando y enfrentará en los próximos años. RED es un proyecto para pensar en el tipo de país y desarrollo que queremos y así transformar. RED es un proyecto para pensar en el tipo de país y desarrollo que queremos y así transformar Chile en una sociedad más justa, igualitaria y democrática.</p>
                 </div>
                 <div class="tags">
-                    <a href="#">Educación</a>
-                    <a href="#">Modelo de Desarrollo y Política Industrial</a>
+                    <a class="educacion" href="#">Educación</a>
+                    <a class="tributario" href="#">Modelo de Desarrollo y Política Industrial</a>
                 </div>
             </div>
 
@@ -125,7 +125,7 @@
             <div class="post">
                 <div class="top">
                     <h2 class="title"><a href="#">Nueva versión disponible del Barómetro de Política y Equidad.</a></h2>
-                    <div class="meta">Diciembre 12, 2013 en categoría <a href="#">Papers</a> por <a href="#">Gonzalo Durán</a>.</div>
+                    <div class="meta">Diciembre 12, 2013 Paper por <a href="#">Gonzalo Durán</a>.</div>
                 </div>
                 <div class="autor">
                     <a href="#"><img src="<?php bloginfo('template_url'); ?>/img/autor1.jpg"></a>
@@ -134,14 +134,14 @@
                     <p>Chile está enfrentando y enfrentará en los próximos años. RED es un proyecto para pensar en el tipo de país y desarrollo que queremos y así transformar. RED es un proyecto para pensar en el tipo de país y desarrollo que queremos y así transformar Chile en una sociedad más justa, igualitaria y democrática.</p>
                 </div>
                 <div class="tags">
-                    <a href="#">Educación</a>
-                    <a href="#">Modelo de Desarrollo y Política Industrial</a>
+                    <a class="educacion" href="#">Educación</a>
+                    <a class="tributario" href="#">Modelo de Desarrollo y Política Industrial</a>
                 </div>
             </div>
 
             <div class="cf"></div>
 
-            <a href="#" class="more">Más Ideas y Acciones...</a>
+            <a href="#" class="more">Ver más <strong>Ideas y Proyectos</strong> &#9662;</a>
 
             <div class="cf"></div>
 

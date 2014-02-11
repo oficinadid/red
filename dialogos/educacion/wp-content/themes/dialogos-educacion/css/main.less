@@ -112,7 +112,7 @@ nav#side {
     position:relative;
     z-index:10;
     menu#main {
-        background:rgba(255,0,0,0.9);
+        background:@grey;
         color:#fff;
         position:fixed;
         top:0;
@@ -169,7 +169,7 @@ nav#side {
                             background-position:-72px 0;
                         }
                         &:hover {
-                            background-color:@redhover;
+                            background-color:@darkgrey;
                         }
                         &.on {
                             background-color:rgba(35,35,35,0.9);
@@ -191,6 +191,97 @@ nav#side {
             top:90px;
         }
 
+    }
+    menu#secondary {
+        position:absolute;
+        top:385px;
+        left:0;
+        right:0;
+        height:43px;
+        background:@teal;
+        overflow:hidden;
+        &.fixed {
+            position:fixed;
+            top:48px;
+            .wrap {
+                border-top:2px solid transparent;
+            }
+            h2#logo-dc {
+                width:131px;
+            }
+            .search {
+                input {
+                    width:0 !important;
+                    padding:0 !important;
+                    display:none;
+                }
+            }
+        }
+        .wrap {
+            border-top:2px solid #52aa98;
+            .transition(0.2s);
+        }
+        h2#logo-dc {
+            width:0px;
+            height:41px;
+            float:left;
+            margin:5px 21px 0 0;
+            .transition(0.5s);
+            a {
+                display:block;
+                width:100%;
+                height:100%;
+                background:url(../img/secondary-logo-bg.png) no-repeat;
+            }
+        }
+        ul.nav {
+            padding:9px 0 0;
+            float:left;
+            li {
+                float:left;
+                a {
+                    margin:0 28px;
+                    padding:6px 0 2px;
+                    display:block;
+                    text-transform:uppercase;
+                    font-weight:700;
+                    font-size:14px;
+                    text-align:center;
+                    color:#afefdb;
+                    border-bottom:1px solid transparent;
+                    &:hover {
+                        border-bottom:1px solid #afefdb;
+                    }
+                }
+            }
+        }
+        .search {
+            float:right;
+            overflow:hidden;
+            width:244px;
+            margin:10px 0 0;
+            input {
+                background:#509684;
+                height:24px;
+                border:none;
+                display:block;
+                margin:0 2px;
+                float:left;
+                .transition(0.2s);
+                &#query {
+                    width:205px;
+                    padding:0 5px;
+                    color:#306054;
+                    font-size:15px;
+                    font-weight:300;
+                    .colaborate;
+                }
+                &#button {
+                    width:31px;
+                    background:#509684 url(../img/secondary-search-bg.png) no-repeat center;
+                }
+            }
+        }
     }
     #searchbox {
         position:fixed;
@@ -241,112 +332,6 @@ header {
 a.menuside-trigger {
     &:hover {
         background-color:@darkgrey;
-    }
-}
-
-#toplayer {
-    menu#main {
-        background:@grey;
-        ul.aux {
-            li {
-                a {
-                    &:hover {
-                        background-color:@darkgrey;
-                    }
-                }
-            }
-        }
-    }
-    menu#secondary {
-        position:absolute;
-        top:385px;
-        left:0;
-        right:0;
-        height:43px;
-        background:@teal;
-        overflow:hidden;
-        &.fixed {
-            position:fixed;
-            top:48px;
-            .wrap {
-                border-top:1px solid transparent;
-            }
-            h2#logo-dc {
-                width:131px;
-            }
-            .search {
-                input {
-                    width:0 !important;
-                    padding:0 !important;
-                    display:none;
-                }
-            }
-        }
-        .wrap {
-            border-top:1px solid #81c5b7;
-            .transition(0.2s);
-        }
-        h2#logo-dc {
-            width:0px;
-            height:41px;
-            float:left;
-            margin:5px 21px 0 0;
-            .transition(0.5s);
-            a {
-                display:block;
-                width:100%;
-                height:100%;
-                background:url(../img/secondary-logo-bg.png) no-repeat;
-            }
-        }
-        ul.nav {
-            padding:9px 0 0;
-            float:left;
-            li {
-                float:left;
-                a {
-                    margin:0 28px;
-                    padding:6px 0 2px;
-                    display:block;
-                    text-transform:uppercase;
-                    font-weight:700;
-                    font-size:14px;
-                    text-align:center;
-                    color:@grey;
-                    border-bottom:1px solid transparent;
-                    &:hover {
-                        border-bottom:1px solid @grey;
-                    }
-                }
-            }
-        }
-        .search {
-            float:right;
-            overflow:hidden;
-            width:244px;
-            margin:10px 0 0;
-            input {
-                background:#509684;
-                height:24px;
-                border:none;
-                display:block;
-                margin:0 2px;
-                float:left;
-                .transition(0.2s);
-                &#query {
-                    width:205px;
-                    padding:0 5px;
-                    color:@grey;
-                    font-size:15px;
-                    font-weight:300;
-                    .colaborate;
-                }
-                &#button {
-                    width:31px;
-                    background:#509684 url(../img/secondary-search-bg.png) no-repeat center;
-                }
-            }
-        }
     }
 }
 
@@ -428,6 +413,7 @@ footer {
             text-transform:uppercase;
             font-size:18px;
             margin:0 auto 50px;
+            text-align:center;
             strong {
                 color:@teal;
             }
@@ -452,7 +438,7 @@ footer {
                 width:100%;
                 display:block;
                 border:none;
-                background:#d8dde2;
+                background:#eff1f3;
                 .colaborate;
                 color:@darkgrey;
             }
@@ -533,12 +519,17 @@ footer {
             }
         }
         a.more {
-            color:@teal;
-            display:block;
-            padding:2px;
-            float:right;
-            font-weight:700;
             font-size:17px;
+            font-weight:300;
+            display:block;
+            float:right;
+            width:175px;
+            height:40px;
+            color:@teal;
+            border:1px solid @teal;
+            text-align:center;
+            padding:9px 0px;
+            margin:10px 0 0;
         }
     }
 }
@@ -562,7 +553,7 @@ footer {
     }
     .post {
         width:195px;
-        height:300px;
+        height:270px;
         background:#fff;
         float:left;
         margin:0 22px 22px 0;
@@ -574,9 +565,15 @@ footer {
         &.nopic {
             border-top:10px solid @teal;
         }
-        .tn {
-            max-width:100%;
-            height:auto;
+        &.pic {
+            a.img {
+                display:block;
+                .tn {
+                    max-width:100%;
+                    height:auto;
+                    float:left;
+                }
+            }
         }
         .texto {
             padding:20px;
@@ -610,12 +607,16 @@ footer {
         }
     }
     a.more {
-        color:@teal;
-        display:block;
-        padding:2px;
-        float:right;
-        font-weight:700;
         font-size:17px;
-        margin:50px 0 0;
+        font-weight:300;
+        display:block;
+        float:right;
+        width:200px;
+        height:40px;
+        color:@teal;
+        border:1px solid @teal;
+        text-align:center;
+        padding:9px 0px;
+        margin:10px 0 0;
     }
 }

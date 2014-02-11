@@ -114,7 +114,7 @@ Template Name: About
                 <a href="#"><img src="<?php bloginfo('template_url'); ?>/img/autor1.jpg"></a>
             </div>
             <div class="datos">
-                <h4><a href="#">Mariana Carnalla</a></h4>
+                <h4><a href="#">David Banda</a></h4>
                 <h5>Arquitecto ajsdhalsd</h5>
             </div>
         </li>
@@ -123,7 +123,7 @@ Template Name: About
                 <a href="#"><img src="<?php bloginfo('template_url'); ?>/img/autor1.jpg"></a>
             </div>
             <div class="datos">
-                <h4><a href="#">Mariana Carnalla</a></h4>
+                <h4><a href="#">David Banda</a></h4>
                 <h5>Arquitecto ajsdhalsd</h5>
             </div>
         </li>
@@ -132,7 +132,7 @@ Template Name: About
                 <a href="#"><img src="<?php bloginfo('template_url'); ?>/img/autor1.jpg"></a>
             </div>
             <div class="datos">
-                <h4><a href="#">Mariana Carnalla</a></h4>
+                <h4><a href="#">David Banda</a></h4>
                 <h5>Arquitecto ajsdhalsd</h5>
             </div>
         </li>
@@ -141,7 +141,7 @@ Template Name: About
                 <a href="#"><img src="<?php bloginfo('template_url'); ?>/img/autor1.jpg"></a>
             </div>
             <div class="datos">
-                <h4><a href="#">Mariana Carnalla</a></h4>
+                <h4><a href="#">Valentina Vargas</a></h4>
                 <h5>Arquitecto ajsdhalsd</h5>
             </div>
         </li>
@@ -150,7 +150,7 @@ Template Name: About
                 <a href="#"><img src="<?php bloginfo('template_url'); ?>/img/autor1.jpg"></a>
             </div>
             <div class="datos">
-                <h4><a href="#">Mariana Carnalla</a></h4>
+                <h4><a href="#">David Banda</a></h4>
                 <h5>Arquitecto ajsdhalsd</h5>
             </div>
         </li>
@@ -159,7 +159,7 @@ Template Name: About
                 <a href="#"><img src="<?php bloginfo('template_url'); ?>/img/autor1.jpg"></a>
             </div>
             <div class="datos">
-                <h4><a href="#">Mariana Carnalla</a></h4>
+                <h4><a href="#">Gustavo Astorga Parraguez</a></h4>
                 <h5>Arquitecto ajsdhalsd</h5>
             </div>
         </li>
@@ -168,7 +168,7 @@ Template Name: About
                 <a href="#"><img src="<?php bloginfo('template_url'); ?>/img/autor1.jpg"></a>
             </div>
             <div class="datos">
-                <h4><a href="#">Mariana Carnalla</a></h4>
+                <h4><a href="#">David Banda</a></h4>
                 <h5>Arquitecto ajsdhalsd</h5>
             </div>
         </li>
@@ -177,7 +177,7 @@ Template Name: About
                 <a href="#"><img src="<?php bloginfo('template_url'); ?>/img/autor1.jpg"></a>
             </div>
             <div class="datos">
-                <h4><a href="#">Mariana Carnalla</a></h4>
+                <h4><a href="#">David Banda</a></h4>
                 <h5>Arquitecto ajsdhalsd</h5>
             </div>
         </li>
@@ -191,7 +191,7 @@ Template Name: About
 
 <div class="header-dc">
     <div class="wrap">
-        <img src="<?php bloginfo('template_url'); ?>/img/about-dc.jpg">
+        <img src="<?php bloginfo('template_url'); ?>/img/about-dc.png">
     </div>
 </div>
 

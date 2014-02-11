@@ -59,7 +59,7 @@
 
                 <div class="cf"></div>
 
-                <a href="#" class="more">Más Ideas y Acciones &#9656;</a>
+                <a href="#" class="more">Ver más <strong>Noticias</strong> &#9662;</a>
 
                 <div class="cf"></div>
 
@@ -73,7 +73,8 @@
                 <h3>Documentos de <strong>Diálogos Ciudadanos</strong></h3>
 
                 <div class="post pic">
-                    <a href="#"><img class="tn" src="<?php bloginfo('template_url'); ?>/img/dc-educacion-documentos1.jpg"></a>
+                    <a class="img" href="#"><img class="tn" src="<?php bloginfo('template_url'); ?>/img/dc-educacion-documentos1.jpg"></a>
+                    <div class="cf"></div>
                     <div class="texto">
                         <span class="fecha">Domingo 20 de Enero 2014</span>
                         <h2><a href="#">Barómetro de Política y Equidad.</a></h2>
@@ -109,7 +110,8 @@
                 </div>
 
                 <div class="post pic">
-                    <a href="#"><img class="tn" src="<?php bloginfo('template_url'); ?>/img/dc-educacion-documentos1.jpg"></a>
+                    <a class="img" href="#"><img class="tn" src="<?php bloginfo('template_url'); ?>/img/dc-educacion-documentos1.jpg"></a>
+                    <div class="cf"></div>
                     <div class="texto">
                         <span class="fecha">Domingo 20 de Enero 2014</span>
                         <h2><a href="#">Barómetro de Política y Equidad.</a></h2>
@@ -128,7 +130,7 @@
 
                 <div class="cf"></div>
 
-                <a href="#" class="more">Más Documentos &#9656;</a>
+                <a href="#" class="more">Ver más <strong>Documentos</strong> &#9662;</a>
 
                 <div class="cf"></div>
 
