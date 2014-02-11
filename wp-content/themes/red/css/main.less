@@ -743,3 +743,213 @@ body.page-template-page-dceducacion-php {
         }
     }
 }
+
+body.page-template-page-about-php {
+    header {
+        //background-image:url(../img/about-bg.jpg) no-repeat center;
+        background-size:100% auto;
+        height:193px;
+        h1#logo-main {
+            .hidden;
+        }
+    }
+    text-align:left;
+    .about {
+        margin:-40px auto 0;
+        position:relative;
+        background:#fff;
+        padding:35px 80px 40px;
+        h3 {
+            font-weight:300;
+            color:@grey;
+            text-transform:uppercase;
+            font-size:18px;
+            margin:0 auto 20px;
+        }
+        p {
+            font-weight:300;
+            line-height:130%;
+            color:@darkgrey;
+            font-size:18px;
+            .red {
+                color:@red;
+            }
+        }
+    }
+    .objetivo {
+        padding:65px 80px;
+        background:@pale;
+        p {
+            font-weight:300;
+            line-height:130%;
+            color:@darkgrey;
+            font-size:18px;
+
+        }
+    }
+    .directorio {
+        padding:60px 80px 30px;
+        border-bottom:1px solid #d5d8da;
+        h3 {
+            font-weight:300;
+            color:@grey;
+            text-transform:uppercase;
+            font-size:18px;
+            margin:0 auto 20px;
+        }
+        .director {
+            margin:30px auto;
+            .top {
+                width:490px;
+                float:left;
+                h2 {
+                    letter-spacing:-1px;
+                    font-size:28px;
+                    font-weight:700;
+                    color:@darkgrey;
+                }
+                .profesion {
+                    font-size:20px;
+                    font-weight:300;
+                    color:@grey;
+                    margin:5px 0 35px;
+                }
+            }
+            .foto {
+                float:right;
+                position:relative;
+                a {
+                    display:block;
+                    float:right;
+                    margin:0 0 0 10px;
+                    img {
+                        border-radius:50%;
+                        float:left;
+                    }
+                }
+            }
+            .texto {
+                display:block;
+                clear:both;
+                color:@grey;
+                font-weight:300;
+                font-size:18px;
+                line-height:140%;
+                margin:0 auto 25px;
+            }
+            a.pubs {
+                font-size:18px;
+                color:@red;
+            }
+        }
+    }
+    .equipo {
+        padding:40px 80px 90px;
+        h3 {
+            font-weight:300;
+            color:@grey;
+            text-transform:uppercase;
+            font-size:18px;
+            margin:0 auto 50px;
+        }
+        ul {
+            li {
+                float:left;
+                width:300px;
+                height:60px;
+                margin:0 0 40px;
+                .pic {
+                    float:left;
+                    margin:0 15px 0 0;
+                    a {
+                        display:block;
+                        float:right;
+                        img {
+                            border-radius:50%;
+                            float:left;
+                        }
+                    }
+                }
+                .datos {
+                    float:left;
+                    h4 {
+                        font-size:28px;
+                        font-weight:700;
+                        margin:0 0 5px;
+                    }
+                    h5 {
+                        font-size:20px;
+                        font-weight:300;
+                        color:@grey;
+                    }
+                }
+                &:nth-child(2n+1) {
+                    margin:0 30px 40px 0;
+                }
+            }
+        }
+        a.all {
+            display:block;
+            float:right;
+            width:250px;
+            height:40px;
+            color:@red;
+            border:1px solid @red;
+            text-align:center;
+            padding:9px 0px;
+            margin:10px 0 0;
+        }
+    }
+    .header-dc {
+        background:@teal;
+        height:320px;
+        padding:70px 0 0;
+        text-align:center;
+    }
+    .dc {
+        padding:60px 80px 90px;
+        h3 {
+            font-weight:300;
+            color:@grey;
+            text-transform:uppercase;
+            font-size:18px;
+            margin:0 auto 45px;
+            strong {
+                color:@teal;
+            }
+        }
+        p {
+            font-weight:300;
+            line-height:130%;
+            color:@grey;
+            font-size:18px;
+            margin:0 auto 40px;
+        }
+        span.conoce {
+            display:block;
+            margin:0 auto 10px;
+            font-weight:300;
+            color:@blue;
+            text-align:center;
+            strong {
+                color:@red;
+                font-size:24px;
+                font-weight:700;
+                letter-spacing:-1px;
+            }
+        }
+        a.ir {
+            display:block;
+            width:320px;
+            height:45px;
+            font-size:19px;
+            font-weight:700;
+            text-align:center;
+            background:@blue;
+            color:@pale;
+            text-transform:uppercase;
+            margin:0 auto;
+            padding:12px 0;
+        }
+    }
+}
