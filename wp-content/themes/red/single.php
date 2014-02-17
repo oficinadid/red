@@ -1,39 +1,40 @@
         <?php get_header(); ?>
 
         <div class="stream wrap">
+        	<?php if ( have_posts() ) : while ( have_posts() ) : the_post(); ?>
 
-            <div id="breadcrumbs">
-                <ul>
-                    <li>Estás en:</li>
-                    <li><a href="#">Home</a></li>
-                    <li>></li>
-                    <li><a href="#">Ideas y Acciones</a></li>
-                    <li>></li>
-                    <li>Nueva versión disponible del Barómetro de Política...</li>
-                </ul>
-                <div class="cf"></div>
-            </div>
+	            <div id="breadcrumbs">
+	                <ul>
+	                    <li>Estás en:</li>
+	                    <li><a href="#">Home</a></li>
+	                    <li>></li>
+	                    <li><a href="#">Ideas y Acciones</a></li>
+	                    <li>></li>
+	                    <li><?php the_title(); ?></li>
+	                </ul>
+	                <div class="cf"></div>
+	            </div>
 
-            <?php if (have_posts()) : while (have_posts()) : the_post(); ?>
 
-                <div class="post" id="main">
+				<div class="post" id="main">
                     <div class="top">
                         <h2 class="title"><?php the_title(); ?></h2>
-                        <div class="meta">Diciembre 12, 2013 en categoría <a href="#">Papers</a> por <a href="#">Gonzalo Durán</a>.</div>
+                        <div class="meta"><?php the_time('F j, Y'); ?> por <?php the_author_posts_link(); ?>.</div>
                     </div>
                     <div class="autor">
                         <a href="#"><img src="<?php bloginfo('template_url'); ?>/img/autor1.jpg"></a>
                     </div>
                     <div class="sep"><div class="cf"></div></div>
                     <div class="tags">
-                        <a href="#">Educación</a>
-                        <a href="#">Modelo de Desarrollo y Política Industrial</a>
+                    	<?php echo get_the_term_list( get_the_ID(), 'temas' ); ?>
                     </div>
                     <a class="download" href="#">Descargar Paper</a>
                     <div class="texto"><?php the_content(); ?></div>
                 </div>
+			<?php endwhile; ?>
+			<?php else: ?>
+			<?php endif; ?>
 
-            <?php endwhile; else : endif; ?>
 
 
             <h3>Más Ideas y Acciones</h3>
