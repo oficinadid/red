@@ -357,6 +357,11 @@ footer {
             text-transform:uppercase;
             padding:7px 15px;
             margin:-10px 0 0;
+            &.on {
+                background:@grey;
+                border:1px solid @grey;
+                color:#fff;
+            }
         }
         ul {
             &.lista {
@@ -364,6 +369,11 @@ footer {
                     text-decoration:underline;
                 }
                 li {
+                    .pic {
+                        img {
+                            width:100%;
+                        }
+                    }
                     .meta {
                         font-size:20px;
                         font-weight:300;
@@ -463,6 +473,7 @@ footer {
                         .pic {
                             float:left;
                             margin:0 15px 0 0;
+                            width:60px;
                             a {
                                 display:block;
                                 float:right;
@@ -520,6 +531,33 @@ footer {
                             }
                         }
                     }
+                }
+            }
+        }
+    }
+    .filtros {
+        color:@grey;
+        h6 {
+            border-top:1px solid @bordergrey;
+            font-weight:700;
+            font-size:14px;
+            color:@grey;
+            font-weight:500;
+            padding:8px 0 8px 25px;
+        }
+        .lista {
+            border-top:1px solid @bordergrey;
+            padding:0;
+            li {
+                .columna-break (avoid);
+                font-size:14px;
+                &:after{content: "."; display: block; height: 0; clear: both; visibility: hidden;}
+                span {
+                    display:block;
+                    float:left;
+                }
+                a {
+                    display:block;
                 }
             }
         }
@@ -1202,7 +1240,35 @@ footer {
     padding:0;
     #colaboradores {
         padding:40px 0 50px;
-        ul.lista {
+        h3 {
+            margin:0 auto 20px;
+        }
+        .filtros {
+            .lista {
+                .columna-gap (0);
+                .columna-count (3);
+                .columna-rule(1px solid @bordergrey);
+                li {
+                    border-bottom:1px solid @bordergrey;
+                    height:28px;
+                    span {
+                        width:25px;
+                        padding:6px 0;
+                        text-align:center;
+                        border-right:1px solid @bordergrey;
+                        font-weight:700;
+                    }
+                    a {
+                        width:185px;
+                        font-weight:300;
+                        float:right;
+                        text-align:left;
+                        padding:6px 10px;
+                    }
+                }
+            }
+        }
+        > ul.lista {
             li {
                 .texto {
                     a.more {
@@ -1212,6 +1278,9 @@ footer {
                         margin:0 0 0 5px;
                     }
                 }
+            }
+            &.columnas {
+                padding:40px 0 0;
             }
         }
         a.marco {
@@ -1365,6 +1434,63 @@ footer {
 
 #content.page-iyp {
     padding:0;
+    #iyp {
+        h3 {
+            margin:0 auto 20px;
+        }
+        > ul.lista {
+            padding:40px 0 0;
+        }
+        .filtros {
+            h6 {
+                padding:8px 0 8px 20px;
+            }
+            .lista {
+                .columna-gap (0);
+                .columna-count (3);
+                .columna-rule(1px solid @bordergrey);
+                li {
+                    a {
+                        &:after{content: "."; display: block; height: 0; clear: both; visibility: hidden;}
+                        padding:6px 0 6px 20px;
+                        display:block;
+                        max-width:190px;
+                        font-weight:300;
+                        line-height:140%;
+                        background-position:8px 13px;
+                        background-repeat:no-repeat;
+                        background-image:url(../img/iyp-filtros-a-bg.png);
+                        &.on {
+                            background-image:url(../img/iyp-filtros-a-on-bg.png);
+                        }
+                    }
+                }
+            }
+            .bottom {
+                border-top:1px solid @bordergrey;
+                border-bottom:1px solid @bordergrey;
+                span {
+                    padding:10px;
+                    display:block;
+                    width:420px;
+                    font-size:12px;
+                    font-weight:300;
+                    float:left;
+                }
+                a.send {
+                    display:block;
+                    float:left;
+                    text-align:center;
+                    text-transform:uppercase;
+                    color:#fff;
+                    background:#a2b2b7;
+                    font-size:12px;
+                    width:210px;
+                    padding:10px 0;
+                }
+            }
+        }
+    }
     #banner-dc {
         background:#e8e8e8 url(../img/colaboradores-dc.png) no-repeat top center;
         height:433px;
