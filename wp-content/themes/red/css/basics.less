@@ -4,9 +4,31 @@
 .transition (@s) {
     -webkit-transition:@s;
     -moz-transition:@s;
-    -o-transition:@s;
     -ms-transition:@s;
+    -o-transition:@s;
     transition:@s; 
+}
+
+.columna-gap (@px) {
+    -webkit-column-gap:@px;
+    -moz-column-gap:@px;
+    -ms-column-gap:@px;
+    -o-column-gap:@px;
+    column-gap:@px;
+}
+.columna-count (@px) {
+    -webkit-column-count:@px;
+    -moz-column-count:@px;
+    -ms-column-count:@px;
+    -o-column-count:@px;
+    column-count:@px;
+}
+.columna-break (@b) {
+    -webkit-column-break-inside: @b;
+    -moz-column-break-inside: @b;
+    -ms-column-break-inside: @b;
+    -o-column-break-inside: @b;
+    break-inside: @b;
 }
 
 .hidden {

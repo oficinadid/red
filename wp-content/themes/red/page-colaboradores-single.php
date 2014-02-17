@@ -59,92 +59,391 @@ Template Name: Single Colaborador
 
         <div id="colaboradores" class="modulo">
             <h3><strong>Más Colaboradores</strong></h3>
-            <ul class="lista full picright">
-                <li>
-                    <div class="pic">
-                        <a href="#"><img src="<?php bloginfo('template_url'); ?>/img/autor1.jpg"></a>
-                    </div>
-                    <div class="datos">
-                        <h5><a href="#">Gustavo Astorga Parraguez</a></h5>
-                        <h6>Arquitecto ajsdhalsd</h6>
-                    </div>
-                    <div class="texto">
-                        Chile está enfrentando y enfrentará en los próximos años. RED es un proyecto para pensar en el tipo de país y desarrollo que queremos y así transformar. RED es un proyecto para pensar en el tipo de país y desarrollo que queremos y así transformar Chile en una sociedad más justa, igualitaria y democrática.<a href="#" class="more">Ver más...</a>
-                    </div>
+            <ul class="lista half columnas">
+            <li>
+                <div class="pic">
+                    <a href="#"><img src="<?php bloginfo('template_url'); ?>/img/autor1.jpg"></a>
+                </div>
+                <div class="datos">
+                    <h5><a href="#">Gustavo Astorga Parraguez</a></h5>
+                    <h6>Arquitecto ajsdhalsd</h6>
                     <div class="tags">
                         <a class="educacion" href="#">Educación</a>
                         <a class="genero" href="#">Modelo de Desarrollo y Política Industrial</a>
                     </div>
-                </li>
-                <li>
-                    <div class="pic">
-                        <a href="#"><img src="<?php bloginfo('template_url'); ?>/img/autor1.jpg"></a>
+                </div>
+            </li>
+            <li>
+                <div class="pic">
+                    <a href="#"><img src="<?php bloginfo('template_url'); ?>/img/autor1.jpg"></a>
+                </div>
+                <div class="datos">
+                    <h5><a href="#">María Jesus Villa</a></h5>
+                    <h6>Arquitecto ajsdhalsd</h6>
+                    <div class="tags">
+                        <a class="constitucion" href="#">Constitucion</a>
                     </div>
-                    <div class="datos">
-                        <h5><a href="#">María Jesus Villa</a></h5>
-                        <h6>Arquitecto ajsdhalsd</h6>
+                </div>
+            </li>
+            <li>
+                <div class="pic">
+                    <a href="#"><img src="<?php bloginfo('template_url'); ?>/img/autor1.jpg"></a>
+                </div>
+                <div class="datos">
+                    <h5><a href="#">David Banda</a></h5>
+                    <h6>Arquitecto ajsdhalsd</h6>
+                    <div class="tags">
+                        <a class="genero" href="#">Modelo de Desarrollo y Política Industrial</a>
+                        <a class="educacion" href="#">Educación</a>
+                        <a class="desigualdad" href="#">Modelo de Desarrollo y Política Industrial</a>
                     </div>
-                    <div class="texto">
-                        Chile está enfrentando y enfrentará en los próximos años. RED es un proyecto para pensar en el tipo de país y desarrollo que queremos y así transformar. RED es un proyecto para pensar en el tipo de país y desarrollo que queremos y así transformar Chile en una sociedad más justa, igualitaria y democrática.<a href="#" class="more">Ver más...</a>
+                </div>
+            </li>
+            <li>
+                <div class="pic">
+                    <a href="#"><img src="<?php bloginfo('template_url'); ?>/img/autor1.jpg"></a>
+                </div>
+                <div class="datos">
+                    <h5><a href="#">Valentina Vargas</a></h5>
+                    <h6>Arquitecto ajsdhalsd</h6>
+                    <div class="tags">
+                        <a class="salud" href="#">Educación</a>
                     </div>
+                </div>
+            </li>
+            <li>
+                <div class="pic">
+                    <a href="#"><img src="<?php bloginfo('template_url'); ?>/img/autor1.jpg"></a>
+                </div>
+                <div class="datos">
+                    <h5><a href="#">Leonardo Garetto</a></h5>
+                    <h6>Arquitecto ajsdhalsd</h6>
+                    <div class="tags">
+                        <a class="energia" href="#">Educación</a>
+                        <a class="ciudad" href="#">Modelo de Desarrollo y Política Industrial</a>
+                    </div>
+                </div>
+            </li>
+            <li>
+                <div class="pic">
+                    <a href="#"><img src="<?php bloginfo('template_url'); ?>/img/autor1.jpg"></a>
+                </div>
+                <div class="datos">
+                    <h5><a href="#">Gustavo Astorga Parraguez</a></h5>
+                    <h6>Arquitecto ajsdhalsd</h6>
                     <div class="tags">
                         <a class="educacion" href="#">Educación</a>
                         <a class="genero" href="#">Modelo de Desarrollo y Política Industrial</a>
                     </div>
-
-                </li>
-                <li>
-                    <div class="pic">
-                        <a href="#"><img src="<?php bloginfo('template_url'); ?>/img/autor1.jpg"></a>
+                </div>
+            </li>
+            <li>
+                <div class="pic">
+                    <a href="#"><img src="<?php bloginfo('template_url'); ?>/img/autor1.jpg"></a>
+                </div>
+                <div class="datos">
+                    <h5><a href="#">María Jesus Villa</a></h5>
+                    <h6>Arquitecto ajsdhalsd</h6>
+                    <div class="tags">
+                        <a class="constitucion" href="#">Constitucion</a>
                     </div>
-                    <div class="datos">
-                        <h5><a href="#">David Banda</a></h5>
-                        <h6>Arquitecto ajsdhalsd</h6>
+                </div>
+            </li>
+            <li>
+                <div class="pic">
+                    <a href="#"><img src="<?php bloginfo('template_url'); ?>/img/autor1.jpg"></a>
+                </div>
+                <div class="datos">
+                    <h5><a href="#">David Banda</a></h5>
+                    <h6>Arquitecto ajsdhalsd</h6>
+                    <div class="tags">
+                        <a class="genero" href="#">Modelo de Desarrollo y Política Industrial</a>
+                        <a class="educacion" href="#">Educación</a>
+                        <a class="desigualdad" href="#">Modelo de Desarrollo y Política Industrial</a>
                     </div>
-                    <div class="texto">
-                        Chile está enfrentando y enfrentará en los próximos años. RED es un proyecto para pensar en el tipo de país y desarrollo que queremos y así transformar. RED es un proyecto para pensar en el tipo de país y desarrollo que queremos y así transformar Chile en una sociedad más justa, igualitaria y democrática.<a href="#" class="more">Ver más...</a>
+                </div>
+            </li>
+            <li>
+                <div class="pic">
+                    <a href="#"><img src="<?php bloginfo('template_url'); ?>/img/autor1.jpg"></a>
+                </div>
+                <div class="datos">
+                    <h5><a href="#">Valentina Vargas</a></h5>
+                    <h6>Arquitecto ajsdhalsd</h6>
+                    <div class="tags">
+                        <a class="salud" href="#">Educación</a>
                     </div>
+                </div>
+            </li>
+            <li>
+                <div class="pic">
+                    <a href="#"><img src="<?php bloginfo('template_url'); ?>/img/autor1.jpg"></a>
+                </div>
+                <div class="datos">
+                    <h5><a href="#">Leonardo Garetto</a></h5>
+                    <h6>Arquitecto ajsdhalsd</h6>
+                    <div class="tags">
+                        <a class="energia" href="#">Educación</a>
+                        <a class="ciudad" href="#">Modelo de Desarrollo y Política Industrial</a>
+                    </div>
+                </div>
+            </li>
+            <li>
+                <div class="pic">
+                    <a href="#"><img src="<?php bloginfo('template_url'); ?>/img/autor1.jpg"></a>
+                </div>
+                <div class="datos">
+                    <h5><a href="#">Gustavo Astorga Parraguez</a></h5>
+                    <h6>Arquitecto ajsdhalsd</h6>
                     <div class="tags">
                         <a class="educacion" href="#">Educación</a>
                         <a class="genero" href="#">Modelo de Desarrollo y Política Industrial</a>
                     </div>
-
-                </li>
-                <li>
-                    <div class="pic">
-                        <a href="#"><img src="<?php bloginfo('template_url'); ?>/img/autor1.jpg"></a>
+                </div>
+            </li>
+            <li>
+                <div class="pic">
+                    <a href="#"><img src="<?php bloginfo('template_url'); ?>/img/autor1.jpg"></a>
+                </div>
+                <div class="datos">
+                    <h5><a href="#">María Jesus Villa</a></h5>
+                    <h6>Arquitecto ajsdhalsd</h6>
+                    <div class="tags">
+                        <a class="constitucion" href="#">Constitucion</a>
                     </div>
-                    <div class="datos">
-                        <h5><a href="#">Valentina Vargas</a></h5>
-                        <h6>Arquitecto ajsdhalsd</h6>
+                </div>
+            </li>
+            <li>
+                <div class="pic">
+                    <a href="#"><img src="<?php bloginfo('template_url'); ?>/img/autor1.jpg"></a>
+                </div>
+                <div class="datos">
+                    <h5><a href="#">David Banda</a></h5>
+                    <h6>Arquitecto ajsdhalsd</h6>
+                    <div class="tags">
+                        <a class="genero" href="#">Modelo de Desarrollo y Política Industrial</a>
+                        <a class="educacion" href="#">Educación</a>
+                        <a class="desigualdad" href="#">Modelo de Desarrollo y Política Industrial</a>
                     </div>
-                    <div class="texto">
-                        Chile está enfrentando y enfrentará en los próximos años. RED es un proyecto para pensar en el tipo de país y desarrollo que queremos y así transformar. RED es un proyecto para pensar en el tipo de país y desarrollo que queremos y así transformar Chile en una sociedad más justa, igualitaria y democrática.<a href="#" class="more">Ver más...</a>
+                </div>
+            </li>
+            <li>
+                <div class="pic">
+                    <a href="#"><img src="<?php bloginfo('template_url'); ?>/img/autor1.jpg"></a>
+                </div>
+                <div class="datos">
+                    <h5><a href="#">Valentina Vargas</a></h5>
+                    <h6>Arquitecto ajsdhalsd</h6>
+                    <div class="tags">
+                        <a class="salud" href="#">Educación</a>
                     </div>
+                </div>
+            </li>
+            <li>
+                <div class="pic">
+                    <a href="#"><img src="<?php bloginfo('template_url'); ?>/img/autor1.jpg"></a>
+                </div>
+                <div class="datos">
+                    <h5><a href="#">Leonardo Garetto</a></h5>
+                    <h6>Arquitecto ajsdhalsd</h6>
+                    <div class="tags">
+                        <a class="energia" href="#">Educación</a>
+                        <a class="ciudad" href="#">Modelo de Desarrollo y Política Industrial</a>
+                    </div>
+                </div>
+            </li>
+            <li>
+                <div class="pic">
+                    <a href="#"><img src="<?php bloginfo('template_url'); ?>/img/autor1.jpg"></a>
+                </div>
+                <div class="datos">
+                    <h5><a href="#">María Jesus Villa</a></h5>
+                    <h6>Arquitecto ajsdhalsd</h6>
+                    <div class="tags">
+                        <a class="constitucion" href="#">Constitucion</a>
+                    </div>
+                </div>
+            </li>
+            <li>
+                <div class="pic">
+                    <a href="#"><img src="<?php bloginfo('template_url'); ?>/img/autor1.jpg"></a>
+                </div>
+                <div class="datos">
+                    <h5><a href="#">Gustavo Astorga Parraguez</a></h5>
+                    <h6>Arquitecto ajsdhalsd</h6>
                     <div class="tags">
                         <a class="educacion" href="#">Educación</a>
                         <a class="genero" href="#">Modelo de Desarrollo y Política Industrial</a>
                     </div>
-
-                </li>
-                <li>
-                    <div class="pic">
-                        <a href="#"><img src="<?php bloginfo('template_url'); ?>/img/autor1.jpg"></a>
+                </div>
+            </li>
+            <li>
+                <div class="pic">
+                    <a href="#"><img src="<?php bloginfo('template_url'); ?>/img/autor1.jpg"></a>
+                </div>
+                <div class="datos">
+                    <h5><a href="#">Leonardo Garetto</a></h5>
+                    <h6>Arquitecto ajsdhalsd</h6>
+                    <div class="tags">
+                        <a class="energia" href="#">Educación</a>
+                        <a class="ciudad" href="#">Modelo de Desarrollo y Política Industrial</a>
                     </div>
-                    <div class="datos">
-                        <h5><a href="#">Leonardo Garetto</a></h5>
-                        <h6>Arquitecto ajsdhalsd</h6>
+                </div>
+            </li>
+            <li>
+                <div class="pic">
+                    <a href="#"><img src="<?php bloginfo('template_url'); ?>/img/autor1.jpg"></a>
+                </div>
+                <div class="datos">
+                    <h5><a href="#">David Banda</a></h5>
+                    <h6>Arquitecto ajsdhalsd</h6>
+                    <div class="tags">
+                        <a class="genero" href="#">Modelo de Desarrollo y Política Industrial</a>
+                        <a class="educacion" href="#">Educación</a>
                     </div>
-                    <div class="texto">
-                        Chile está enfrentando y enfrentará en los próximos años. RED es un proyecto para pensar en el tipo de país y desarrollo que queremos y así transformar. RED es un proyecto para pensar en el tipo de país y desarrollo que queremos y así transformar Chile en una sociedad más justa, igualitaria y democrática.<a href="#" class="more">Ver más...</a>
+                </div>
+            </li>
+            <li>
+                <div class="pic">
+                    <a href="#"><img src="<?php bloginfo('template_url'); ?>/img/autor1.jpg"></a>
+                </div>
+                <div class="datos">
+                    <h5><a href="#">Valentina Vargas</a></h5>
+                    <h6>Arquitecto ajsdhalsd</h6>
+                    <div class="tags">
+                        <a class="salud" href="#">Educación</a>
                     </div>
+                </div>
+            </li>
+            <li>
+                <div class="pic">
+                    <a href="#"><img src="<?php bloginfo('template_url'); ?>/img/autor1.jpg"></a>
+                </div>
+                <div class="datos">
+                    <h5><a href="#">Leonardo Garetto</a></h5>
+                    <h6>Arquitecto ajsdhalsd</h6>
+                    <div class="tags">
+                        <a class="energia" href="#">Educación</a>
+                        <a class="ciudad" href="#">Modelo de Desarrollo y Política Industrial</a>
+                    </div>
+                </div>
+            </li>
+            <li>
+                <div class="pic">
+                    <a href="#"><img src="<?php bloginfo('template_url'); ?>/img/autor1.jpg"></a>
+                </div>
+                <div class="datos">
+                    <h5><a href="#">María Jesus Villa</a></h5>
+                    <h6>Arquitecto ajsdhalsd</h6>
+                    <div class="tags">
+                        <a class="constitucion" href="#">Constitucion</a>
+                    </div>
+                </div>
+            </li>
+            <li>
+                <div class="pic">
+                    <a href="#"><img src="<?php bloginfo('template_url'); ?>/img/autor1.jpg"></a>
+                </div>
+                <div class="datos">
+                    <h5><a href="#">María Jesus Villa</a></h5>
+                    <h6>Arquitecto ajsdhalsd</h6>
+                    <div class="tags">
+                        <a class="constitucion" href="#">Constitucion</a>
+                    </div>
+                </div>
+            </li>
+            <li>
+                <div class="pic">
+                    <a href="#"><img src="<?php bloginfo('template_url'); ?>/img/autor1.jpg"></a>
+                </div>
+                <div class="datos">
+                    <h5><a href="#">David Banda</a></h5>
+                    <h6>Arquitecto ajsdhalsd</h6>
+                    <div class="tags">
+                        <a class="genero" href="#">Modelo de Desarrollo y Política Industrial</a>
+                        <a class="educacion" href="#">Educación</a>
+                        <a class="desigualdad" href="#">Modelo de Desarrollo y Política Industrial</a>
+                    </div>
+                </div>
+            </li>
+            <li>
+                <div class="pic">
+                    <a href="#"><img src="<?php bloginfo('template_url'); ?>/img/autor1.jpg"></a>
+                </div>
+                <div class="datos">
+                    <h5><a href="#">Gustavo Astorga Parraguez</a></h5>
+                    <h6>Arquitecto ajsdhalsd</h6>
                     <div class="tags">
                         <a class="educacion" href="#">Educación</a>
                         <a class="genero" href="#">Modelo de Desarrollo y Política Industrial</a>
                     </div>
-
-                </li>
-            </ul>
+                </div>
+            </li>
+            <li>
+                <div class="pic">
+                    <a href="#"><img src="<?php bloginfo('template_url'); ?>/img/autor1.jpg"></a>
+                </div>
+                <div class="datos">
+                    <h5><a href="#">Valentina Vargas</a></h5>
+                    <h6>Arquitecto ajsdhalsd</h6>
+                    <div class="tags">
+                        <a class="salud" href="#">Educación</a>
+                    </div>
+                </div>
+            </li>
+            <li>
+                <div class="pic">
+                    <a href="#"><img src="<?php bloginfo('template_url'); ?>/img/autor1.jpg"></a>
+                </div>
+                <div class="datos">
+                    <h5><a href="#">David Banda</a></h5>
+                    <h6>Arquitecto ajsdhalsd</h6>
+                    <div class="tags">
+                        <a class="genero" href="#">Modelo de Desarrollo y Política Industrial</a>
+                        <a class="educacion" href="#">Educación</a>
+                        <a class="desigualdad" href="#">Modelo de Desarrollo y Política Industrial</a>
+                    </div>
+                </div>
+            </li>
+            <li>
+                <div class="pic">
+                    <a href="#"><img src="<?php bloginfo('template_url'); ?>/img/autor1.jpg"></a>
+                </div>
+                <div class="datos">
+                    <h5><a href="#">Valentina Vargas</a></h5>
+                    <h6>Arquitecto ajsdhalsd</h6>
+                    <div class="tags">
+                        <a class="salud" href="#">Educación</a>
+                    </div>
+                </div>
+            </li>
+            <li>
+                <div class="pic">
+                    <a href="#"><img src="<?php bloginfo('template_url'); ?>/img/autor1.jpg"></a>
+                </div>
+                <div class="datos">
+                    <h5><a href="#">Leonardo Garetto</a></h5>
+                    <h6>Arquitecto ajsdhalsd</h6>
+                    <div class="tags">
+                        <a class="energia" href="#">Educación</a>
+                        <a class="ciudad" href="#">Modelo de Desarrollo y Política Industrial</a>
+                    </div>
+                </div>
+            </li>
+            <li>
+                <div class="pic">
+                    <a href="#"><img src="<?php bloginfo('template_url'); ?>/img/autor1.jpg"></a>
+                </div>
+                <div class="datos">
+                    <h5><a href="#">Gustavo Astorga Parraguez</a></h5>
+                    <h6>Arquitecto ajsdhalsd</h6>
+                    <div class="tags">
+                        <a class="educacion" href="#">Educación</a>
+                        <a class="genero" href="#">Modelo de Desarrollo y Política Industrial</a>
+                    </div>
+                </div>
+            </li>
+        </ul>
             <a href="#" class="marco">Ver más <strong>Colaboradores</strong> &#9662;</a>
             <div class="cf"></div>
         </div>
