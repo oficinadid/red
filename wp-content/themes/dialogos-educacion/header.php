@@ -80,17 +80,17 @@
             <menu id="secondary">
                 <div class="wrap">
 
-                    <h2 id="logo-dc"><a href="#"></a></h2>
+                    <h2 id="logo-dc"><a href="<?php bloginfo('wpurl'); ?>"></a></h2>
                     
                     <ul class="nav">
-                        <li><a href="#">About</a></li>
-                        <li><a href="#">Participación</a></li>
-                        <li><a href="#">Noticias</a></li>
-                        <li><a href="#">Documentos</a></li>
+                        <li><a href="#about">About</a></li>
+                        <li><a href="#participacion">Participación</a></li>
+                        <li><a href="#noticias">Noticias</a></li>
+                        <li><a href="#documentos">Documentos</a></li>
                     </ul>
 
                     <div class="search">
-                        <input id="query" type="text" placeholder="Búsqueda en Diálogos... ">
+                        <input id="query" type="text" placeholder="| Búsqueda en Diálogos... ">
                         <input id="button" type="submit" value="">
                     </div>
 

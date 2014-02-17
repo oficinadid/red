@@ -1,23 +1,3 @@
-function fadelogo() {
-
-    var fadestart = 200;
-    var fadeend = 380;
-    var fadeelement = $('.home menu a.logo');
-    var totop = $(document).scrollTop();
-
-    if (totop < fadestart) {
-    	opacity = 0;
-    }
-    else if (totop >= fadestart && totop < fadeend) {
-    	opacity = (totop - fadestart)/ (fadeend - fadestart);
-    }
-    else if (totop >= fadeend) {
-    	opacity = 1;
-    }
-
-    fadeelement.css('opacity',opacity);
-}
-
 function sidenav() {
     var sidedif = $('#side').width() - (($(window).width() - $('.wrap').width())/2);
     $('a.menuside-trigger').click(function(){
@@ -34,7 +14,6 @@ function sidenav() {
 
 $(document).ready(function() {
 
-	fadelogo();
     sidenav();
 
 	$('.post .autor .autores-trigger').click(function() {
@@ -52,8 +31,6 @@ $(document).ready(function() {
 });
 
 $(window).bind('scroll', function(){
-
-	fadelogo();
 
     if ($(document).scrollTop() > 336) {
         $('menu#secondary').addClass('fixed');

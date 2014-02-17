@@ -1,208 +1,187 @@
-        <?php get_header(); ?>
+<?php
+/*
+Template Name: About
+*/
+?>
 
-        <div class="stream wrap">
+<?php get_header(); ?>
 
-            <h3>About</h3>
+<div id="content" class="page-about">
+    
+    <div id="quees" class="modulo first">
+        <h3>¿Qué es <strong>RED</strong>?</h3>
+        <p><span class="red"><strong>RED</strong></span>, <strong>Red de Estudios para la profundización Democrática</strong>, es un proyecto cuyo fin es colaborar con las transformaciones políticas, culturales, sociales y económicas que Chile está enfrentando y enfrentará en los próximos años. RED es un proyecto que nace de la necesidad de generar vínculos entre los diversos actores de la izquierda para pensar en el tipo de país y desarrollo que queremos.</p>
+    </div>
+    
+    <div id="objetivo" class="modulo">
+        <p><strong>El objetivo de RED</strong> es generar las bases ideológicas y político-prácticas que informen un proyecto de desarrollo que permita transformar Chile en una sociedad más justa, igualitaria y democrática. Buscamos construir y consolidar una red de actores de diversos domicilios políticos y espacios de acción, que permita levantar información, promover la reflexión y desarrollar propuestas, así como visibilizar y difundir el pensamiento de la izquierda contemporánea en Chile.</p>
+    </div>
 
-            <div class="post">
-                <div class="top">
-                    <h2 class="title"><a href="#">Nueva versión disponible del Barómetro de Política y Equidad.</a></h2>
-                    <div class="meta">Diciembre 12, 2013 en categoría <a href="#">Papers</a> por <a href="#">Gonzalo Durán</a>.</div>
-                </div>
-                <div class="autor">
+    <div id="directorio" class="modulo">
+        <h3><strong>Directorio</strong></h3>
+        <ul class="lista full picright">
+            <li>
+                <div class="pic">
                     <a href="#"><img src="<?php bloginfo('template_url'); ?>/img/autor1.jpg"></a>
                 </div>
-                <div class="texto">
-                    <p>Chile está enfrentando y enfrentará en los próximos años. RED es un proyecto para pensar en el tipo de país y desarrollo que queremos y así transformar. RED es un proyecto para pensar en el tipo de país y desarrollo que queremos y así transformar Chile en una sociedad más justa, igualitaria y democrática.</p>
-                </div>
-                <div class="tags">
-                    <a href="#">Educación</a>
-                    <a href="#">Modelo de Desarrollo y Política Industrial</a>
-                </div>
-            </div>
-
-            <div class="cf"></div>
-
-            <div class="post">
-                <div class="top">
-                    <h2 class="title"><a href="#">Nueva versión disponible del Barómetro de Política y Equidad.</a></h2>
-                    <div class="meta">Diciembre 12, 2013 en categoría <a href="#">Papers</a> por <a href="#">Gonzalo Durán</a>.</div>
-                </div>
-                <div class="autor">
-                    <a class="autores-trigger">
-                        <span class="trigger">+</span>
-                        <span class="untrigger">-</span>
-                        <img src="<?php bloginfo('template_url'); ?>/img/autores.jpg">
-                    </a>
-                    <ul class="autores">
-                        <li>
-                            <a href="#">
-                                <img src="<?php bloginfo('template_url'); ?>/img/autor1.jpg">
-                                <span>Carmen Durán. E</span>
-                                <div class="cf"></div>
-                            </a>
-                        </li>
-                        <li>
-                            <a href="#">
-                                <img src="<?php bloginfo('template_url'); ?>/img/autor1.jpg">
-                                <span>Carmen Durán. E</span>
-                                <div class="cf"></div>
-                            </a>
-                        </li>
-                        <li>
-                            <a href="#">
-                                <img src="<?php bloginfo('template_url'); ?>/img/autor1.jpg">
-                                <span>Carmen Durán. E</span>
-                                <div class="cf"></div>
-                            </a>
-                        </li>
-                    </ul>
+                <div class="datos">
+                    <h5><a href="#">Gustavo Astorga Parraguez</a></h5>
+                    <h6>Arquitecto ajsdhalsd</h6>
                 </div>
                 <div class="texto">
-                    <p>Chile está enfrentando y enfrentará en los próximos años. RED es un proyecto para pensar en el tipo de país y desarrollo que queremos y así transformar. RED es un proyecto para pensar en el tipo de país y desarrollo que queremos y así transformar Chile en una sociedad más justa, igualitaria y democrática.</p>
+                    Chile está enfrentando y enfrentará en los próximos años. RED es un proyecto para pensar en el tipo de país y desarrollo que queremos y así transformar. RED es un proyecto para pensar en el tipo de país y desarrollo que queremos y así transformar Chile en una sociedad más justa, igualitaria y democrática.
                 </div>
-                <div class="tags">
-                    <a href="#">Educación</a>
-                    <a href="#">Modelo de Desarrollo y Política Industrial</a>
-                </div>
-            </div>
-
-            <div class="cf"></div>
-
-            <div class="post">
-                <div class="top">
-                    <h2 class="title"><a href="#">Nueva versión disponible del Barómetro de Política y Equidad.</a></h2>
-                    <div class="meta">Diciembre 12, 2013 en categoría <a href="#">Papers</a> por <a href="#">Gonzalo Durán</a>.</div>
-                </div>
-                <div class="autor">
+                <a href="#" class="link">> Publicaciones de <strong>Luisa Cahuich</strong></a>
+            </li>
+            <li>
+                <div class="pic">
                     <a href="#"><img src="<?php bloginfo('template_url'); ?>/img/autor1.jpg"></a>
                 </div>
+                <div class="datos">
+                    <h5><a href="#">María Jesus Villa</a></h5>
+                    <h6>Arquitecto ajsdhalsd</h6>
+                </div>
                 <div class="texto">
-                    <p>Chile está enfrentando y enfrentará en los próximos años. RED es un proyecto para pensar en el tipo de país y desarrollo que queremos y así transformar. RED es un proyecto para pensar en el tipo de país y desarrollo que queremos y así transformar Chile en una sociedad más justa, igualitaria y democrática.</p>
+                    Chile está enfrentando y enfrentará en los próximos años. RED es un proyecto para pensar en el tipo de país y desarrollo que queremos y así transformar. RED es un proyecto para pensar en el tipo de país y desarrollo que queremos y así transformar Chile en una sociedad más justa, igualitaria y democrática.
                 </div>
-                <div class="tags">
-                    <a href="#">Educación</a>
-                    <a href="#">Modelo de Desarrollo y Política Industrial</a>
-                </div>
-            </div>
-
-            <div class="cf"></div>
-
-            <div class="post">
-                <div class="top">
-                    <h2 class="title"><a href="#">Nueva versión disponible del Barómetro de Política y Equidad.</a></h2>
-                    <div class="meta">Diciembre 12, 2013 en categoría <a href="#">Papers</a> por <a href="#">Gonzalo Durán</a>.</div>
-                </div>
-                <div class="autor">
+                <a href="#" class="link">> Publicaciones de <strong>Luisa Cahuich</strong></a>
+            </li>
+            <li>
+                <div class="pic">
                     <a href="#"><img src="<?php bloginfo('template_url'); ?>/img/autor1.jpg"></a>
                 </div>
+                <div class="datos">
+                    <h5><a href="#">David Banda</a></h5>
+                    <h6>Arquitecto ajsdhalsd</h6>
+                </div>
                 <div class="texto">
-                    <p>Chile está enfrentando y enfrentará en los próximos años. RED es un proyecto para pensar en el tipo de país y desarrollo que queremos y así transformar. RED es un proyecto para pensar en el tipo de país y desarrollo que queremos y así transformar Chile en una sociedad más justa, igualitaria y democrática.</p>
+                    Chile está enfrentando y enfrentará en los próximos años. RED es un proyecto para pensar en el tipo de país y desarrollo que queremos y así transformar. RED es un proyecto para pensar en el tipo de país y desarrollo que queremos y así transformar Chile en una sociedad más justa, igualitaria y democrática.
                 </div>
-                <div class="tags">
-                    <a href="#">Educación</a>
-                    <a href="#">Modelo de Desarrollo y Política Industrial</a>
+                <a href="#" class="link">> Publicaciones de <strong>Luisa Cahuich</strong></a>
+            </li>
+            <li>
+                <div class="pic">
+                    <a href="#"><img src="<?php bloginfo('template_url'); ?>/img/autor1.jpg"></a>
                 </div>
-            </div>
-
-            <div class="cf"></div>
-
-            <a href="#" class="more">Más Ideas y Acciones...</a>
-
-            <div class="cf"></div>
-
-        </div>
-
-        <div id="destacados">
-            <div class="wrap">
-
-                <h2>Destacados</h2>
-
-                <div class="post"></div>
-
-                <div class="post"></div>
-
-                <div class="post"></div>
-
-                <div class="post"></div>
-
-                <div class="post"></div>
-
-                <div class="post"></div>
-
-                <div class="cf"></div>
-
-            </div>
-        </div>
-
-        <div id="header-dc">
-            <div class="wrap">
-
-                <h2 id="logo-main"></h2>
-
-                <div class="right">
-                    <a href="#">Ir al sitio de Diálogos</a>
-                    <span>Conoce el proyecto de participación de <strong>RED</strong></span>
+                <div class="datos">
+                    <h5><a href="#">Valentina Vargas</a></h5>
+                    <h6>Arquitecto ajsdhalsd</h6>
                 </div>
-
-                <div class="cf"></div>
-
-            </div>
-        </div>
-
-        <div id="dc" class="stream">
-            <div class="wrap">
-
-                <h3>Últimas Noticias de <a href="#">Diálogos Ciudadanos</a></h3>
-
-                <div class="post">
-                    <div class="top">
-                        <h2 class="title"><a href="#">Nueva versión disponible del Barómetro de Política y Equidad.</a></h2>
-                        <div class="meta">Diciembre 12, 2013 en categoría <a href="#">Papers</a> por <a href="#">Gonzalo Durán</a>.</div>
-                    </div>
-                    <div class="texto">
-                        <p>Chile está enfrentando y enfrentará en los próximos años. RED es un proyecto para pensar en el tipo de país y desarrollo que queremos y así transformar. RED es un proyecto para pensar en el tipo de país y desarrollo que queremos y así transformar Chile en una sociedad más justa, igualitaria y democrática.</p>
-                    </div>
+                <div class="texto">
+                    Chile está enfrentando y enfrentará en los próximos años. RED es un proyecto para pensar en el tipo de país y desarrollo que queremos y así transformar. RED es un proyecto para pensar en el tipo de país y desarrollo que queremos y así transformar Chile en una sociedad más justa, igualitaria y democrática.
                 </div>
-
-                <div class="cf"></div>
-
-                <div class="post">
-                    <div class="top">
-                        <h2 class="title"><a href="#">Nueva versión disponible del Barómetro de Política y Equidad.</a></h2>
-                        <div class="meta">Diciembre 12, 2013 en categoría <a href="#">Papers</a> por <a href="#">Gonzalo Durán</a>.</div>
-                    </div>
-                    <div class="texto">
-                        <p>Chile está enfrentando y enfrentará en los próximos años. RED es un proyecto para pensar en el tipo de país y desarrollo que queremos y así transformar. RED es un proyecto para pensar en el tipo de país y desarrollo que queremos y así transformar Chile en una sociedad más justa, igualitaria y democrática.</p>
-                    </div>
+                <a href="#" class="link">> Publicaciones de <strong>Luisa Cahuich</strong></a>
+            </li>
+            <li>
+                <div class="pic">
+                    <a href="#"><img src="<?php bloginfo('template_url'); ?>/img/autor1.jpg"></a>
                 </div>
-
-                <div class="cf"></div>
-
-                <div class="post">
-                    <div class="top">
-                        <h2 class="title"><a href="#">Nueva versión disponible del Barómetro de Política y Equidad.</a></h2>
-                        <div class="meta">Diciembre 12, 2013 en categoría <a href="#">Papers</a> por <a href="#">Gonzalo Durán</a>.</div>
-                    </div>
-                    <div class="texto">
-                        <p>Chile está enfrentando y enfrentará en los próximos años. RED es un proyecto para pensar en el tipo de país y desarrollo que queremos y así transformar. RED es un proyecto para pensar en el tipo de país y desarrollo que queremos y así transformar Chile en una sociedad más justa, igualitaria y democrática.</p>
-                    </div>
+                <div class="datos">
+                    <h5><a href="#">Leonardo Garetto</a></h5>
+                    <h6>Arquitecto ajsdhalsd</h6>
                 </div>
+                <div class="texto">
+                    Chile está enfrentando y enfrentará en los próximos años. RED es un proyecto para pensar en el tipo de país y desarrollo que queremos y así transformar. RED es un proyecto para pensar en el tipo de país y desarrollo que queremos y así transformar Chile en una sociedad más justa, igualitaria y democrática.
+                </div>
+                <a href="#" class="link">> Publicaciones de <strong>Luisa Cahuich</strong></a>
+            </li>
+        </ul>
+    </div>
 
-                <div class="cf"></div>
+    <div id="colaboradores" class="modulo">
+        <h3><strong>Equipo</strong></h3>
+        <ul class="lista half">
+            <li>
+                <div class="pic">
+                    <a href="#"><img src="<?php bloginfo('template_url'); ?>/img/autor1.jpg"></a>
+                </div>
+                <div class="datos">
+                    <h5><a href="#">David Banda</a></h5>
+                    <h6>Arquitecto ajsdhalsd</h6>
+                </div>
+            </li>
+            <li>
+                <div class="pic">
+                    <a href="#"><img src="<?php bloginfo('template_url'); ?>/img/autor1.jpg"></a>
+                </div>
+                <div class="datos">
+                    <h5><a href="#">David Banda</a></h5>
+                    <h6>Arquitecto ajsdhalsd</h6>
+                </div>
+            </li>
+            <li>
+                <div class="pic">
+                    <a href="#"><img src="<?php bloginfo('template_url'); ?>/img/autor1.jpg"></a>
+                </div>
+                <div class="datos">
+                    <h5><a href="#">David Banda</a></h5>
+                    <h6>Arquitecto ajsdhalsd</h6>
+                </div>
+            </li>
+            <li>
+                <div class="pic">
+                    <a href="#"><img src="<?php bloginfo('template_url'); ?>/img/autor1.jpg"></a>
+                </div>
+                <div class="datos">
+                    <h5><a href="#">Valentina Vargas</a></h5>
+                    <h6>Arquitecto ajsdhalsd</h6>
+                </div>
+            </li>
+            <li>
+                <div class="pic">
+                    <a href="#"><img src="<?php bloginfo('template_url'); ?>/img/autor1.jpg"></a>
+                </div>
+                <div class="datos">
+                    <h5><a href="#">David Banda</a></h5>
+                    <h6>Arquitecto ajsdhalsd</h6>
+                </div>
+            </li>
+            <li>
+                <div class="pic">
+                    <a href="#"><img src="<?php bloginfo('template_url'); ?>/img/autor1.jpg"></a>
+                </div>
+                <div class="datos">
+                    <h5><a href="#">Gustavo Astorga Parraguez</a></h5>
+                    <h6>Arquitecto ajsdhalsd</h6>
+                </div>
+            </li>
+            <li>
+                <div class="pic">
+                    <a href="#"><img src="<?php bloginfo('template_url'); ?>/img/autor1.jpg"></a>
+                </div>
+                <div class="datos">
+                    <h5><a href="#">David Banda</a></h5>
+                    <h6>Arquitecto ajsdhalsd</h6>
+                </div>
+            </li>
+            <li>
+                <div class="pic">
+                    <a href="#"><img src="<?php bloginfo('template_url'); ?>/img/autor1.jpg"></a>
+                </div>
+                <div class="datos">
+                    <h5><a href="#">David Banda</a></h5>
+                    <h6>Arquitecto ajsdhalsd</h6>
+                </div>
+            </li>
+        </ul>
+        <a href="#" class="marco">Ir a todos los <strong>Colaboradores</strong> &#9656;</a>
+        <div class="cf"></div>
+    </div>
 
-                <a href="#" class="more">Más Ideas y Acciones...</a>
+    <div id="banner-dc" class="banda">
+        <img src="<?php bloginfo('template_url'); ?>/img/about-dc.png">
+    </div>
 
-                <div class="cf"></div>
+    <div id="dc" class="modulo">
+        
+        <h3>¿Qué es <strong>Diálogos Ciudadanos</strong>?</h3>
+        <p>Chile está enfrentando y enfrentará en los próximos años. RED es un proyecto para pensar en el tipo de país y desarrollo que queremos y así transformar. RED es un proyecto para pensar en el tipo de país y desarrollo que queremos y así transformar Chile en una sociedad más justa, igualitaria y democrática. Diálogos Ciudadanos es un proyecto para pensar en el tipo de país y desarrollo que queremos y así transformar Chile en una sociedad más justa, igualitaria y democrática. <strong>Diálogos Ciudadanos</strong> es un proyecto para pensar en el tipo de país y desarrollo que queremos y así transformar Chile en una sociedad más justa, igualitaria y democrática y desarrollo.</p>
 
-            </div>
+        <span class="conoce">Conoce el proyecto de participación de <strong>RED</strong></span>
+        <a href="#" class="ir">Ir a Diálogos Ciudadanos</a>
 
-        </div>
+    </div>
 
-        <div id="participacion">
-            <h2>Participación de <strong>Diálogos Ciudadanos</strong></h2>
-            <h1>¿Pregunta en Diálogos ...disponible del Barómetro de Política y Equidad?</h1>
-            <a href="#" class="respuesta">Danos tu respuesta</a>
-        </div>
+</div>
 
-        <?php get_footer(); ?>
+<?php get_footer(); ?>
