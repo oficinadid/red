@@ -3,7 +3,7 @@ jQuery(document).ready(function() {
 	show: 500,
 	hide: 1000,
 	content: function () {
-	      return jQuery(this).prop('title');
-	  }
+              return jQuery(this).prop('title');
+          }
 	});
 });

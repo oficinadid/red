@@ -21,55 +21,55 @@ AND ANY CHANGES MADE HERE WILL BE OVERWRITTEN.
 
   @media screen
   {
-	body{
-		color: #333
-	}
-	:focus {
+  	body{
+  		color: #333
+  	}
+  	:focus {
 		outline: 0
 	}
-	div#print_preview_hdr {
-		margin: 0 0 16px 0;
-		color: #18749D;
-		font-family: Georgia,"Times New Roman","Bitstream Charter",Times,serif;
-		padding: 12px 20px 12px 0;
-		font-size: 16px;
-		border-bottom: 2px solid #C5D7F1;
-		background-color: #DFEFFF;
-		display: block !important
-	}
-	div#print_preview_hdr div:first-child {
-		background-image: url(../images/wp-logo.png);
-		background-position: 16px center;
-		background-repeat: no-repeat;
-		padding-left: 36px
-	}
-	div#print_preview_hdr span.actionlinks {
-		width: 200px;
-		display: block;
-		float: right;
-		text-align: right;
-		margin-top: 5px;
-		font-family: "lucida sans", "lucida grande", lucida , sans-serif;
-		font-size: 12px;
-		color: #CCC
-	}
-	div#print_preview_hdr a {
-		color: #21759B;
-		text-decoration: none;
-		display: inline;
-		font-weight: normal;
-		letter-spacing: normal
-	}
+  	div#print_preview_hdr {
+	  	margin: 0 0 16px 0;
+	  	color: #18749D;
+	  	font-family: Georgia,"Times New Roman","Bitstream Charter",Times,serif;
+	  	padding: 12px 20px 12px 0;
+	  	font-size: 16px;
+	  	border-bottom: 2px solid #C5D7F1;
+	  	background-color: #DFEFFF;
+	  	display: block !important
+  	}
+  	div#print_preview_hdr div:first-child {
+	  	background-image: url(../images/wp-logo.png);
+	  	background-position: 16px center;
+	  	background-repeat: no-repeat;
+	  	padding-left: 36px
+  	}
+  	div#print_preview_hdr span.actionlinks {
+	  	width: 200px;
+	  	display: block;
+	  	float: right;
+	  	text-align: right;
+	  	margin-top: 5px;
+	  	font-family: "lucida sans", "lucida grande", lucida , sans-serif;
+	  	font-size: 12px;
+	  	color: #CCC
+  	}
+  	div#print_preview_hdr a {
+	  	color: #21759B;
+	  	text-decoration: none;
+	  	display: inline;
+	  	font-weight: normal;
+	  	letter-spacing: normal
+  	}
 	div#print_preview_hdr a:hover {
 		color: #21759B;
 		text-decoration: underline
 	}
-	div#view-container {
-		margin: 0 20px 20px 20px
-	}
+  	div#view-container {
+  		margin: 0 20px 20px 20px
+  	}
     div.print-hr {
-		border-top: 1px dotted #ccc;
-		margin: 15px 0 30px
+    		border-top: 1px dotted #ccc;
+    		margin: 15px 0 30px
     }
   }
 
@@ -87,9 +87,9 @@ AND ANY CHANGES MADE HERE WILL BE OVERWRITTEN.
 		margin-left:-9000px
 	}
      div.print-page-break {
-	page-break-after: always;
-	border-top: 0;
-	margin: 0
+     	page-break-after: always;
+     	border-top: 0;
+     	margin: 0
      }
   }
 
@@ -310,11 +310,11 @@ AND ANY CHANGES MADE HERE WILL BE OVERWRITTEN.
 	}
 	table.widefat tbody tr td.entry-view-field-value table.gfield_list td,
 	table.widefat tbody tr td.entry-view-field-value table.gfield_list th {
-		border-bottom: 1px solid #DFDFDF;
-		padding: 6px 10px
+    		border-bottom: 1px solid #DFDFDF;
+    		padding: 6px 10px
 	}
 	table.widefat tbody tr td.entry-view-field-value table.gfield_list td {
-		border-top: 1px solid #FFF
+    		border-top: 1px solid #FFF
 	}
 	table.widefat tbody tr td.entry-view-field-value table.gfield_list th {
 		color: #333;
@@ -323,9 +323,9 @@ AND ANY CHANGES MADE HERE WILL BE OVERWRITTEN.
 	}
 	table.widefat tbody tr td.entry-view-field-value table.gfield_list td {
 		font-size: 12px;
-		padding: 4px 7px 3px 10px;
-		vertical-align: top;
-		color: #555;
-		word-wrap: break-word
+    		padding: 4px 7px 3px 10px;
+    		vertical-align: top;
+    		color: #555;
+    		word-wrap: break-word
 	}
   }

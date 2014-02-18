@@ -24,18 +24,18 @@ Template Name: Single Colaborador
     <div class="stream">
 
         <div id="perfil" class="modulo post">
-            
+
             <?php if (have_posts()) : while (have_posts()) : the_post(); ?>
 
                 <div class="pic">
-                    <a href="#"><img src="<?php bloginfo('template_url'); ?>/img/autor1.jpg"></a>
+                    <a href="#"><?php the_post_thumbnail('90x90'); ?></a>
                 </div>
                 <div class="datos">
                     <h5><a href="#"><?php the_title(); ?></a></h5>
-                    <h6>Arquitecto ajsdhalsd</h6>
+                    <h6><?php the_field('about') ?></h6>
                 </div>
                 <div class="cf"></div>
-                <div class="texto"><?php the_content(); ?> </div>
+                <div class="texto"><?php the_content(); ?></div>
 
                 <div class="publicaciones">
                     <h4>Publicaciones del colaborador.</h4>

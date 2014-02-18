@@ -27,7 +27,7 @@ to no.
 
 html[dir="rtl"] .gform_wrapper *,
 html[dir="rtl"] .gform_wrapper form,
-html[dir="rtl"] .gform_wrapper .gform_body,
+html[dir="rtl"] .gform_wrapper .gform_body, 
 html[dir="rtl"] .gform_wrapper ul li,
 html[dir="rtl"] .gform_wrapper ul li.gfield,
 html[dir="rtl"] .gform_wrapper ul li.gfield.gfield_html,
@@ -109,8 +109,8 @@ html[dir="rtl"] .gform_wrapper .chzn-container ul.chzn-choices li.search-field {
 
 html[dir="rtl"] .gform_wrapper .left_label .gfield_label,
 html[dir="rtl"] .gform_wrapper .right_label .gfield_label {
-	float: right !important;
-	margin: 0 0 0 15px !important;
+    	float: right !important;
+    	margin: 0 0 0 15px !important;
 }
 
 html[dir="rtl"] .gform_wrapper .right_label .gfield_label {
@@ -279,8 +279,8 @@ body.rtl .gform_wrapper .left_label .gfield_label,
 body.rtl .gform_wrapper .right_label .gfield_label,
 body .gform_wrapper.gf_rtl_wrapper .left_label .gfield_label,
 body .gform_wrapper.gf_rtl_wrapper .right_label .gfield_label {
-	float: right !important;
-	margin: 0 0 0 15px !important;
+    	float: right !important;
+    	margin: 0 0 0 15px !important;
 }
 
 body.rtl .gform_wrapper .right_label .gfield_label,

@@ -524,8 +524,8 @@ div.gform_confirmation_wrapper.gf_confirmation_yellow_gradient div#gforms_confir
 	max-width: 99%;
 	font-size: 1.8em;
 	border-top: 2px solid #FFF;
-	border-bottom: 1px solid #E6DB55;
-	background-color:#FFFBCC;
+	border-bottom: 1px solid #E6DB55; 
+	background-color:#FFFBCC; 
 	color:#424242;
 	background: #fffce5;
 	background: -moz-linear-gradient(top,  #fffce5 0%, #fff9bf 100%);
@@ -554,7 +554,7 @@ div.gform_confirmation_wrapper.gf_confirmation_green_gradient div#gforms_confirm
 	font-size: 1.8em;
 	border-top: 2px solid #effade;
 	border-bottom: 1px solid #a7c37c;
-	background-color:#FFFBCC;
+	background-color:#FFFBCC; 
 	text-shadow: #DFB 1px 1px;
 	color: #030;
 	background: rgb(219,242,183);
@@ -571,20 +571,20 @@ div.gform_confirmation_wrapper.gf_confirmation_yellow_gradient:before,
 div.gform_confirmation_wrapper.gf_confirmation_yellow_gradient:after,
 div.gform_confirmation_wrapper.gf_confirmation_green_gradient:before,
 div.gform_confirmation_wrapper.gf_confirmation_green_gradient:after {
-	z-index: -1;
-	position: absolute;
+	z-index: -1; 
+	position: absolute; 
 	content: "";
 	bottom: 15px;
 	left: 10px;
-	width: 50%;
+	width: 50%; 
 	top: 80%;
 	max-width:40%;
-	background: rgba(0, 0, 0, 0.2);
-	-webkit-box-shadow: 0 15px 10px rgba(0,0,0, 0.2);
+	background: rgba(0, 0, 0, 0.2); 
+	-webkit-box-shadow: 0 15px 10px rgba(0,0,0, 0.2);   
 	-moz-box-shadow: 0 15px 10px rgba(0, 0, 0, 0.2);
 	box-shadow: 0 15px 10px rgba(0, 0, 0, 0.2);
-	-webkit-transform: rotate(-3deg);
-	-moz-transform: rotate(-3deg);
+	-webkit-transform: rotate(-3deg);    
+	-moz-transform: rotate(-3deg);   
 	-o-transform: rotate(-3deg);
 	-ms-transform: rotate(-3deg);
 	transform: rotate(-3deg);

@@ -1,25 +1,89 @@
 -------------------------------------------------------------------------------------------------------------------
+Version 1.8.4
+
+    - Added "gform_footer_init_scripts_filter" hook to support filtering the footer init scripts string
+	- Added support for custom wp-includes directory
+
+    - Updated setup to run only in admin for single site installations and always on multisite
+    - Updated Google Font includes to be protocol-less
+    - Updated conditional logic to handle the "Other" choice for radio buttons
+	- Updated INACTIVE trim values setup script to ACTIVE. All leading and trailing spaces are now stripped from all previous entry values, field labels, choice texts, choice values, input labels and conditional logic rule values for fields, notifications and confirmations.
+	- Updated the form editor, form importer, notification editor and confirmation editor to trim leading and trailing spaces from all labels, choices values and conditional logic values on save/import
+    - Updated GFFormDisplay::print_form_scripts() to print all scripts at once rather than printing individually
+    - Updated GFFormsModel::update_lead_property() to return the result of the $wpdb->update() call
+    - Updated Credit Card field's Security Code input to use "type='text'" and "pattern='[0-9]*' when in HTML5 mode (rather than "type='number'")
+    - Updated location of gform_form_actions hook so that actions can be filtered when in the trash page
+    - Updated the entry search criteria to support times in the start_date and end_date
+    - Updated GFFormsModel::get_form to optionally allow returning a trashed form
+
+    - Fixed issue with number field not properly formatting numbers on the entry edit page and on the individual field merge tag
+    - Fixed issue with export start and end dates
+    - Fixed issue with entry list trash view where entry row remains in the list after deleting when a fileupload field in the entry is empty
+    - Fixed issue with deleting entries on multisite installs where files uploaded using the fileupload field aren't deleted if the site ms_files_rewriting option is not set. This issue affects all new multisite installations of WordPress created after the release of WordPres 3.5.
+    - Fixed issue with number field configured with the 9.999,99 format displaying browser validation errors when HTML5 is enabled.
+    - Fixed issue with list field export where "Array" was being displayed under certain conditions.
+    - Fixed warning thrown in rewrite_rules function when using array_merge with a parameter that wasn't an array
+    - Fixed issue with dates used when exporting entries
+    - Fixed number field validation when currency format is specified.
+    - Fixed issue with how spaces in post image file names were being replaced.
+    - Fixed notices when Post Image field with enabled Title, Description, and/or Caption were submitted without values
+    - Fixed styling issue with checkboxes on entry notes
+    - Fixed number field input type
+    - Fixed JS error on form editor when user refreshes the page with the scrollbar lower than the top of the page
+    - Fixed left margin of conditional logic instructions when label position is set to left-aligned.
+
+    - API: Added support for PUT entries/{entry ID}/properties so entry properties (is_read, is_starred etc) can be updated individually
+    - API: Added GFAPI::update_form_property() and GFAPI::update_forms_property() so form properties from the main forms table (is_trash, is_active etc) can be updated individually
+    - API: Added support for PUT forms/{form ID}/properties
+    - API: Added GFAPI::update_entry_property() to update a single property of an entry
+    - API: Updated the QR Code to include the site title
+    - API: Updated GFAPI::add_entry() to return an error if the entry object is not an array
+    - API: Fixed authentication for multisite installations
+    - API: Fixed loading of scripts on the API settings page when using SSL
+    - API: Fixed GFAPI::update_entry() to update the entry status
+
+    - AF: Added support for "dynamic_field_map" field setting
+    - AF: Added icon support to form editor top toolbar
+	- AF: Added support for displaying an icon next to the form settings page title
+	- AF: Added support for displaying an icon next to the plugin settings page title
+    - AF: Added support for configuring a form settings page title (using first section as default)
+    - AF: Added support for configuring the "No items" message as well as forcing any message to be displayed in the feed list
+    - AF: Added support for "requires credit card" setting in the Payment Add-On to be used by payment gateways that require a credit card field on the form
+    - AF: Added replace_field() method to replace a field by name in a given $settings array
+    - AF: Added get_field() method to retrieve a field by name in a given $settings array
+    - AF: Updated get_feed() method to return false if no feed is found instead of a non-empty array
+    - AF: Updated get_payment_choices() from private to public
+    - AF: Updated the feed add-on feed_condition field to trim values before saving
+    - AF: Updated payment add-on to better handle different payment actions
+    - AF: Updated payment add-on get_webhook_url() to use simpler callback parameter
+    - AF: Updated default icon for the Results menu
+    - AF: Updated Payment Add-On default settings so that it is easier to add feed settings under the "Other" section
+    - AF: Updated field_map settings field type so that it is available from GFAddon instead of GFFeedAddOn
+    - AF: Fixed issue with subscription cancellation
+    - AF: Fixed results calculation loop to allow add-ons to add custom data to the field_data element. Fixes an issue with the Quiz Add-On correct/incorrect numbers for > 150 entries.
+
+-------------------------------------------------------------------------------------------------------------------
 Version 1.8.3
 	- Added new filter "gform_post_category_choices" to alter post category choices sort order. Both globally and form id + field id specific.
-	add_filter("gform_post_category_choices", "set_sort", 10, 3);
-	function set_sort($choices, $field, $form_id){
-	    //usort calls a custom sort function you create
-	    usort($choices, "sort_numerically");
-	    return $choices;
-	}
-	function sort_numerically($a, $b){
-	    return floatval($a["text"]) > floatval($b["text"]);
-	}
-	OR
-	add_filter("gform_post_category_choices_390_1", "set_sort", 10, 3);
-	function set_sort($choices, $field, $form_id){
-	    //usort calls a custom sort function you create
-	    usort($choices, "sort_numerically");
-	    return $choices;
-	}
-	function sort_numerically($a, $b){
-	    return floatval($a["text"]) > floatval($b["text"]);
-	}
+        add_filter("gform_post_category_choices", "set_sort", 10, 3);
+        function set_sort($choices, $field, $form_id){
+            //usort calls a custom sort function you create
+            usort($choices, "sort_numerically");
+            return $choices;
+        }
+        function sort_numerically($a, $b){
+            return floatval($a["text"]) > floatval($b["text"]);
+        }
+        OR
+        add_filter("gform_post_category_choices_390_1", "set_sort", 10, 3);
+        function set_sort($choices, $field, $form_id){
+            //usort calls a custom sort function you create
+            usort($choices, "sort_numerically");
+            return $choices;
+        }
+        function sort_numerically($a, $b){
+            return floatval($a["text"]) > floatval($b["text"]);
+        }
     - Added INACTIVE setup script to trim leading and trailing spaces from all entry values, field labels, choice texts, choice values and input labels. Uncomment line 503 to test.
     - Updated GFFormDetail::add_field() to json_encode the field markup before sending it back to the form editor
     - Updated GFCommon::calculate() to replace multiple spaces and new lines with a single space
@@ -819,11 +883,11 @@ Version 1.7.dev2
     - Updated "Max Characters" field to only allow numbers to be entered
     - Updated post creation to not fire Buddy Press' save_post function until the post data is complete
     - Added new filter "gform_post_status_options" to allow addition of custom post status in field's post status setting
-	add_action('gform_post_status_options', 'add_custom_post_status');
-	function add_custom_post_status($post_status_options) {
-	    $post_status_options['custom_status'] = 'My Custom Status';
-	    return $post_status_options;
-	}
+        add_action('gform_post_status_options', 'add_custom_post_status');
+        function add_custom_post_status($post_status_options) {
+            $post_status_options['custom_status'] = 'My Custom Status';
+            return $post_status_options;
+        }
     - Fixed issue where commas in checkbox post custom field fields with commas in the label/value resulted in multiple post meta values for a single checkbox value
     - Updated confirmation settings ui and code to load editing into new page, removed functions no longer called
     - Added confirm message when deleting a field or modifying/deleting a field choice that is depended on for conditional logic
@@ -867,49 +931,49 @@ Version 1.7.dev1
 		Example usage:
 		add_filter( 'gform_entry_meta', array( 'GFQuiz', 'entry_meta' ), 10, 2);
 		public static function entry_meta($entry_meta, $form_id){
-	    $form = RGFormsModel::get_form_meta($form_id);
-	    $quiz_fields = GFCommon::get_fields_by_type( $form, array( 'quiz' ) );
-	    if ( false === empty ( $quiz_fields ) ) {
-		 $entry_meta['gquiz_score'] = array(
-		    'label' => 'Quiz Score Total',
-		    'is_numeric' => true,
-		    'update_entry_meta_callback' => array('GFQuiz', 'update_entry_meta')
-		    );
-		 $entry_meta['gquiz_grade'] = array(
-		    'label' => 'Quiz Grade',
-		    'is_numeric' => false,
-		    'update_entry_meta_callback' => array('GFQuiz', 'update_entry_meta')
-		    );
-		 $entry_meta['gquiz_percent'] = array(
-		    'label' => 'Quiz Percentage',
-		    'is_numeric' => true,
-		    'update_entry_meta_callback' => array('GFQuiz', 'update_entry_meta')
-		    );
-		 $entry_meta['gquiz_is_pass'] = array(
-		    'label' => 'Quiz Pass/Fail',
-		    'is_numeric' => false,
-		    'update_entry_meta_callback' => array('GFQuiz', 'update_entry_meta')
-		    );
+            $form = RGFormsModel::get_form_meta($form_id);
+            $quiz_fields = GFCommon::get_fields_by_type( $form, array( 'quiz' ) );
+            if ( false === empty ( $quiz_fields ) ) {
+                 $entry_meta['gquiz_score'] = array(
+                    'label' => 'Quiz Score Total',
+                    'is_numeric' => true,
+                    'update_entry_meta_callback' => array('GFQuiz', 'update_entry_meta')
+                    );
+                 $entry_meta['gquiz_grade'] = array(
+                    'label' => 'Quiz Grade',
+                    'is_numeric' => false,
+                    'update_entry_meta_callback' => array('GFQuiz', 'update_entry_meta')
+                    );
+                 $entry_meta['gquiz_percent'] = array(
+                    'label' => 'Quiz Percentage',
+                    'is_numeric' => true,
+                    'update_entry_meta_callback' => array('GFQuiz', 'update_entry_meta')
+                    );
+                 $entry_meta['gquiz_is_pass'] = array(
+                    'label' => 'Quiz Pass/Fail',
+                    'is_numeric' => false,
+                    'update_entry_meta_callback' => array('GFQuiz', 'update_entry_meta')
+                    );
 
-	    }
-	    return $entry_meta;
-	}
+            }
+            return $entry_meta;
+        }
 
-	public static function update_entry_meta($key, $lead, $form){
-	    $value = "";
-	    $results = self::get_quiz_results( $form, $lead, false );
+        public static function update_entry_meta($key, $lead, $form){
+            $value = "";
+            $results = self::get_quiz_results( $form, $lead, false );
 
-	    if ( $key == "gquiz_score" )
-		$value = $results["score"];
-	    elseif ( $key == "gquiz_percent" )
-		$value = $results["percent"];
-	    elseif ( $key == "gquiz_grade" )
-		$value = $results["grade"];
-	    elseif ( $key == "gquiz_is_pass" )
-		$value = $results["is_pass"] ? "1" : "0";
+            if ( $key == "gquiz_score" )
+                $value = $results["score"];
+            elseif ( $key == "gquiz_percent" )
+                $value = $results["percent"];
+            elseif ( $key == "gquiz_grade" )
+                $value = $results["grade"];
+            elseif ( $key == "gquiz_is_pass" )
+                $value = $results["is_pass"] ? "1" : "0";
 
-	    return $value;
-	}
+            return $value;
+        }
 	- Added RGFormsModel::get_leads_where_sql() function to assist with get_leads() queries
     - Fixed sending admin notifications with conditional routing when using PayPal's option to only send when payment is received
     - Fixed register link on multi-site; goes to primary site's Form Settings
@@ -942,7 +1006,7 @@ Version 1.7.dev1
     - Fixed issue where fields that are not on the last page of a multi-page form and are marked to not allow duplicates were not going through duplicate validation
     - Updated Settings UI
     - Added gform_entry_detail_sidebar_before hook to allow text to be added before the first sidebar box on the entry detail page
-	add_action("gform_entry_detail_sidebar_before", "add_sidebar_text_before", 10, 2);
+        add_action("gform_entry_detail_sidebar_before", "add_sidebar_text_before", 10, 2);
 		function add_sidebar_text_before($form, $lead){
 			echo "<div class='stuffbox'><h3><span class='hndle'>Extra Cool Stuff</span></h3><div class='inside'>text added before!<br/></div></div>";
 		}
@@ -1024,12 +1088,12 @@ Version 1.6.4.5.2
 Version 1.6.4.5.1
     - Fixed issue with number field calculation not rounding correctly when entry is saved
     - Added gform_shortcode_$action filter to allow Add-Ons to implement shortcode actions
-	add_filter("gform_shortcode_custom", "custom_action", 10, 3);
-	function custom_action($string, $attributes, $content){
-	    $string = "custom shortcode action";
+        add_filter("gform_shortcode_custom", "custom_action", 10, 3);
+        function custom_action($string, $attributes, $content){
+            $string = "custom shortcode action";
 
-	    return $string;
-	}
+            return $string;
+        }
     - Fixed issue with total not being calculated on forms with animation and next button conditional logic
     - Fixed issue with conditional logic value reset with pre-populated fields
 
@@ -1128,10 +1192,10 @@ Version 1.6.4
     - Fixed issue with quantity field being recorded as . when a value is not entered
     - Fixed issue with a "Select Format" option appearing in the quantity field's number format option for newly created fields.
     - Added hook to allow users to specify the page size on the entry list page
-	add_filter("gform_entry_page_size", "set_page_size", 10, 2);
-	function set_page_size($page_size, $form_id){
-	    return 50; //sets page size to 50
-	}
+        add_filter("gform_entry_page_size", "set_page_size", 10, 2);
+        function set_page_size($page_size, $form_id){
+            return 50; //sets page size to 50
+        }
     - Updated the form editor so that the max characters option on single input field is hidden when input mask is enabled
     - Updated checkbox field so that it can be pre-populated using an array in addition to a comma separated list
     - Fixed notice for $read_only variable
@@ -1143,22 +1207,22 @@ Version 1.6.4
     - Implemented support for {Product Name:1:qty} merge tag to allow the quantity of product fields to be returned via a merge tag
     - Fixed issue with {all_fields} merge tag when using post category fields as target of conditional logic
     - Added filter to allow changes to the recaptcha init screen
-	add_filter("gform_recaptcha_init_script", "custom_translation", 10, 3);
-	function custom_translation($script, $form_id, $field){
-	    $script = 'RecaptchaOptions.custom_translations = {
-				instructions_visual : "Scrivi le due parole:",
-				instructions_audio : "Trascrivi ci\u00f2 che senti:",
-				play_again : "Riascolta la traccia audio",
-				cant_hear_this : "Scarica la traccia in formato MP3",
-				visual_challenge : "Modalit\u00e0 visiva",
-				audio_challenge : "Modalit\u00e0 auditiva",
-				refresh_btn : "Chiedi due nuove parole",
-				help_btn : "Aiuto",
-				incorrect_try_again : "Scorretto. Riprova.",
-			}';
-	    return $script;
+        add_filter("gform_recaptcha_init_script", "custom_translation", 10, 3);
+        function custom_translation($script, $form_id, $field){
+            $script = 'RecaptchaOptions.custom_translations = {
+                                instructions_visual : "Scrivi le due parole:",
+                                instructions_audio : "Trascrivi ci\u00f2 che senti:",
+                                play_again : "Riascolta la traccia audio",
+                                cant_hear_this : "Scarica la traccia in formato MP3",
+                                visual_challenge : "Modalit\u00e0 visiva",
+                                audio_challenge : "Modalit\u00e0 auditiva",
+                                refresh_btn : "Chiedi due nuove parole",
+                                help_btn : "Aiuto",
+                                incorrect_try_again : "Scorretto. Riprova.",
+                        }';
+            return $script;
 
-	}
+        }
     - Added support for {Total:1:price} merge tag to allow total to be formatted numerically
     - Fixed issue of no results displayed when viewing a form that has a paged entry list and switching to a form that does not
 
@@ -1240,9 +1304,9 @@ Version 1.6.3.beta1
 	- Fixed admin paging so that the filter carries through to the next page
 	- Fixed admin paging so that the counts displayed apply to the entry list you are viewing (all, unread, starred, spam, trash)
     - Added "gform_akismet_enabled" hook which allows you to disable akismet integration
-	Documentation: http://www.gravityhelp.com/documentation/page/Gform_akismet_enabled
-	Example:
-	    add_filter("gform_akismet_enabled", "__return_false");
+        Documentation: http://www.gravityhelp.com/documentation/page/Gform_akismet_enabled
+        Example:
+            add_filter("gform_akismet_enabled", "__return_false");
     - Updated enqueue and print scripts functions to always include jQuery, allows "gform_post_render" js hook to be accessible even when GF not using it
     - Added 'eventName' parameter to ajaxSpinner submit event to allow third party integrations to target this specific event
     - Added $ajax parameter to 'gform_pre_render' hook
@@ -1253,7 +1317,7 @@ Version 1.6.3.beta1
 	- Added ability to turn on/off progress bar and set completion text when displayed with the confirmation text
 	- Added "gform_progressbar_start_at_zero" hook to set progress bar back to previous behavior
 	  Example:
-		add_filter("gform_progressbar_start_at_zero", "set_progressbar_start", 10, 2);
+	  	add_filter("gform_progressbar_start_at_zero", "set_progressbar_start", 10, 2);
 		function set_progressbar_start($start_at_zero, $form)
 		{
 			return false;
@@ -1279,42 +1343,42 @@ Version 1.6.2
     - Fixed issue with blank sections being displayed on {all_fields} merge tag.
     - Fixed issue where content templates would return empty when a "0" was passed
     - Added "gform_replace_merge_tags" hook which allows for the replacement of custom merge tags
-	Documentation: http://www.gravityhelp.com/documentation/page/Gform_replace_variables
-	Example:
-	    add_filter('gform_replace_merge_tags', 'replace_download_link', 10, 7);
-	    function replace_download_link($text, $form, $entry, $url_encode, $esc_html, $nl2br, $format) {
+        Documentation: http://www.gravityhelp.com/documentation/page/Gform_replace_variables
+        Example:
+            add_filter('gform_replace_merge_tags', 'replace_download_link', 10, 7);
+            function replace_download_link($text, $form, $entry, $url_encode, $esc_html, $nl2br, $format) {
 
-		if(strpos($text, '{download_link}') === false)
-		    return $text;
+                if(strpos($text, '{download_link}') === false)
+                    return $text;
 
-		$text = str_replace('{download_link}', gform_get_meta($entry['id'], 'download_link'), $text);
+                $text = str_replace('{download_link}', gform_get_meta($entry['id'], 'download_link'), $text);
 
-		return $text;
-	    }
+                return $text;
+            }
     - Added "gform_custom_merge_tags" hook which allows for the inclusion of custom merge tags whereever merge tag drop downs are generated
-	Documentation: http://www.gravityhelp.com/documentation/page/Gform_custom_merge_tags
-	Example:
-	    add_filter('gform_custom_merge_tags', 'custom_merge_tags', 10, 4);
-	    function custom_merge_tags($merge_tags, $form_id, $fields, $element_id) {
-		$merge_tags[] = array('label' => 'Download Link', 'tag' => '{download_link}');
-		return $merge_tags;
-	    }
+        Documentation: http://www.gravityhelp.com/documentation/page/Gform_custom_merge_tags
+        Example:
+            add_filter('gform_custom_merge_tags', 'custom_merge_tags', 10, 4);
+            function custom_merge_tags($merge_tags, $form_id, $fields, $element_id) {
+                $merge_tags[] = array('label' => 'Download Link', 'tag' => '{download_link}');
+                return $merge_tags;
+            }
     - Added "gform_entry_created" hook which fires immediately after the lead has been created but before any lead specific functionality has processed
-	Documentation: http://www.gravityhelp.com/documentation/page/Gform_entry_created
-	Example:
-	    add_action('gform_entry_created', 'generate_mergedoc');
-	    function generate_mergedoc($entry, $form) {
-		$download_link = self::get_download_link($entry['id']);
-		gform_update_meta($entry['id'], 'download_link', $download_link);
-	    }
+        Documentation: http://www.gravityhelp.com/documentation/page/Gform_entry_created
+        Example:
+            add_action('gform_entry_created', 'generate_mergedoc');
+            function generate_mergedoc($entry, $form) {
+                $download_link = self::get_download_link($entry['id']);
+                gform_update_meta($entry['id'], 'download_link', $download_link);
+            }
     - Added "gform_form_actions" hook which allows the modification of existing form actions and addition of new form actions
-	Documentation: http://www.gravityhelp.com/documentation/page/Gform_form_actions
-	Example:
-	    add_action('gform_form_actions', 'add_mergedoc_link', 10, 4);
-	    function add_mergedoc_link($actions, $form_id) {
-		$actions['mergedoc_settings'] = "<a href=\"" . get_admin_url() . "admin.php?page=gf_mergedoc&id={$form_id}\">" . __("MergeDoc", "gravityformsmergedoc") . "</a>";
-		return $actions;
-	    }
+        Documentation: http://www.gravityhelp.com/documentation/page/Gform_form_actions
+        Example:
+            add_action('gform_form_actions', 'add_mergedoc_link', 10, 4);
+            function add_mergedoc_link($actions, $form_id) {
+                $actions['mergedoc_settings'] = "<a href=\"" . get_admin_url() . "admin.php?page=gf_mergedoc&id={$form_id}\">" . __("MergeDoc", "gravityformsmergedoc") . "</a>";
+                return $actions;
+            }
     - Fixed issue with activation throwing errors when trying to remove old indexes.
     - Fixed issue with Pricing fields displaying as $0.00 for text formatted notifications
     - Updated issue where selecting "None" for Paging Progress Indicator option was not being re-populated correctly after updating the form
@@ -1357,20 +1421,20 @@ Version 1.6
     - Added ID attribute to the "Add Form" link
     - Dynamically calculating WordPress root directory on files that are loaded outside the WP context (i.e. preview.php, select_columns.php)
     - Added "gform_post_render" javascript hook to functions to bound to every form render on AJAX enabled forms.
-	Documentation: http://www.gravityhelp.com/documentation/page/Gform_post_render
-	Example:
-	    jQuery(document).bind('gform_post_render', function(){
-		// code to trigger on AJAX form render
-	    });
+        Documentation: http://www.gravityhelp.com/documentation/page/Gform_post_render
+        Example:
+            jQuery(document).bind('gform_post_render', function(){
+                // code to trigger on AJAX form render
+            });
     - Added support for additional date formats
     - Fixed conditional logic issue on multi-page forms when AJAX is turned on
     - Fixed issue where the full list of radio and checkbox items were displayed in the admin after editing a choice
     - Fixed erroneous single quote from AJAX inline script block
     - Fixed issue with conditional logic fields not making into notification email when sending notification after payment is made.
     - Added "gform_allowable_tags" hook to allow enabling HTML or specific HTML tags for submitted data
-	Documentation: http://www.gravityhelp.com/documentation/page/Gform_allowable_tags
-	Example:
-	add_filter("gform_allowable_tags", "__return_true");
+        Documentation: http://www.gravityhelp.com/documentation/page/Gform_allowable_tags
+        Example:
+        add_filter("gform_allowable_tags", "__return_true");
     - Added browser class to gform_wrapper
     - Added a form specific class to the confirmation container. "gform_confirmation_message_FORMID".
     - Fixed issue where adding any post field to a form prevented the form from saving if Post Formats were not supported
@@ -1442,9 +1506,9 @@ Version 1.5.2.9
 Version 1.5.2.8
     - Added product price javascript filter to allow custom total calculation
 
-	function gform_product_total(formId, price){
-	    return price + 100;
-	}
+        function gform_product_total(formId, price){
+            return price + 100;
+        }
     - Added gform_product_info filter to allow manipulation of the product list
     - Removed custom class from field when displayed in the form editor
     - Implemented gform_address_display_format on form display
@@ -1463,9 +1527,9 @@ Version 1.5.2.7
 Version 1.5.2.6
     - Added rgobj() function to better handle retrieving properties from objects
     - Added new hook "gform_default_notification" to allow the default admin notification for new forms to be disabled
-	Documentation: http://www.gravityhelp.com/documentation/page/Gform_default_notification
-	Example:
-	add_filter("gform_default_notification", "__return_false");
+        Documentation: http://www.gravityhelp.com/documentation/page/Gform_default_notification
+        Example:
+        add_filter("gform_default_notification", "__return_false");
 
     - Fixed localization issues on a few strings
     - Updated POT file
@@ -1834,23 +1898,23 @@ Version 1.4.beta1
     - Added Entry ID column to Entry List Customizer
     - Added ability to hide the state field
     - Added hook to allow new address types to be created
-	Example:
-	add_filter("gform_address_types", "brazilian_address", 10, 2);
+        Example:
+        add_filter("gform_address_types", "brazilian_address", 10, 2);
 
-	function brazilian_address($address_types, $form_id){
-	    $address_types["brazil"] = array(
-					    "label" => "Brasil",
-					    "country" => "Brasil",
-					    "zip_label" => "CEP",
-					    "state_label" => "Estado",
-					    "states" => array("", "Acre", "Alagoas", "Amapa", "Amazonas","Bahia", "Ceara", "Distrito Federal", "Espirito Santo", "Goias", "Maranhao", "Mato Grosso", "Mato Grosso do Sul", "Minas Gerais", "Para", "Paraiba", "Parana", "Pernambuco", "Piaui", "Roraima", "Rondonia", "Rio de Janeiro", "Rio Grande do Norte", "Rio Grande do Sul", "Santa Catarina", "Sao Paulo", "Sergipe", "Tocantins")
-	    );
-	    return $address_types;
-	}
+        function brazilian_address($address_types, $form_id){
+            $address_types["brazil"] = array(
+                                            "label" => "Brasil",
+                                            "country" => "Brasil",
+                                            "zip_label" => "CEP",
+                                            "state_label" => "Estado",
+                                            "states" => array("", "Acre", "Alagoas", "Amapa", "Amazonas","Bahia", "Ceara", "Distrito Federal", "Espirito Santo", "Goias", "Maranhao", "Mato Grosso", "Mato Grosso do Sul", "Minas Gerais", "Para", "Paraiba", "Parana", "Pernambuco", "Piaui", "Roraima", "Rondonia", "Rio de Janeiro", "Rio Grande do Norte", "Rio Grande do Sul", "Santa Catarina", "Sao Paulo", "Sergipe", "Tocantins")
+            );
+            return $address_types;
+        }
 
     - Added ability to automatically import forms based on config option
-	  define("GF_IMPORT_FILE", "c:/gf_import.xml");
-	  define("GF_THEME_IMPORT_FILE", "c:/gf_import.xml");
+          define("GF_IMPORT_FILE", "c:/gf_import.xml");
+          define("GF_THEME_IMPORT_FILE", "c:/gf_import.xml");
 
     - Enhanced selection fields (i.e. checkbox, drop down, multiple choice) so that users can define values that are different than choice labels
     - Enhanced post tag field so that it can also be created as a drop down, checkbox or multiple choice field
@@ -1889,33 +1953,33 @@ Version 1.3.13.beta1
     - Added HTML Block "field"
     - Added Import/Export functionality
     - Added filter to define the tab index start value.
-	add_filter("gform_tabindex_4", create_function("", "return false;"));
+        add_filter("gform_tabindex_4", create_function("", "return false;"));
 
     - Added option on Settings page to turn on/off HTML5 input types and default to type=text. Default to On.
     - Added filter to define where file uploads should go. Both globally and form specific.
-	add_filter("gform_upload_path", "change_upload_path", 20, 2);
-	function change_upload_path($path_info, $form_id){
-	    $path_info["path"] = "/new/path/";
-	    $path_info["url"] = "http://new_url.com/images/";
-	    return $path_info;
-	}
-	OR
-	add_filter("gform_upload_path_4", "change_upload_path");
-	function change_upload_path($path_info){
-	    $path_info["path"] = "/new/path/";
-	    $path_info["url"] = "http://new_url.com/images/";
-	    return $path_info;
-	}
+        add_filter("gform_upload_path", "change_upload_path", 20, 2);
+        function change_upload_path($path_info, $form_id){
+            $path_info["path"] = "/new/path/";
+            $path_info["url"] = "http://new_url.com/images/";
+            return $path_info;
+        }
+        OR
+        add_filter("gform_upload_path_4", "change_upload_path");
+        function change_upload_path($path_info){
+            $path_info["path"] = "/new/path/";
+            $path_info["url"] = "http://new_url.com/images/";
+            return $path_info;
+        }
 
     - Added filter for user notifications to modify send to address
-	add_filter("gform_autoresponder_email_4", "change_notification_email");
-	function change_notification_email($email){
-	    return "new_email@test.com";
-	}
+        add_filter("gform_autoresponder_email_4", "change_notification_email");
+        function change_notification_email($email){
+            return "new_email@test.com";
+        }
 
     - Added filter to enable the confirmation anchor functionality which scrolls the page to the confirmation text after the form is submitted. Off by default.
-	//turns on the confirmation anchor functionality
-	add_filter("gform_confirmation_anchor", create_function("","return true;"));
+        //turns on the confirmation anchor functionality
+        add_filter("gform_confirmation_anchor", create_function("","return true;"));
 
     - Added .gform_hidden class to list items < li> that contain hidden fields to preserve formatting
     - Fixed issue with date formatting when using notification variable. It outputs the date as YYYY/MM/DD instead of the date format selected for that field.
@@ -1960,15 +2024,15 @@ Version 1.3.10
     - Fixed issue with the editor's floating menu that got stuck to the bottom of the screen when a field was deleted
     - Added filter on post author field to limit what type of users are displayed
 
-	//Allows manipulation of the arguments that are used to create the user drop down (by the wp_dropdown_users function)
-	//Visit http://codex.wordpress.org/Template_Tags/wp_dropdown_users for a more details on the available options
-	add_filter("gform_author_dropdown_args", set_users);
-	function set_users($args){
+        //Allows manipulation of the arguments that are used to create the user drop down (by the wp_dropdown_users function)
+        //Visit http://codex.wordpress.org/Template_Tags/wp_dropdown_users for a more details on the available options
+        add_filter("gform_author_dropdown_args", set_users);
+        function set_users($args){
 
-	    //only include user with id=1
-	    $args["include"] = 1;
-	    return $args;
-	}
+            //only include user with id=1
+            $args["include"] = 1;
+            return $args;
+        }
 
 
 ------------------------------------------------------------------------------------------------------------------
@@ -1992,10 +2056,10 @@ Version 1.3.9
     - Added country code mapping
     - Added validation message filter
 
-	add_filter("gform_validation_message", "change_message", 10, 2);
-	function change_message($message, $form){
-	    return "failed " . $form["title"];
-	}
+        add_filter("gform_validation_message", "change_message", 10, 2);
+        function change_message($message, $form){
+            return "failed " . $form["title"];
+        }
 
     - Refactor get_selection_fields to GFCommon in support of the Integration plugin
     - Changed settings to support multiple pages (for addons)
@@ -2073,22 +2137,22 @@ Version 1.3
     - Added gform_is_duplicate filter to allow for custom field duplicate logic. (Thanks to Aaron Campbell)
     - Added gform_post_data filter that can be used to manipulate the post data before it is created
 
-	add_filter("gform_post_data", "create_as_page", 10, 2);
-	function create_as_page($post_data, $form){
-	    $post_data["post_type"] = "page";
-	    return $post_data;
-	}
+        add_filter("gform_post_data", "create_as_page", 10, 2);
+        function create_as_page($post_data, $form){
+            $post_data["post_type"] = "page";
+            return $post_data;
+        }
 
 ------------------------------------------------------------------------------------------------------------------
 Version 1.3.dev-9
 
     - Added gform_post_data filter that can be used to manipulate the post data before it is created
 
-	add_filter("gform_post_data", "create_as_page", 10, 2);
-	function create_as_page($post_data, $form){
-	    $post_data["post_type"] = "page";
-	    return $post_data;
-	}
+        add_filter("gform_post_data", "create_as_page", 10, 2);
+        function create_as_page($post_data, $form){
+            $post_data["post_type"] = "page";
+            return $post_data;
+        }
 
     - Fixed issue with address field not updating the state on the entry detail page
     - Fixed issue with post custom fields being editable on entry detail page
@@ -2163,41 +2227,41 @@ Version 1.2
 
     - Added gform_predefined_choices filter to allow users to manipulate and/or add new predefined choices
 
-	Sample:
-	add_filter("gform_predefined_choices", "add_predefined_choice");
-	function add_predefined_choice($choices){
-	    $choices["My New Choice"] = array("Choice 1", "Choice 2", "Choice 3"); //Adds a new predefined choice to the end of the list
-	    return $choices;
-	}
+        Sample:
+        add_filter("gform_predefined_choices", "add_predefined_choice");
+        function add_predefined_choice($choices){
+            $choices["My New Choice"] = array("Choice 1", "Choice 2", "Choice 3"); //Adds a new predefined choice to the end of the list
+            return $choices;
+        }
 
     - Added gform_pre_render filter. Fires before form rendering process and allows users to manipulate the form object before it gets displayed
 
-	Sample:
-	add_filter("gform_pre_render_17", test_render); //Adds a filter to form id 17. It is also possible to use gform_pre_render to filter every form
-	function test_render($form){
-	    $form["fields"][1]["isRequired"] = true; //Dynamically marks a field (id=1) as required
-	    return $form;
-	}
+        Sample:
+        add_filter("gform_pre_render_17", test_render); //Adds a filter to form id 17. It is also possible to use gform_pre_render to filter every form
+        function test_render($form){
+            $form["fields"][1]["isRequired"] = true; //Dynamically marks a field (id=1) as required
+            return $form;
+        }
 
     - Added gform_notification_email filter. Fires before sending the admin notification email and allows users to dynamically dynamically route entries to another email address
 
-	Sample:
-	add_filter("gform_notification_email_17", "route_notification", 10, 2); //Adds a filter to form id 17. It is also possible to use gform_notification_email to filter every form
-	function route_notification($email_to, $entry){
-	    $value = $entry["17"];
-	    return $value;
-	}
+        Sample:
+        add_filter("gform_notification_email_17", "route_notification", 10, 2); //Adds a filter to form id 17. It is also possible to use gform_notification_email to filter every form
+        function route_notification($email_to, $entry){
+            $value = $entry["17"];
+            return $value;
+        }
 
 ------------------------------------------------------------------------------------------------------------------
 Version 1.2.dev7
     - Implemented bulk add and predefined values for choices
     - Added gform_predefined_choices filter to allow users to manipulate and/or add new predefined choices
 
-	add_filter("gform_predefined_choices", "add_predefined_choice");
-	function add_predefined_choice($choices){
-	    $choices["My New Choice"] = array("Choice 1", "Choice 2", "Choice 3");
-	    return $choices;
-	}
+        add_filter("gform_predefined_choices", "add_predefined_choice");
+        function add_predefined_choice($choices){
+            $choices["My New Choice"] = array("Choice 1", "Choice 2", "Choice 3");
+            return $choices;
+        }
 
     - Implemented form activity limit options (entry cap and form start/end scheduling)
 
@@ -2207,20 +2271,20 @@ Version 1.2.dev6
     - Changed field editor's default value input to a textarea for fields that are rendered as textareas (Paragraph, Post Content and Post Excerpt)
     - Added gform_pre_render filter. Fires before form rendering process and allows users to manipulate the form object before it gets displayed
 
-	add_filter("gform_pre_render_17", test_render);
-	function test_render($form){
-	    $form["fields"][1]["isRequired"] = true;
-	    return $form;
-	}
+        add_filter("gform_pre_render_17", test_render);
+        function test_render($form){
+            $form["fields"][1]["isRequired"] = true;
+            return $form;
+        }
 
 
     - Add gform_notification_email filter. Fires before sending the admin notification email and allows users to dynamically route emails
 
-	add_filter("gform_notification_email_17", "route_notification", 10, 2);
-	function route_notification($email_to, $entry){
-	    $value = $entry["17"];
-	    return $value;
-	}
+        add_filter("gform_notification_email_17", "route_notification", 10, 2);
+        function route_notification($email_to, $entry){
+            $value = $entry["17"];
+            return $value;
+        }
 
 ------------------------------------------------------------------------------------------------------------------
 Version 1.2.dev5

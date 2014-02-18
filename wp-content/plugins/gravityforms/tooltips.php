@@ -155,12 +155,12 @@ function gform_tooltip($name, $css_class="", $return=false){
     $tooltip_class = isset($__gf_tooltips[$name]) ? "tooltip_{$name}" : "";
 
     if(empty($tooltip_text))
-	return "";
+        return "";
 
     $tooltip = "<a href='#' onclick='return false;' class='gf_tooltip " . esc_attr($css_class) . " {$tooltip_class}' title='" . esc_attr($tooltip_text) . "'><i class='fa fa-question-circle'></i></a>";
 
     if($return)
-	return $tooltip;
+        return $tooltip;
     else
-	echo $tooltip;
+        echo $tooltip;
 }
