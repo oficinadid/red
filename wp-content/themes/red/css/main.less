@@ -1,7 +1,6 @@
 @charset "UTF-8";
 
 @import url(normalize.min.css);
-@import url(media.less);
 @import url(basics.less);
 
 //Estilos Generales
@@ -22,6 +21,14 @@ h1, h2, h3, h4, h5, h6, p {margin:0;}
 body {
     right:0;
     .transition(0.2s);
+}
+
+#cortina {
+    position:absolute;
+    top:0; bottom:0; left:0; right:0;
+    background:rgba(255, 255, 255, 0.7);
+    display:none;
+    z-index:99;
 }
 
 a.menuside-trigger {
@@ -589,6 +596,9 @@ footer {
             .autor {
                 float:right;
                 position:relative;
+                &.on {
+                    z-index:99;
+                }
                 a {
                     display:block;
                     float:right;
@@ -624,6 +634,7 @@ footer {
                     left:100px;
                     top:10px;
                     display:none;
+                    background:#fff;
                     li {
                         padding:0 0 19px;
                         margin:0 0 19px;
@@ -1605,3 +1616,5 @@ footer {
         width:175px;
     }
 }
+
+@import url(media.less);

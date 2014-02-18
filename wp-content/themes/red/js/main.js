@@ -40,6 +40,8 @@ $(document).ready(function() {
 	$('.post .autor .autores-trigger').click(function() {
 		$(this).children('span.trigger').fadeToggle(150);
 		$(this).children('span.untrigger').fadeToggle(150);
+        $('#cortina').fadeToggle(150);
+        $(this).parent('.autor').toggleClass('on');
 		$(this).next('ul.autores').fadeToggle(150);
 	});
 

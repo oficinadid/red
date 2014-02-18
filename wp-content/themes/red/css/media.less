@@ -1,32 +1,251 @@
-/* - 550 - */
-@media only screen and (max-width:790px) {
+//////////////////////////////////////////////////////////////////////////////////////////////////////////
+/* - iPad Portrait - *////////////////////////////////////////////////////////////////////////////////////
+//////////////////////////////////////////////////////////////////////////////////////////////////////////
 
-.wrap {
-    width:100% !important;
-}
-header {
-    h1#logo-main {
-        width:90%;
-        background-size:100% auto;
+@media only screen and (min-device-width : 768px) and (max-device-width : 1024px) and (orientation : portrait) {
+    
+    .wrap {
+        width:768px;
     }
-}
-
-.stream {
-    .post {
-        .top {
-            width:75%;
+    #toplayer menu#main {
+        a.logo {
+            margin:7px 0 0 20px;
+        }
+        ul {
+            &.nav {
+                li {
+                    a {
+                        margin:0 20px;
+                    }
+                }
+            }
+            &.aux {
+                float:left;
+            }
         }
     }
-}
 
-#dc {
-    .wrap {
-        width:100%;
+    header {
+        h1#logo-main {
+            width:90%;
+        }
     }
+
+    #content {
+        .modulo {
+            width:768px;
+            padding-left:69px !important;
+            padding-right:69px !important;
+        }
+    }
+
+    .home, .single, .error404, .page {
+        #content {
+            #banner-dc .modulo h2#logo-main {
+                margin:0 30px 0 20px;
+            }
+        }
+    }
+
+    #content .stream .post .autor ul.autores {
+        left:auto;
+        right:0;
+        top:90px;
+        padding:0 0 10px 30px;
+    }
+
 }
 
-#participacion {
-    width:100%;
+//////////////////////////////////////////////////////////////////////////////////////////////////////////
+/* - iPad Landscape - *///////////////////////////////////////////////////////////////////////////////////
+//////////////////////////////////////////////////////////////////////////////////////////////////////////
+
+@media only screen and (min-device-width : 768px) and (max-device-width : 1024px) and (orientation : landscape) {
+    
+    
+
 }
+
+//////////////////////////////////////////////////////////////////////////////////////////////////////////
+/* - iPhone Portrait - *//////////////////////////////////////////////////////////////////////////////////
+//////////////////////////////////////////////////////////////////////////////////////////////////////////
+
+@media only screen and (min-device-width : 320px) and (max-device-width : 480px) and (orientation : portrait) {
+    
+    .wrap {
+        width:320px;
+    }
+
+    #toplayer menu#main {
+        a.logo {
+            margin:7px 0 0 10px;
+            opacity:1 !important;
+            // background-position:top right;
+            // width:62px;
+        }
+        ul {
+            &.nav {
+                display:none;
+                li {
+                    a {
+                        margin:0 20px;
+                    }
+                }
+            }
+            &.aux {
+                margin:0 60px 0 0;
+            }
+        }
+    }
+
+    header {
+        .wrap {
+            width:280px;
+        }
+        .sep {
+            width:auto;
+        }
+        h1#logo-main {
+            width:90%;
+            background-size:100% auto;
+            height:50px;
+            margin:80px auto 0;
+        }
+        .desc {
+            padding:0;
+            font-size:17px;
+            font-weight:500;
+        }
+    }
+
+    footer {
+        padding:40px 0 20px;
+        .wrap {
+            width:320px;
+            padding:0 40px;
+            .columna {
+                margin:0 0 30px;
+            }
+        }
+    }
+
+    #content {
+        a.marco {
+            margin:0 auto;
+            float:none;
+            padding:6px 0;
+            clear:both;
+        }
+        .modulo {
+            width:320px;
+            padding-left:20px !important;
+            padding-right:20px !important;
+            ul.lista {
+                &.full {
+                    li {
+                        .datos {
+                            width:auto;
+                        }
+                    }
+                }
+            }
+        }
+        .stream {
+            .post {
+                .top {
+                    width:auto;
+                }
+                .autor {
+                    ul.autores {
+                        left:auto;
+                        right:0;
+                        top:90px;
+                        padding:0 0 10px 30px;
+                    }
+                }
+            }
+        }
+        .mosaico {
+            .card {
+                width:280px;
+                padding:0 0 50px;
+                height:auto;
+                &.big {
+                    width:280px;
+                    .texto {
+                        h2 {
+                            clear:both;
+                            margin:20px 0 15px;
+                        }
+                    }
+                }
+            }
+        }
+    }
+
+    .home, .single, .error404, .page {
+        #content {
+            #banner-dc {
+                .modulo {
+                    padding:30px 0 20px !important;
+                    h2#logo-main {
+                        width:280px;
+                        height:80px;
+                        margin:0 20px;
+                        background-size:100% auto;
+                        background-position:top center;
+                    }
+                    .right {
+                        margin:0 20px;
+                        a {
+                            width:280px;
+                        }
+                    }
+                }
+            }
+        }
+    }
+
+    .home {
+        #noticias-dc #participacion a.respuesta {
+            width:280px;
+        }
+        #ideasyproyectos {
+            padding:0;
+            a.marco {
+                margin:15px auto 0;
+            }
+        }
+    }
+
+}
+
+//////////////////////////////////////////////////////////////////////////////////////////////////////////
+/* - iPhone Landscape - */////////////////////////////////////////////////////////////////////////////////
+//////////////////////////////////////////////////////////////////////////////////////////////////////////
+
+@media only screen and (min-device-width : 320px) and (max-device-width : 480px) and (orientation : landscape) {
+
+
+
+}
+
+//////////////////////////////////////////////////////////////////////////////////////////////////////////
+/* - iPhone 5 Portrait - */////////////////////////////////////////////////////////////////////////////////
+//////////////////////////////////////////////////////////////////////////////////////////////////////////
+
+@media only screen and (device-aspect-ratio: 40/71) and (orientation : portrait) {
+    
+    
+
+}
+
+//////////////////////////////////////////////////////////////////////////////////////////////////////////
+/* - iPhone 5 Landscape - */////////////////////////////////////////////////////////////////////////////////
+//////////////////////////////////////////////////////////////////////////////////////////////////////////
+
+@media only screen and (device-aspect-ratio: 40/71) and (orientation : landscape) {
+    
+    
 
 }

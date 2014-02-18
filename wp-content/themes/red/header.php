@@ -1,14 +1,14 @@
 <!DOCTYPE html>
 <html class="no-js">
     <head>
-        <meta charset="utf-8">
+        <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
         <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
         <title>RED</title>
         <meta name="description" content="">
-        <meta name="viewport" content="width=device-width">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
 
         <link rel="stylesheet" href="<?php bloginfo('template_url'); ?>/css/main.css">
-        <link href='http://fonts.googleapis.com/css?family=Pathway+Gothic+One' rel='stylesheet' type='text/css'>
+        <link href='http://fonts.googleapis.com/css?family=Pathway+Gothic+One&subset=latin,latin-ext' rel='stylesheet' type='text/css'>
 
         <script src="http://code.jquery.com/jquery-1.10.2.min.js"></script>
         <script src="<?php bloginfo('template_url'); ?>/js/main.js"></script>
@@ -16,6 +16,8 @@
     </head>
 
     <body <?php body_class(); ?>>
+
+        <div id="cortina"></div>
 
         <a class="menuside-trigger"></a>
 
