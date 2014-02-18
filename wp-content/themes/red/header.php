@@ -81,7 +81,7 @@
 
         <header>
 
-            <?php if ( is_home() ) { ?>
+            <?php if (is_home()) { ?>
 
                 <h1 id="logo-main"></h1>
 
@@ -90,6 +90,15 @@
                     <div class="desc">RED es un centro de estudio y investigación cuyo fin es colaborar con las transformaciones políticas, culturales, sociales y económicas que Chile está enfrentando y enfrentará en los próximos años. Este proyecto nace de la necesidad de generar vínculos entre los diversos actores de la izquierda para pensar en el tipo de país y desarrollo que queremos para el futuro.</div>
 
                     <a href="#" class="colaboradores">Colaboradores</a>
+                </div>
+
+            <?php } else if (is_404()) { ?>
+
+                <div class="wrap">
+                    <h1>Lo sentimos; esta página no está disponible</h1>
+                    <p>Es posible que el enlace que seguiste esté roto o se haya eliminado la página.</p>
+
+                    <a href="#" class="colaboradores">Home RED</a>
                 </div>
 
             <?php } else {} ?>

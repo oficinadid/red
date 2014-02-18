@@ -1,13 +1,46 @@
-
-
 // Variables
 .transition (@s) {
     -webkit-transition:@s;
     -moz-transition:@s;
-    -o-transition:@s;
     -ms-transition:@s;
+    -o-transition:@s;
     transition:@s; 
 }
+
+.columna-gap (@px) {
+    -webkit-column-gap:@px;
+    -moz-column-gap:@px;
+    -ms-column-gap:@px;
+    -o-column-gap:@px;
+    column-gap:@px;
+}
+.columna-count (@px) {
+    -webkit-column-count:@px;
+    -moz-column-count:@px;
+    -ms-column-count:@px;
+    -o-column-count:@px;
+    column-count:@px;
+}
+.columna-rule (@px) {
+    -webkit-column-rule:@px;
+    -moz-column-rule:@px;
+    -ms-column-rule:@px;
+    -o-column-rule:@px;
+    column-rule:@px;
+}
+.columna-break (@b) {
+    -webkit-column-break-inside: @b;
+    -moz-column-break-inside: @b;
+    -ms-column-break-inside: @b;
+    -o-column-break-inside: @b;
+    break-inside: @b;
+}
+
+.hidden {
+    display:none;
+    visibility:hidden;
+}
+
 @red: #f00;
 @redhover: #bf1b1b;
 @grey: #57656d;
@@ -15,6 +48,8 @@
 @teal: #5eb19e;
 @blue: #1d5b9e;
 @pale: #f2f2f2;
+
+@bordergrey: #d5d8da;
 
 ::-webkit-input-placeholder {
    color: inherit;

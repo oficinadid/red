@@ -47,7 +47,17 @@ $(document).ready(function() {
         $(this).toggleClass('on');
         $('#searchbox').fadeToggle(100);
         $('#searchbox input#field').select();
-    })
+    });
+
+    $('.filtros').hide();
+    $('a.filtro').click(function() {
+        $(this).toggleClass('on');
+        $('.filtros').slideToggle(200);
+    });
+
+    $('#iyp .filtros .lista a').click(function() {
+        $(this).toggleClass('on');
+    });
 	
 });
 
