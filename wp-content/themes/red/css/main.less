@@ -1111,6 +1111,71 @@ footer {
     }
 }
 
+.error404 {
+    header {
+        .wrap {
+            padding:0 50px;
+        }
+        padding:200px 0 0;
+        color:#fff;
+        h1 {
+            font-weight:700;
+            font-size:36px;
+            margin:0 auto 20px;
+        }
+        p {
+            font-weight:300;
+            font-size:30px;
+            margin:0 auto 10px;
+            line-height:120%;
+        }
+    }
+    #content {
+        padding:0;
+        #banner-dc {
+            background:@teal;
+            .modulo {
+                padding:50px 0 0 !important;
+                h2#logo-main {
+                    width:374px;
+                    height:147px;
+                    background:url(../img/dc-logo-main.png) no-repeat center;
+                    float:left;
+                    margin:0 40px 0 0;
+                }
+                .right {
+                    float:left;
+                    text-align:center;
+                    a {
+                        display:block;
+                        width:320px;
+                        height:45px;
+                        text-align:center;
+                        padding:12px 0;
+                        margin:15px auto 10px;
+                        background:@blue;
+                        color:@pale;
+                        text-transform:uppercase;
+                        font-size:21px;
+                        font-weight:700;
+                        border-bottom:2px solid rgba(56,56,54,0.3);
+                        letter-spacing:1px;
+                    }
+                    span {
+                        display:block;
+                        font-size:14px;
+                        color:#1b548a;
+                        strong {
+                            font-weight:700;
+                            color:@pale;
+                        }
+                    }
+                }
+            }
+        }
+    }
+}
+
 .page-template-default {
     #content {
         padding:0;
@@ -1526,5 +1591,14 @@ footer {
                 }
             }
         }
+    }
+}
+
+#content.search-results {
+    .stream {
+        padding:40px 0;
+    }
+    a.marco {
+        width:175px;
     }
 }
