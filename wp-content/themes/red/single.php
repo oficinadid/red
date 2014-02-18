@@ -51,7 +51,34 @@
                     <div class="meta">Diciembre 12, 2013 Paper por <a href="#">Gonzalo Durán</a>.</div>
                 </div>
                 <div class="autor">
-                    <a href="#"><img src="<?php bloginfo('template_url'); ?>/img/autor1.jpg"></a>
+                    <a class="autores-trigger">
+                        <span class="trigger">+</span>
+                        <span class="untrigger">-</span>
+                        <img src="<?php bloginfo('template_url'); ?>/img/autores.jpg">
+                    </a>
+                    <ul class="autores">
+                        <li>
+                            <a href="#">
+                                <img src="<?php bloginfo('template_url'); ?>/img/autor1.jpg">
+                                <span>Carmen Durán. E</span>
+                                <div class="cf"></div>
+                            </a>
+                        </li>
+                        <li>
+                            <a href="#">
+                                <img src="<?php bloginfo('template_url'); ?>/img/autor1.jpg">
+                                <span>Carmen Durán. E</span>
+                                <div class="cf"></div>
+                            </a>
+                        </li>
+                        <li>
+                            <a href="#">
+                                <img src="<?php bloginfo('template_url'); ?>/img/autor1.jpg">
+                                <span>Carmen Durán. E</span>
+                                <div class="cf"></div>
+                            </a>
+                        </li>
+                    </ul>
                 </div>
                 <div class="texto">
                     <p>Chile está enfrentando y enfrentará en los próximos años. RED es un proyecto para pensar en el tipo de país y desarrollo que queremos y así transformar. RED es un proyecto para pensar en el tipo de país y desarrollo que queremos y así transformar Chile en una sociedad más justa, igualitaria y democrática.</p>
