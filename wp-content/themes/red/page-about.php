@@ -53,7 +53,7 @@ Template Name: About
                 <div class="texto">
                     <?php the_content(); ?>
                 </div>
-                <a href="<?php the_permalink(); ?>" class="link">> Publicaciones de <strong>Luisa Cahuich</strong></a>
+		<a href="<?php the_permalink(); ?>" class="link">> Publicaciones de <strong><?php the_title(); ?></strong></a>
             </li>
 
         <?php endwhile;
@@ -102,7 +102,7 @@ Template Name: About
     <div id="dc" class="modulo">
 
         <h3>¿Qué es <strong>Diálogos Ciudadanos</strong>?</h3>
-        <p>Chile está enfrentando y enfrentará en los próximos años. RED es un proyecto para pensar en el tipo de país y desarrollo que queremos y así transformar. RED es un proyecto para pensar en el tipo de país y desarrollo que queremos y así transformar Chile en una sociedad más justa, igualitaria y democrática. Diálogos Ciudadanos es un proyecto para pensar en el tipo de país y desarrollo que queremos y así transformar Chile en una sociedad más justa, igualitaria y democrática. <strong>Diálogos Ciudadanos</strong> es un proyecto para pensar en el tipo de país y desarrollo que queremos y así transformar Chile en una sociedad más justa, igualitaria y democrática y desarrollo.</p>
+	<?php the_field('que_es_dialogos', 'option') ?>
 
         <span class="conoce">Conoce el proyecto de participación de <strong>RED</strong></span>
         <a href="#" class="ir">Ir a Diálogos Ciudadanos</a>
