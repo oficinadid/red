@@ -12,7 +12,6 @@
 
         <script src="http://code.jquery.com/jquery-1.10.2.min.js"></script>
         <script src="<?php bloginfo('template_url'); ?>/js/main.js"></script>
-
 		<?php wp_head(); ?>
     </head>
 
@@ -48,16 +47,16 @@
         </nav>
 
         <div id="toplayer">
-            
+
             <menu id="main">
                 <div class="wrap">
 
                     <a href="<?php bloginfo('wpurl'); ?>" class="logo"></a>
 
                     <ul class="nav">
-                        <li><a href="#">About</a></li>
-                        <li><a href="#">Colaboradores</a></li>
-                        <li><a href="#">Ideas y Proyectos</a></li>
+                        <li><a href="<?php bloginfo('wpurl'); ?>/about/">About</a></li>
+                        <li><a href="<?php bloginfo('wpurl'); ?>/colaboradores/">Colaboradores</a></li>
+                        <li><a href="<?php bloginfo('wpurl'); ?>/ideas-y-proyectos/">Ideas y Proyectos</a></li>
                     </ul>
 
                     <ul class="aux">
