@@ -1,5 +1,8 @@
 <?php
 
+add_theme_support('post-thumbnails');
+add_image_size('130x130', 130, 130, true);
+
 // registramos taxonomia Tema
 function tax_tema() {
 
