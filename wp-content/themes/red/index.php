@@ -5,39 +5,39 @@
     <div id="directorio" class="modulo first">
         <h3><strong>Directorio</strong> RED</h3>
         <ul class="lista full">
-	<?php
+        <?php
 			$args = array(
 				'no_found_rows' => true,
-			'post_type' => 'colaboradores',
-			'meta_query' => array(
+	        	'post_type' => 'colaboradores',
+	        	'meta_query' => array(
 			       array(
-				   'key' => 'directorio',
-				   'value' => true,
-				   'compare' => 'LIKE',
+			           'key' => 'directorio',
+			           'value' => true,
+			           'compare' => 'LIKE',
 			       )
 			   )
-		);
-	$directorio = new WP_Query($args);
+	        );
+        $directorio = new WP_Query($args);
 
-	if($directorio->have_posts()) : while($directorio->have_posts()): $directorio->the_post(); $exposts[] = get_the_ID(); ?>
-		<li>
+        if($directorio->have_posts()) : while($directorio->have_posts()): $directorio->the_post(); $exposts[] = get_the_ID(); ?>
+        	<li>
                 <div class="pic">
-		    <a href="<?php the_permalink(); ?>"><?php the_post_thumbnail('130x130'); ?></a>
+                    <a href="<?php the_permalink(); ?>"><?php the_post_thumbnail('130x130'); ?></a>
                 </div>
                 <div class="datos">
-		    <h5><a href="<?php the_permalink(); ?>"><?php the_title(); ?></a></h5>
-		    <h6><?php the_field('about') ?></h6>
+                    <h5><a href="<?php the_permalink(); ?>"><?php the_title(); ?></a></h5>
+                    <h6><?php the_field('about') ?></h6>
                     <div class="tags">
                         <a class="educacion" href="#">Educación</a>
                         <a class="tributario" href="#">Modelo de Desarrollo y Política Industrial</a>
                     </div>
                 </div>
-		<a href="<?php the_permalink(); ?>" class="mas">Ver más...</a>
+                <a href="<?php the_permalink(); ?>" class="mas">Ver más...</a>
             </li>
 
-	<?php endwhile;
-	wp_reset_postdata();
-	endif; ?>
+        <?php endwhile;
+        wp_reset_postdata();
+        endif; ?>
 
         </ul>
     </div>
@@ -45,123 +45,161 @@
     <div id="colaboradores" class="modulo">
         <h3>Red de <strong>Colaboradores</strong></h3>
         <ul class="lista half">
-	<?php
-	$args = array(
-			'no_found_rows' => true,
-			'post_type' => 'colaboradores',
-			'posts_per_page' => 8,
-			'post__not_in' => $exposts
-		);
-	$colaboradores = new WP_Query($args);
+        <?php
+        $args = array(
+        		'no_found_rows' => true,
+        		'post_type' => 'colaboradores',
+        		'posts_per_page' => 8,
+        		'post__not_in' => $exposts
+        	);
+        $colaboradores = new WP_Query($args);
 
-	if($colaboradores->have_posts()) : while($colaboradores->have_posts()): $colaboradores->the_post(); ?>
-		<li>
+        if($colaboradores->have_posts()) : while($colaboradores->have_posts()): $colaboradores->the_post(); ?>
+        	<li>
                 <div class="pic">
-		    <a href="<?php the_permalink(); ?>"><?php the_post_thumbnail('130x130'); ?></a>
+                    <a href="<?php the_permalink(); ?>"><?php the_post_thumbnail('130x130'); ?></a>
                 </div>
                 <div class="datos">
-		    <h5><a href="<?php the_permalink(); ?>"><?php the_title(); ?></a></h5>
-		    <h6><?php the_field('about') ?></h6>
+                    <h5><a href="<?php the_permalink(); ?>"><?php the_title(); ?></a></h5>
+                    <h6><?php the_field('about') ?></h6>
                 </div>
             </li>
-	<?php endwhile;
-	wp_reset_postdata();
-	endif; ?>
+        <?php endwhile;
+        wp_reset_postdata();
+        endif; ?>
 
         </ul>
-	<a href="<?php bloginfo('wpurl'); ?>/colaboradores" class="marco">Ir a todos los <strong>Colaboradores</strong> &#9656;</a>
+        <a href="<?php bloginfo('wpurl'); ?>/colaboradores" class="marco">Ir a todos los <strong>Colaboradores</strong> &#9656;</a>
         <div class="cf"></div>
     </div>
 
     <div id="ideasyproyectos" class="banda">
-	<div class="modulo">
+        <div class="modulo">
             <h3><strong>Ideas y Proyectos</strong></h3>
 
             <div class="mosaico">
 
-	    <?php
-		$args = array(
-			'post_type' => 'post',
-			'posts_per_page' => 1,
-			'no_found_rows' => true,
-			'meta_key' => 'es_destacado',
-			'meta_value' => true,
-			'fields' => 'ids'
-			);
-		$destacado = get_posts( $args );
-	    ?>
+            <?php
+            	// $args = array(
+            	// 	'post_type' => 'post',
+            	// 	'posts_per_page' => 1,
+            	// 	'no_found_rows' => true,
+            	// 	'meta_key' => 'es_destacado',
+            	// 	'meta_value' => true,
+            	// 	'fields' => 'ids'
+            	// 	);
+            	// $destacados = get_posts( $args );
+            ?>
+				<?php
+				$args = array(
+            		'post_type' => 'post',
+            		'posts_per_page' => 1,
+            		'no_found_rows' => true,
+            		'meta_key' => 'es_destacado',
+            		'meta_value' => true
+            		);
+				$post_destacado = new WP_Query($args);
 
-                <div class="card pic big">
-                    <a class="img" href="#"><img class="tn" src="<?php bloginfo('template_url'); ?>/img/ideasproyectos-img.jpg"></a>
-                    <div class="autor-pic">
-                        <a href="#"><img src="<?php bloginfo('template_url'); ?>/img/autor1.jpg"></a>
-                    </div>
-                    <div class="texto">
-			<span class="fecha">Domingo 20 de Enero 2014 <?php echo get_the_time( 'D d \d\e M Y', $destacado[0] ); ?></span>
-			<h2><a href="#"><?php echo get_the_title( $destacado[0] ); ?></a></h2>
-                        <p>Chile está enfrentando y enfrentará en los próximos años. RED es un proyecto para pensar en el tipo de país y desarrollo que queremos y así transformar.</p>
-                    </div>
-                    <div class="tags">
-                        <a class="educacion" href="#">Educación</a>
-                    </div>
-                </div>
+				if($post_destacado->have_posts()) : while($post_destacado->have_posts()): $post_destacado->the_post(); $ex_destacado[] = get_the_ID(); ?>
 
-                <div class="card pic third">
-                    <a class="img" href="#"><img class="tn" src="<?php bloginfo('template_url'); ?>/img/ideasproyectos-img.jpg"></a>
-                    <div class="autor-pic">
-                        <a href="#"><img src="<?php bloginfo('template_url'); ?>/img/autor1.jpg"></a>
-                    </div>
-                    <div class="texto">
-                        <span class="fecha">Domingo 20 de Enero 2014</span>
-                        <h2><a href="#">Barómetro de Política y Equidad.</a></h2>
-                        <span class="autor">Por <a href="#">Guillermo Durán</a></span>
-                    </div>
-                    <div class="tags">
-                        <a class="ciudad" href="#">Modelo de Desarrollo y Política Industrial</a>
-                    </div>
-                </div>
+					<div class="card pic big">
+	                    <a class="img" href="#"><img class="tn" src="<?php bloginfo('template_url'); ?>/img/ideasproyectos-img.jpg"></a>
+	                    <div class="autor-pic">
+	                        <a href="#"><img src="<?php bloginfo('template_url'); ?>/img/autor1.jpg"></a>
+	                    </div>
+	                    <div class="texto">
+	                        <span class="fecha"><?php the_time('l j \d\e F Y'); ?></span>
+	                        <h2><a href="#"><?php the_title(); ?></a></h2>
+	                        <p><?php the_excerpt(); ?></p>
+	                    </div>
+	                    <div class="tags">
+	                    	<?php $temas = get_the_terms(get_the_ID(), 'temas' ); ?>
+	                    	<?php foreach ($temas as $tema): ?>
+	                    		<a class="<?php echo $tema->slug ?>" href="#"><?php echo $tema->name ?></a>
+	                    	<?php endforeach ?>
 
-                <div class="card pic">
-                    <a class="img" href="#"><img class="tn" src="<?php bloginfo('template_url'); ?>/img/ideasproyectos-img.jpg"></a>
-                    <div class="texto">
-                        <span class="fecha">Domingo 20 de Enero 2014</span>
-                        <h2><a href="#">Barómetro de Política y Equidad.</a></h2>
-                        <span class="autor">Fuente <a href="#">RED</a></span>
-                    </div>
-                    <div class="tags">
-                        <a class="ciudad" href="#">Modelo de Desarrollo y Política Industrial</a>
-                    </div>
-                </div>
+	                    </div>
+	                </div>
 
-                <div class="card nopic">
-                    <div class="autor-pic">
-                        <a href="#"><img src="<?php bloginfo('template_url'); ?>/img/autor1.jpg"></a>
-                    </div>
-                    <div class="texto">
-                        <span class="fecha">Domingo 20 de Enero 2014</span>
-                        <h2><a href="#">Barómetro de Política y Equidad.</a></h2>
-                        <p>Chile está enfrentando y enfrentará en los próximos años. RED es un proyecto para pensar en el tipo de país y desarrollo que queremos y así transformar.</p>
-                        <span class="autor">Por <a href="#">Guillermo Durán</a></span>
-                    </div>
-                    <div class="tags">
-                        <a class="educacion" href="#">Educación</a>
-                    </div>
-                </div>
+				<?php endwhile;
+				wp_reset_postdata();
+				endif; ?>
 
-                <div class="card nopic third">
-                    <div class="autor-pic">
-                        <a href="#"><img src="<?php bloginfo('template_url'); ?>/img/autor1.jpg"></a>
-                    </div>
-                    <div class="texto">
-                        <span class="fecha">Domingo 20 de Enero 2014</span>
-                        <h2><a href="#">Barómetro de Política y Equidad.</a></h2>
-                        <p>Chile está enfrentando y enfrentará en los próximos años. RED es un proyecto para pensar en el tipo de país y desarrollo que queremos y así transformar.</p>
-                        <span class="autor">Por <a href="#">Guillermo Durán</a></span>
-                    </div>
-                    <div class="tags">
-                        <a class="educacion" href="#">Educación</a>
-                    </div>
-                </div>
+				<?php
+				$args = array(
+					'post_type' => 'post',
+					'posts_per_page' => 4,
+					'post__not_in' => $ex_destacado,
+					'no_found_rows' => true
+				);
+				$lista_posts = new WP_Query($args);
+				$i = 0;
+				if($lista_posts->have_posts()) : while($lista_posts->have_posts()): $lista_posts->the_post(); ?>
+
+					<?php
+                    	$colaboradores = get_field('colaboradores');
+                    	$fuente = get_field('fuente');
+                    ?>
+					<div class="card <?php echo (has_post_thumbnail()) ? 'pic' : 'nopic' ?> <?php echo (($i % 3 == 0) || ($i == 0)) ? 'third' : '' ?>">
+						<?php if (has_post_thumbnail()): ?>
+							<a class="img" href="<?php the_permalink(); ?>"><?php the_post_thumbnail('small'); ?></a>
+						<?php endif ?>
+						<?php if ($colaboradores): ?>
+							<div class="autor-pic">
+		                    	<?php if ( count($colaboradores) > 1): ?>
+		                    		<!-- imagen varios autores -->
+									<a href="#"><img src="<?php bloginfo('template_url'); ?>/img/autor1.jpg"></a>
+								<?php elseif (count($colaboradores) == 1): ?>
+									<!-- imagen para un autor -->
+									<?php foreach ($colaboradores as $colaborador): ?>
+										<a href="#"><?php echo get_the_post_thumbnail( $colaborador, '130x130' ); ?></a>
+									<?php endforeach ?>
+
+		                    	<?php endif ?>
+		                    </div>
+						<?php endif ?>
+
+	                    <div class="texto">
+	                        <span class="fecha"><?php the_time('l j \d\e F Y'); ?></span>
+	                        <h2><a href="#"><?php the_title(); ?></a></h2>
+
+	                        <?php if ($colaboradores): ?>
+
+	                        	<?php if (count($colaboradores) > 1): ?>
+	                        		<span class="autor">Por: Varios Autores</span>
+	                        	<?php else: ?>
+	                        		<?php foreach ($colaboradores as $colaborador): ?>
+	                        			<span class="autor">Por: <a href="<?php echo get_permalink($colaborador); ?>"><?php echo get_the_title($colaborador); ?></a></span>
+	                        		<?php endforeach ?>
+	                        	<?php endif ?>
+
+
+	                        <?php elseif ($fuente): ?>
+
+	                        	<span class="autor">Fuente:
+		                        	<?php if (get_field('url_fuente')): ?>
+		                        		<a href="<?php the_field('url_fuente') ?>"><?php the_field('fuente') ?></a>
+		                        	<?php else: ?>
+										<?php the_field('fuente') ?>
+		                        	<?php endif ?>
+
+	                        	</span>
+	                        <?php endif ?>
+
+	                    </div>
+	                    <div class="tags">
+	                    	<?php $temas = get_the_terms(get_the_ID(), 'temas' ); ?>
+	                    	<?php foreach ($temas as $tema): ?>
+	                    		<a class="<?php echo $tema->slug ?>" href="#"><?php echo $tema->name ?></a>
+	                    	<?php endforeach ?>
+
+	                    </div>
+	                </div>
+
+				<?php $i++; endwhile;
+				wp_reset_postdata();
+				endif; ?>
+
 
             </div>
 
