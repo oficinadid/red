@@ -13,6 +13,7 @@
         <script src="http://code.jquery.com/jquery-1.10.2.min.js"></script>
         <script src="<?php bloginfo('template_url'); ?>/js/main.js"></script>
 
+		<?php wp_head(); ?>
     </head>
 
     <body <?php body_class(); ?>>
