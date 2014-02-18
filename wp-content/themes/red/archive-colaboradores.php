@@ -8,7 +8,64 @@ get_header(); ?>
 
     <div id="colaboradores" class="modulo first">
         <h3><strong>Colaboradores</strong></h3>
-        <a href="#" class="filtro">Listado de Colaboradores</a>
+         <a class="filtro">Listado de Colaboradores</a>
+        <div class="filtros">
+            <h6>Colaboradores por orden alfabético</h6>
+            <ul class="lista">
+                <li><span>A.</span><a href="#">Alcantara Alberto</a></li>
+                <li><a href="#">Alcantara Alberto</a></li>
+                <li><a href="#">Alcantara Alberto</a></li>
+                <li><a href="#">Alcantara Alberto</a></li>
+                <li><a href="#">Alcantara Alberto</a></li>
+                <li><a href="#">Alcantara Alberto</a></li>
+                <li><span>B.</span><a href="#">Alcantara Alberto</a></li>
+                <li><a href="#">Alcantara Alberto</a></li>
+                <li><a href="#">Alcantara Alberto</a></li>
+                <li><a href="#">Alcantara Alberto</a></li>
+                <li><span>C.</span><a href="#">Alcantara Alberto</a></li>
+                <li><a href="#">Alcantara Alberto</a></li>
+                <li><a href="#">Alcantara Alberto</a></li>
+                <li><a href="#">Alcantara Alberto</a></li>
+                <li><a href="#">Alcantara Alberto</a></li>
+                <li><span>D.</span><a href="#">Alcantara Alberto</a></li>
+                <li><a href="#">Alcantara Alberto</a></li>
+                <li><a href="#">Alcantara Alberto</a></li>
+                <li><a href="#">Alcantara Alberto</a></li>
+                <li><a href="#">Alcantara Alberto</a></li>
+                <li><a href="#">Alcantara Alberto</a></li>
+                <li><span>F.</span><a href="#">Alcantara Alberto</a></li>
+                <li><a href="#">Alcantara Alberto</a></li>
+                <li><a href="#">Alcantara Alberto</a></li>
+                <li><span>G.</span><a href="#">Alcantara Alberto</a></li>
+                <li><a href="#">Alcantara Alberto</a></li>
+                <li><a href="#">Alcantara Alberto</a></li>
+                <li><a href="#">Alcantara Alberto</a></li>
+                <li><span>H.</span><a href="#">Alcantara Alberto</a></li>
+                <li><a href="#">Alcantara Alberto</a></li>
+                <li><span>J.</span><a href="#">Alcantara Alberto</a></li>
+                <li><a href="#">Alcantara Alberto</a></li>
+                <li><span>M.</span><a href="#">Alcantara Alberto</a></li>
+                <li><a href="#">Alcantara Alberto</a></li>
+                <li><a href="#">Alcantara Alberto</a></li>
+                <li><a href="#">Alcantara Alberto</a></li>
+                <li><span>O.</span><a href="#">Alcantara Alberto</a></li>
+                <li><a href="#">Alcantara Alberto</a></li>
+                <li><span>P.</span><a href="#">Alcantara Alberto</a></li>
+                <li><a href="#">Alcantara Alberto</a></li>
+                <li><span>R.</span><a href="#">Alcantara Alberto</a></li>
+                <li><a href="#">Alcantara Alberto</a></li>
+                <li><a href="#">Alcantara Alberto</a></li>
+                <li><a href="#">Alcantara Alberto</a></li>
+                <li><a href="#">Alcantara Alberto</a></li>
+                <li><span>S.</span><a href="#">Alcantara Alberto</a></li>
+                <li><a href="#">Alcantara Alberto</a></li>
+                <li><a href="#">Alcantara Alberto</a></li>
+                <li><a href="#">Alcantara Alberto</a></li>
+                <li><span>T.</span><a href="#">Alcantara Alberto</a></li>
+                <li><a href="#">Alcantara Alberto</a></li>
+                <li><a href="#">Alcantara Alberto</a></li>
+            </ul>
+        </div>
         <ul class="lista half columnas">
         <?php
             $args = array(
@@ -49,6 +106,7 @@ get_header(); ?>
 	                    <h5><a href="<?php the_permalink(); ?>"><?php the_title(); ?></a></h5>
 	                    <h6><?php the_field('about') ?></h6>
 	                    <div class="tags">
+
 	                    	<?php foreach ($terms as $t): ?>
 	                    	<?php
 	                    		$posts_in_term = array_filter($c_posts, function($p) use ($t) {
