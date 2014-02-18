@@ -107,7 +107,7 @@ get_header(); ?>
 	                    <h6><?php the_field('about') ?></h6>
 	                    <div class="tags">
 
-	                    	<?php foreach ($terms as $t): ?>
+	                    <?php foreach ($terms as $t): ?>
 	                    	<?php
 	                    		$posts_in_term = array_filter($c_posts, function($p) use ($t) {
 	                    			return has_term($t->term_id, 'temas', $p);

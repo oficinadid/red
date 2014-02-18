@@ -20,6 +20,22 @@
         $directorio = new WP_Query($args);
 
         if($directorio->have_posts()) : while($directorio->have_posts()): $directorio->the_post(); $exposts[] = get_the_ID(); ?>
+
+        <?php
+        	// posts colaboradores
+        	$c_posts =
+    			get_posts(
+					array (
+						'post_type'		=> 'post',
+						'meta_query'	=> array (
+							array (
+								'key' => 'colaboradores',
+								'value' => '"' . get_the_ID() . '"',
+								'compare' => 'LIKE'
+							)
+						)
+				));
+         ?>
         	<li>
                 <div class="pic">
                     <a href="<?php the_permalink(); ?>"><?php the_post_thumbnail('130x130'); ?></a>
@@ -28,8 +44,19 @@
                     <h5><a href="<?php the_permalink(); ?>"><?php the_title(); ?></a></h5>
                     <h6><?php the_field('about') ?></h6>
                     <div class="tags">
-                        <a class="educacion" href="#">Educación</a>
-                        <a class="tributario" href="#">Modelo de Desarrollo y Política Industrial</a>
+                    	<?php  $terms = get_terms('temas'); foreach ($terms as $t): ?>
+	                    	<?php
+	                    		$posts_in_term = array_filter($c_posts, function($p) use ($t) {
+	                    			return has_term($t->term_id, 'temas', $p);
+	                    		}); ?>
+
+                    		<?php if ($posts_in_term): ?>
+                    			<a class="<?php echo $t->slug ?>" href="#"><?php echo $t->name ?></a>
+
+                    		<?php endif ?>
+
+	                    <?php endforeach ?>
+
                     </div>
                 </div>
                 <a href="<?php the_permalink(); ?>" class="mas">Ver más...</a>
