@@ -66,7 +66,7 @@ function tb_show(caption, url, imageGroup) {//function called when the user clic
 	   if(url.indexOf("?")!==-1){ //ff there is a query string involved
 			baseURL = url.substr(0, url.indexOf("?"));
 	   }else{
-			baseURL = url;
+	   		baseURL = url;
 	   }
 
 	   var urlString = /\.jpg$|\.jpeg$|\.png$|\.gif$|\.bmp$/;
@@ -190,7 +190,7 @@ function tb_show(caption, url, imageGroup) {//function called when the user clic
 
 			var queryString = url.replace(/^[^\?]+\??/,'');
 			var params = tb_parseQuery( queryString );
-	    __inlineId = params["inlineId"];
+            __inlineId = params["inlineId"];
 
 			TB_WIDTH = (params['width']*1) + 30 || 630; //defaults to 630 if no paramaters were added to URL
 			TB_HEIGHT = (params['height']*1) + 40 || 440; //defaults to 440 if no paramaters were added to URL
@@ -229,7 +229,7 @@ function tb_show(caption, url, imageGroup) {//function called when the user clic
 					jQuery("#TB_window").unload(function () {
 
 						jQuery('#' + params['inlineId']).append( jQuery("#TB_ajaxContent").children() ); // move elements back when you're finished
-		    });
+                    });
 					tb_position();
 					jQuery("#TB_load").remove();
 					jQuery("#TB_window").css({'visibility':'visible'});
@@ -275,20 +275,20 @@ function tb_showIframe(){
 }
 
 function tb_remove() {
-	jQuery("#TB_imageOff").unbind("click");
+ 	jQuery("#TB_imageOff").unbind("click");
 	jQuery("#TB_closeWindowButton").unbind("click");
 
 	jQuery("#TB_window").fadeOut("fast",
-	function(){
+        function(){
 
-	    if(__inlineId){
-		jQuery('#'+ __inlineId).append( jQuery("#TB_ajaxContent").children() ); // move elements back when you're finished
-		__inlineId = "";
-	    }
+            if(__inlineId){
+                jQuery('#'+ __inlineId).append( jQuery("#TB_ajaxContent").children() ); // move elements back when you're finished
+                __inlineId = "";
+            }
 
-	    jQuery('#TB_window,#TB_overlay,#TB_HideSelect').unbind().remove();
+            jQuery('#TB_window,#TB_overlay,#TB_HideSelect').unbind().remove();
 
-	});
+        });
 
     jQuery("#TB_load").remove();
 	if (typeof document.body.style.maxHeight == "undefined") {//if IE 6

@@ -65,11 +65,11 @@ body .gform_wrapper.gf_reset_wrapper tfoot,
 body .gform_wrapper.gf_reset_wrapper thead,
 body .gform_wrapper.gf_reset_wrapper tr,
 body .gform_wrapper.gf_reset_wrapper th,
-body .gform_wrapper.gf_reset_wrapper td {
-	margin: 0;
-	padding: 0;
-	border: 0;
-	outline: 0;
+body .gform_wrapper.gf_reset_wrapper td { 
+	margin: 0; 
+	padding: 0; 
+	border: 0; 
+	outline: 0; 
 }
 
 body .gform_wrapper.gf_reset_wrapper div,
@@ -103,11 +103,11 @@ body .gform_wrapper.gf_reset_wrapper tfoot,
 body .gform_wrapper.gf_reset_wrapper thead,
 body .gform_wrapper.gf_reset_wrapper tr,
 body .gform_wrapper.gf_reset_wrapper th,
-body .gform_wrapper.gf_reset_wrapper td {
-	font-weight: inherit;
-	font-style: inherit;
-	font-size: 100%;
-	font-family: inherit;
+body .gform_wrapper.gf_reset_wrapper td {  
+	font-weight: inherit; 
+	font-style: inherit; 
+	font-size: 100%; 
+	font-family: inherit; 
 	vertical-align: baseline;
 	line-height: 1;
 	font-weight: normal;
@@ -119,14 +119,14 @@ body .gform_wrapper.gf_reset_wrapper p {
 	line-height: 1.8;
 }
 
-body .gform_wrapper.gf_reset_wrapper fieldset,
+body .gform_wrapper.gf_reset_wrapper fieldset, 
 body .gform_wrapper.gf_reset_wrapper img {
 	border: 0;
 }
 
-body .gform_wrapper.gf_reset_wrapper ol,
-body .gform_wrapper.gf_reset_wrapper ul,
-body .gform_wrapper.gf_reset_wrapper li {
+body .gform_wrapper.gf_reset_wrapper ol, 
+body .gform_wrapper.gf_reset_wrapper ul, 
+body .gform_wrapper.gf_reset_wrapper li { 
 	list-style: none;
 }
 

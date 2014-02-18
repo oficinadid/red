@@ -10,7 +10,7 @@
  */
 (function($){
 	$.fn.textareaCount = function(options, fn) {
-	var defaults = {
+        var defaults = {
 			maxCharacterSize: -1,
 			originalStyle: 'originalTextareaInfo',
 			warningStyle: 'warningTextareaInfo',
@@ -44,7 +44,7 @@
 				 .bind('mouseover', function(event){setTimeout(function(){limitTextAreaByCharacterCount();}, 10);})
 				 .bind('paste', function(event){setTimeout(function(){limitTextAreaByCharacterCount();}, 10);});
 
-	limitTextAreaByCharacterCount();
+        limitTextAreaByCharacterCount();
 
 		function limitTextAreaByCharacterCount(){
 			charLeftInfo.html(countByCharacters());
