@@ -84,3 +84,44 @@ function cpt_colaboradores() {
 
 // Hook into the 'init' action
 add_action( 'init', 'cpt_colaboradores', 0 );
+
+/**
+ * Load javascripts used by the theme
+ */
+function custom_theme_js(){
+	wp_register_script( 'infinite_scroll',  get_template_directory_uri() . '/js/jquery.infinitescroll.min.js', array('jquery'),null,true );
+	wp_register_script( 'manual-trigger',  get_template_directory_uri() . '/js/manual-trigger.js', array('jquery'),null,true );
+	// if( ! is_singular() ) {
+		wp_enqueue_script('infinite_scroll');
+		wp_enqueue_script('manual-trigger');
+	// }
+}
+add_action('wp_enqueue_scripts', 'custom_theme_js');
+
+/**
+ * Infinite Scroll
+ */
+function custom_infinite_scroll_js() {
+	?>
+	<script>
+	var infinite_scroll = {
+		loading: {
+			img: 'data:image/gif;base64,R0lGODlhAQABAHAAACH5BAUAAAAALAAAAAABAAEAAAICRAEAOw==',
+			msgText: '<span class="is-loading">Cargando posts</small>',
+			finishedMsg: '<span class="is-end">No hay más posts</span>',
+			speed: "fast"
+		},
+
+		"debug" : true,
+		"bufferPx" : 5,
+		"behavior" : "twitter",
+		"nextSelector":"a.nextpostslink",
+		"navSelector":".wp-pagenavi",
+		"itemSelector":"li.post",
+		"contentSelector":"ul.post-list"
+	};
+	jQuery( infinite_scroll.contentSelector ).infinitescroll( infinite_scroll );
+	</script>
+	<?php
+}
+add_action( 'wp_footer', 'custom_infinite_scroll_js',100 );

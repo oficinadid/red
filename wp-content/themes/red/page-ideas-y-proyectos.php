@@ -1,10 +1,10 @@
 <?php
 /*
-Template Name: Ideas y Proyectos
+	Template Name: Ideas y Proyectos
 */
+get_header();
+$paged = (get_query_var('paged')) ? get_query_var('paged') : 1;
 ?>
-
-<?php get_header(); ?>
 
 <div id="content" class="page-iyp">
 
@@ -42,94 +42,69 @@ Template Name: Ideas y Proyectos
                 <div class="cf"></div>
             </div>
         </div>
-        <ul class="lista full picright">
-            <li>
-                <div class="pic">
-                    <a href="#"><img src="<?php bloginfo('template_url'); ?>/img/autor1.jpg"></a>
-                </div>
-                <div class="datos">
-                    <h5><a href="#">Nueva versión disponible del Barómetro de Política y Equidad.</a></h5>
-                    <div class="meta">Diciembre 12, 2013 en categoría <a href="#">Papers</a> por <a href="#">Gonzalo Durán</a>.</div>
-                </div>
-                <div class="texto">
-                    Chile está enfrentando y enfrentará en los próximos años. RED es un proyecto para pensar en el tipo de país y desarrollo que queremos y así transformar. RED es un proyecto para pensar en el tipo de país y desarrollo que queremos y así transformar Chile en una sociedad más justa, igualitaria y democrática.<a href="#" class="more">Ver más...</a>
-                </div>
-                <div class="tags">
-                    <a class="educacion" href="#">Educación</a>
-                    <a class="genero" href="#">Modelo de Desarrollo y Política Industrial</a>
-                </div>
-            </li>
-            <li>
-                <div class="pic">
-                    <a href="#"><img src="<?php bloginfo('template_url'); ?>/img/autor1.jpg"></a>
-                </div>
-                <div class="datos">
-                    <h5><a href="#">Nueva versión disponible del Barómetro de Política y Equidad.</a></h5>
-                    <div class="meta">Diciembre 12, 2013 en categoría <a href="#">Papers</a> por <a href="#">Gonzalo Durán</a>.</div>
-                </div>
-                <div class="texto">
-                    Chile está enfrentando y enfrentará en los próximos años. RED es un proyecto para pensar en el tipo de país y desarrollo que queremos y así transformar. RED es un proyecto para pensar en el tipo de país y desarrollo que queremos y así transformar Chile en una sociedad más justa, igualitaria y democrática.<a href="#" class="more">Ver más...</a>
-                </div>
-                <div class="tags">
-                    <a class="educacion" href="#">Educación</a>
-                    <a class="genero" href="#">Modelo de Desarrollo y Política Industrial</a>
-                </div>
+        <ul class="lista full picright post-list">
+        	<?php
+        	$args = array(
+        		'post_type' => 'post',
+        		'posts_per_page' => 5,
+        		'paged' => $paged
+        	);
+        	$iyp = new WP_Query($args);
 
-            </li>
-            <li>
-                <div class="pic">
-                    <a href="#"><img src="<?php bloginfo('template_url'); ?>/img/autor1.jpg"></a>
-                </div>
-                <div class="datos">
-                    <h5><a href="#">Nueva versión disponible del Barómetro de Política y Equidad.</a></h5>
-                    <div class="meta">Diciembre 12, 2013 en categoría <a href="#">Papers</a> por <a href="#">Gonzalo Durán</a>.</div>
-                </div>
-                <div class="texto">
-                    Chile está enfrentando y enfrentará en los próximos años. RED es un proyecto para pensar en el tipo de país y desarrollo que queremos y así transformar. RED es un proyecto para pensar en el tipo de país y desarrollo que queremos y así transformar Chile en una sociedad más justa, igualitaria y democrática.<a href="#" class="more">Ver más...</a>
-                </div>
-                <div class="tags">
-                    <a class="educacion" href="#">Educación</a>
-                    <a class="genero" href="#">Modelo de Desarrollo y Política Industrial</a>
-                </div>
+        	if($iyp->have_posts()) : while($iyp->have_posts()): $iyp->the_post(); ?>
+        		<?php $colaboradores = get_field('colaboradores'); ?>
+        		 <li class="post">
+	                <div class="pic">
+	                	<?php
+	                	// d($colaboradores);
+						if ( count($colaboradores) > 1): ?>
+						<!-- imagen varios autores -->
+							<a href="#"><img src="<?php bloginfo('template_url'); ?>/img/autor1.jpg"></a>
+						<?php elseif ( is_array($colaboradores) && count($colaboradores) == 1): ?>
+							<!-- imagen para un autor -->
+							<?php foreach ($colaboradores as $colaborador): ?>
+								<a href="<?php echo get_permalink($colaborador); ?>"><?php echo get_the_post_thumbnail( $colaborador, '130x130' ); ?></a>
+							<?php endforeach ?>
 
-            </li>
-            <li>
-                <div class="pic">
-                    <a href="#"><img src="<?php bloginfo('template_url'); ?>/img/autor1.jpg"></a>
-                </div>
-                <div class="datos">
-                    <h5><a href="#">Nueva versión disponible del Barómetro de Política y Equidad.</a></h5>
-                    <div class="meta">Diciembre 12, 2013 en categoría <a href="#">Papers</a> por <a href="#">Gonzalo Durán</a>.</div>
-                </div>
-                <div class="texto">
-                    Chile está enfrentando y enfrentará en los próximos años. RED es un proyecto para pensar en el tipo de país y desarrollo que queremos y así transformar. RED es un proyecto para pensar en el tipo de país y desarrollo que queremos y así transformar Chile en una sociedad más justa, igualitaria y democrática.<a href="#" class="more">Ver más...</a>
-                </div>
-                <div class="tags">
-                    <a class="educacion" href="#">Educación</a>
-                    <a class="genero" href="#">Modelo de Desarrollo y Política Industrial</a>
-                </div>
+						<?php endif ?>
 
-            </li>
-            <li>
-                <div class="pic">
-                    <a href="#"><img src="<?php bloginfo('template_url'); ?>/img/autor1.jpg"></a>
-                </div>
-                <div class="datos">
-                    <h5><a href="#">Nueva versión disponible del Barómetro de Política y Equidad.</a></h5>
-                    <div class="meta">Diciembre 12, 2013 en categoría <a href="#">Papers</a> por <a href="#">Gonzalo Durán</a>.</div>
-                </div>
-                <div class="texto">
-                    Chile está enfrentando y enfrentará en los próximos años. RED es un proyecto para pensar en el tipo de país y desarrollo que queremos y así transformar. RED es un proyecto para pensar en el tipo de país y desarrollo que queremos y así transformar Chile en una sociedad más justa, igualitaria y democrática.<a href="#" class="more">Ver más...</a>
-                </div>
-                <div class="tags">
-                    <a class="educacion" href="#">Educación</a>
-                    <a class="genero" href="#">Modelo de Desarrollo y Política Industrial</a>
-                </div>
+	                </div>
+	                <div class="datos">
+	                    <h5><a href="#"><?php the_title(); ?></a></h5>
+	                    <div class="meta"><?php the_time('F j, Y'); ?> por
+						<?php if (is_array($colaboradores)): ?>
+							<?php $c = 0; foreach ($colaboradores as $colaborador): ?>
+								<?php echo ($c != 0) ? ', ' : ' '; ?><a href="<?php get_permalink($colaborador); ?>"><?php echo get_the_title($colaborador); ?></a>
+								<?php $c++; endforeach ?>
+						<?php else: ?>
+							<?php the_field('fuente') ?>
+						<?php endif ?>
 
-            </li>
+	                    </div>
+	                </div>
+	                <div class="texto">
+	                    <?php the_excerpt(); ?><a href="#" class="more">Ver más...</a>
+	                </div>
+	                <div class="tags">
+
+						<?php
+							$temas = get_the_terms(get_the_ID(), 'temas' );
+							foreach ($temas as $tema): ?>
+							<a class="<?php echo $tema->slug ?>" href="#"><?php echo $tema->name ?></a>
+						<?php endforeach ?>
+
+	                </div>
+	            </li>
+
+        	<?php endwhile;
+        	wp_reset_postdata();
+        	endif; ?>
+
         </ul>
-        <a href="#" class="marco">Ver más <strong>Ideas y Proyectos</strong> &#9662;</a>
+        <!-- <a href="#" class="marco">Ver más <strong>Ideas y Proyectos</strong> &#9662;</a> -->
+        <?php wp_pagenavi(array('query' => $iyp)) ?>
         <div class="cf"></div>
+
     </div>
 
     <div id="banner-dc" class="banda">

@@ -139,14 +139,14 @@
 					<?php
 						if ( count($colaboradores) > 1): ?>
 						<!-- imagen varios autores -->
-									<a href="#"><img src="<?php bloginfo('template_url'); ?>/img/autor1.jpg"></a>
-								<?php elseif (count($colaboradores) == 1): ?>
-									<!-- imagen para un autor -->
-									<?php foreach ($colaboradores as $colaborador): ?>
-										<a href="<?php the_permalink(); ?>"><?php echo get_the_post_thumbnail( $colaborador, '130x130' ); ?></a>
-									<?php endforeach ?>
+							<a href="#"><img src="<?php bloginfo('template_url'); ?>/img/autor1.jpg"></a>
+						<?php elseif (count($colaboradores) == 1): ?>
+							<!-- imagen para un autor -->
+							<?php foreach ($colaboradores as $colaborador): ?>
+								<a href="<?php the_permalink(); ?>"><?php echo get_the_post_thumbnail( $colaborador, '130x130' ); ?></a>
+							<?php endforeach ?>
 
-					<?php endif ?>
+						<?php endif ?>
 				    </div>
 						<?php endif ?>
 	                    <div class="texto">
