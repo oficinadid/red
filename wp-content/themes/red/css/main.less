@@ -377,9 +377,14 @@ footer {
                 }
                 li {
                     .pic {
-                        img {
+                        a {
                             width:100%;
-                            height:auto;
+                            img {
+                                width:100%;
+                                height:auto;
+                                border-radius:50%;
+                                float:left;
+                            }
                         }
                     }
                     .meta {
@@ -403,12 +408,6 @@ footer {
                             a {
                                 display:block;
                                 float:right;
-                                img {
-                                    width:90px;
-                                    height:auto;
-                                    border-radius:50%;
-                                    float:left;
-                                }
                             }
                         }
                         .datos {
@@ -964,7 +963,6 @@ footer {
             }
         }
         .stream {
-            text-align:center;
             h3 {
                 margin:0 auto 20px;
             }
@@ -979,6 +977,7 @@ footer {
             a.marco {
                 color:@teal;
                 border-color:@teal;
+                width:270px;
             }
         }
         #participacion {
@@ -1613,6 +1612,11 @@ footer {
 #content.search-results {
     .stream {
         padding:40px 0;
+        .post {
+            .top {
+                width:auto;
+            }
+        }
     }
     a.marco {
         width:175px;
