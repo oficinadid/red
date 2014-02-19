@@ -378,9 +378,14 @@ footer {
                 }
                 li {
                     .pic {
-                        img {
+                        a {
                             width:100%;
-                            height:auto;
+                            img {
+                                width:100%;
+                                height:auto;
+                                border-radius:50%;
+                                float:left;
+                            }
                         }
                     }
                     .meta {
@@ -404,12 +409,6 @@ footer {
                             a {
                                 display:block;
                                 float:right;
-                                img {
-                                    width:90px;
-                                    height:auto;
-                                    border-radius:50%;
-                                    float:left;
-                                }
                             }
                         }
                         .datos {
@@ -913,6 +912,15 @@ footer {
 }
 
 .home {
+    #directorio {
+        ul.lista {
+            li {
+                .pic {
+                    width:130px;
+                }
+            }
+        }
+    }
     #ideasyproyectos {
         background:#e1e4e5;
         padding:0 0 50px;
@@ -970,7 +978,6 @@ footer {
             }
         }
         .stream {
-            text-align:center;
             h3 {
                 margin:0 auto 20px;
             }
@@ -985,6 +992,7 @@ footer {
             a.marco, a.nextpostslink {
                 color:@teal;
                 border-color:@teal;
+                width:270px;
             }
         }
         #participacion {
@@ -1619,6 +1627,11 @@ footer {
 #content.search-results {
     .stream {
         padding:40px 0;
+        .post {
+            .top {
+                width:auto;
+            }
+        }
     }
     a.marco, a.nextpostslink {
         width:175px;
@@ -1626,3 +1639,4 @@ footer {
 }
 
 @import url(media.less);
+@import url(devices.less);
