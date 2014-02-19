@@ -27,27 +27,12 @@
             <h3>Bienvenido a <strong>RED</strong></h3>
             <h4>Temas</h4>
             <ul class="temas">
-                <li><a href="#"><span class="name">Educación</span><span class="count">104</span></a></li>
-                <li><a href="#"><span class="name">Constitución y Reformas Políticas</span><span class="count">70</span></a></li>
-                <li><a href="#"><span class="name">Sistema Tributario</span><span class="count">98</span></a></li>
-                <li><a href="#"><span class="name">Modelo de Desarrollo y Política Industrial</span><span class="count">54</span></a></li>
-                <li><a href="#"><span class="name">Desigualdad y Pobreza</span><span class="count">95</span></a></li>
-                <li><a href="#"><span class="name">Salud</span><span class="count">87</span></a></li>
-                <li><a href="#"><span class="name">Trabajo y Pensiones</span><span class="count">39</span></a></li>
-                <li><a href="#"><span class="name">Energía y Medioambiente</span><span class="count">48</span></a></li>
-                <li><a href="#"><span class="name">Comunicaciones y Tecnología</span><span class="count">31</span></a></li>
-                <li><a href="#"><span class="name">Ciudad, Territorio y Transporte</span><span class="count">72</span></a></li>
-                <li><a href="#"><span class="name">Género y Diversidad</span><span class="count">70</span></a></li>
-                <li><a href="#"><span class="name">Derechos Humanos</span><span class="count">90</span></a></li>
-                <li><a href="#"><span class="name">Ciencias</span><span class="count">7</span></a></li>
-                <li><a href="#"><span class="name">Cultura</span><span class="count">12</span></a></li>
-                <li><a href="#"><span class="name">Participación, Democracia y Desarrollo Local</span><span class="count">80</span></a></li>
+            	<?php $temas = get_terms('temas'); foreach ($temas as $tema): ?>
+            		<li><a href="<?php echo get_term_link( $tema, 'temas' ); ?> "><span class="name"><?php echo $tema->name ?></span><span class="count"><?php echo $tema->count ?></span></a></li>
+            	<?php endforeach ?>
+
             </ul>
-            <ul class="medios">
-                <li><a href="#">Videos</a></li>
-                <li><a href="#">Audios</a></li>
-                <li><a href="#">Imágenes</a></li>
-            </ul>
+
         </nav>
 
         <div id="toplayer">
@@ -102,9 +87,9 @@
 
                 <div class="wrap">
                     <div class="sep"></div>
-		    <div class="desc"><?php the_field('que_es_red', 'option') ?></div>
+		    		<div class="desc"><?php the_field('que_es_red', 'option') ?></div>
 
-		    <a href="<?php bloginfo('wpurl'); ?>/colaboradores" class="colaboradores">Colaboradores</a>
+		    		<a href="<?php bloginfo('wpurl'); ?>/colaboradores" class="colaboradores">Colaboradores</a>
                 </div>
 
             <?php } else if (is_404()) { ?>
@@ -113,7 +98,7 @@
                     <h1>Lo sentimos; esta página no está disponible</h1>
                     <p>Es posible que el enlace que seguiste esté roto o se haya eliminado la página.</p>
 
-		    <a href="<?php bloginfo('wpurl'); ?>" class="colaboradores">Home RED</a>
+		    		<a href="<?php bloginfo('wpurl'); ?>" class="colaboradores">Home RED</a>
                 </div>
 
             <?php } else {} ?>
