@@ -146,7 +146,7 @@
 								<a href="<?php the_permalink(); ?>"><?php echo get_the_post_thumbnail( $colaborador, '130x130' ); ?></a>
 							<?php endforeach ?>
 
-					<?php endif ?>
+						<?php endif ?>
 				    </div>
 						<?php endif ?>
 	                    <div class="texto">
