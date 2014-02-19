@@ -127,12 +127,22 @@ nav#side {
         height:48px;
         a.logo {
             display:block;
-            width:101px;
+            width:80px;
             height:43px;
             background:url(../img/red-logo-small.png) no-repeat;
             float:left;
-            margin:7px 0 0;
+            margin:7px 0px 0;
             .transition (0s);
+        }
+        a#mobilemenu-trigger {
+            text-transform:uppercase;
+            padding:4px 10px 2px;
+            margin:6px auto;
+            font-size:17px;
+            font-weight:700;
+            display:block;
+            float:left;
+            border:2px solid rgba(173, 31, 35, 0.9);
         }
         ul {
             float:left;
@@ -193,6 +203,26 @@ nav#side {
         right:0;
         height:22px;
 
+    }
+    #menu-mobile {
+        position:fixed;
+        top:40px;
+        width:100%;
+        background:rgba(48, 48, 48, 0.985);
+        color:#fff;
+        display:none;
+        ul {
+            padding:0 15px;
+            li {
+                border-bottom:1px solid rgba(93, 93, 93, 0.5);
+                padding:5px 0;
+                a {
+                    display:block;
+                    padding:10px 0;
+                    text-transform:uppercase;
+                }
+            }
+        }
     }
     #searchbox {
         position:fixed;
@@ -268,6 +298,16 @@ header {
         right:0;
         height:554px;
         z-index:-1;
+    }
+}
+
+.addthis_floating_style {
+    background:none !important;
+    position:absolute !important;
+    top:620px !important;
+    &.fixed {   
+        position:fixed !important;
+        top:60px !important;
     }
 }
 
