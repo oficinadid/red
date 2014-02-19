@@ -51,7 +51,7 @@
 	                    		}); ?>
 
                     		<?php if ($posts_in_term): ?>
-                    			<a class="<?php echo $t->slug ?>" href="#"><?php echo $t->name ?></a>
+                    			<a class="<?php echo $t->slug ?>" href="<?php echo get_term_link( $t, 'temas' ) ?>"><?php echo $t->name ?></a>
 
                     		<?php endif ?>
 
@@ -130,7 +130,7 @@
 				if($post_destacado->have_posts()) : while($post_destacado->have_posts()): $post_destacado->the_post(); $ex_destacado[] = get_the_ID(); ?>
 					<?php
 						$colaboradores = get_field('colaboradores');
-			$fuente = get_field('fuente');
+						$fuente = get_field('fuente');
 					 ?>
 					<div class="card pic big">
 			    <a class="img" href="<?php the_permalink(); ?>"><?php the_post_thumbnail('medium'); ?></a>
@@ -160,7 +160,7 @@
 	                    <div class="tags">
 	                    	<?php $temas = get_the_terms(get_the_ID(), 'temas' ); ?>
 	                    	<?php foreach ($temas as $tema): ?>
-	                    		<a class="<?php echo $tema->slug ?>" href="#"><?php echo $tema->name ?></a>
+	                    		<a class="<?php echo $tema->slug ?>" href="<?php echo get_term_link( $t, 'temas' ) ?>"><?php echo $tema->name ?></a>
 	                    	<?php endforeach ?>
 
 	                    </div>
@@ -206,7 +206,7 @@
 
 	                    <div class="texto">
 	                        <span class="fecha"><?php the_time('l j \d\e F Y'); ?></span>
-	                        <h2><a href="#"><?php the_title(); ?></a></h2>
+	                        <h2><a href="<?php the_permalink(); ?>"><?php the_title(); ?></a></h2>
 							<?php if (!has_post_thumbnail()): ?>
 								<p><?php the_excerpt(); ?></p>
 							<?php endif ?>
@@ -239,7 +239,7 @@
 	                    <div class="tags">
 	                    	<?php $temas = get_the_terms(get_the_ID(), 'temas' ); ?>
 	                    	<?php foreach ($temas as $tema): ?>
-	                    		<a class="<?php echo $tema->slug ?>" href="#"><?php echo $tema->name ?></a>
+	                    		<a class="<?php echo $tema->slug ?>" href="<?php echo get_term_link( $t, 'temas' ) ?>"><?php echo $tema->name ?></a>
 	                    	<?php endforeach ?>
 
 	                    </div>
@@ -254,7 +254,7 @@
 
             <div class="cf"></div>
 
-            <a href="#" class="marco">Ver más <strong>Ideas y Proyectos</strong> &#9656;</a>
+            <a href="<?php bloginfo('wpurl'); ?>/ideas-y-proyectos" class="marco">Ver más <strong>Ideas y Proyectos</strong> &#9656;</a>
 
         </div>
     </div>
@@ -263,7 +263,7 @@
         <div class="modulo">
             <h2 id="logo-main"></h2>
             <div class="right">
-                <a href="#">Ir al sitio de Diálogos</a>
+                <a href="http://dialogos.redparalademocracia.cl">Ir al sitio de Diálogos</a>
                 <span>Conoce el proyecto de participación de <strong>RED</strong></span>
             </div>
             <div class="cf"></div>
@@ -301,7 +301,7 @@
             	<?php endforeach; restore_current_blog(); ?>
 
 
-            <a href="#" class="marco">Ver más de <strong>Diálogos Ciudadanos</strong> &#9656;</a>
+            <a href="http://dialogos.redparalademocracia.cl" class="marco">Ver más de <strong>Diálogos Ciudadanos</strong> &#9656;</a>
 
             <div class="cf"></div>
 
