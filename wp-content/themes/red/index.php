@@ -128,16 +128,34 @@
 				$post_destacado = new WP_Query($args);
 
 				if($post_destacado->have_posts()) : while($post_destacado->have_posts()): $post_destacado->the_post(); $ex_destacado[] = get_the_ID(); ?>
-
+					<?php
+						$colaboradores = get_field('colaboradores');
+			$fuente = get_field('fuente');
+					 ?>
 					<div class="card pic big">
-	                    <a class="img" href="#"><img class="tn" src="<?php bloginfo('template_url'); ?>/img/ideasproyectos-img.jpg"></a>
-	                    <div class="autor-pic">
-	                        <a href="#"><img src="<?php bloginfo('template_url'); ?>/img/autor1.jpg"></a>
-	                    </div>
+			    <a class="img" href="<?php the_permalink(); ?>"><?php the_post_thumbnail('medium'); ?></a>
+			    <?php if ($colaboradores): ?>
+							<div class="autor-pic">
+					<?php
+						if ( count($colaboradores) > 1): ?>
+						<!-- imagen varios autores -->
+									<a href="#"><img src="<?php bloginfo('template_url'); ?>/img/autor1.jpg"></a>
+								<?php elseif (count($colaboradores) == 1): ?>
+									<!-- imagen para un autor -->
+									<?php foreach ($colaboradores as $colaborador): ?>
+										<a href="<?php the_permalink(); ?>"><?php echo get_the_post_thumbnail( $colaborador, '130x130' ); ?></a>
+									<?php endforeach ?>
+
+					<?php endif ?>
+				    </div>
+						<?php endif ?>
 	                    <div class="texto">
 	                        <span class="fecha"><?php the_time('l j \d\e F Y'); ?></span>
-	                        <h2><a href="#"><?php the_title(); ?></a></h2>
-	                        <p><?php the_excerpt(); ?></p>
+				<h2><a href="<?php the_permalink(); ?>"><?php the_title(); ?></a></h2>
+
+					<p><?php the_excerpt(); ?></p>
+
+
 	                    </div>
 	                    <div class="tags">
 	                    	<?php $temas = get_the_terms(get_the_ID(), 'temas' ); ?>
@@ -169,13 +187,13 @@
                     ?>
 					<div class="card <?php echo (has_post_thumbnail()) ? 'pic' : 'nopic' ?> <?php echo (($i % 3 == 0) || ($i == 0)) ? 'third' : '' ?>">
 						<?php if (has_post_thumbnail()): ?>
-							<a class="img" href="<?php the_permalink(); ?>"><?php the_post_thumbnail('small'); ?></a>
+							<a class="img" href="<?php the_permalink(); ?>"><?php the_post_thumbnail('thumbnail'); ?></a>
 						<?php endif ?>
 						<?php if ($colaboradores): ?>
 							<div class="autor-pic">
 		                    	<?php if ( count($colaboradores) > 1): ?>
 		                    		<!-- imagen varios autores -->
-									<a href="#"><img src="<?php bloginfo('template_url'); ?>/img/autor1.jpg"></a>
+									<a href="#"><img src="http://placehold.it/90x90"></a>
 								<?php elseif (count($colaboradores) == 1): ?>
 									<!-- imagen para un autor -->
 									<?php foreach ($colaboradores as $colaborador): ?>
@@ -189,6 +207,10 @@
 	                    <div class="texto">
 	                        <span class="fecha"><?php the_time('l j \d\e F Y'); ?></span>
 	                        <h2><a href="#"><?php the_title(); ?></a></h2>
+							<?php if (!has_post_thumbnail()): ?>
+								<p><?php the_excerpt(); ?></p>
+							<?php endif ?>
+
 
 	                        <?php if ($colaboradores): ?>
 
