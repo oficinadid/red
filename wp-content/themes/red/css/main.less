@@ -320,7 +320,7 @@ footer {
 
 #content {
     padding:0 0 40px;
-    a.marco {
+    a.marco, a.nextpostslink {
         display:block;
         float:right;
         width:250px;
@@ -331,6 +331,7 @@ footer {
         text-align:center;
         padding:9px 0px;
     }
+
     .modulo {
         text-align:left;
         width:790px;
@@ -904,13 +905,18 @@ footer {
             }
         }
     }
+    .wp-pagenavi {
+    	.extend {
+    		display: none;
+    	}
+    }
 }
 
 .home {
     #ideasyproyectos {
         background:#e1e4e5;
         padding:0 0 50px;
-        a.marco {
+        a.marco, a.nextpostslink {
             margin:15px 0 0;
             color:@grey;
             border-color:@grey;
@@ -976,7 +982,7 @@ footer {
                     color:@teal;
                 }
             }
-            a.marco {
+            a.marco, a.nextpostslink {
                 color:@teal;
                 border-color:@teal;
             }
@@ -1366,7 +1372,7 @@ footer {
                 padding:40px 0 0;
             }
         }
-        a.marco {
+        a.marco, a.nextpostslink {
             width:210px;
         }
     }
@@ -1614,7 +1620,7 @@ footer {
     .stream {
         padding:40px 0;
     }
-    a.marco {
+    a.marco, a.nextpostslink {
         width:175px;
     }
 }
