@@ -78,6 +78,11 @@ $(document).ready(function() {
         $(this).toggleClass('on');
     });
 
+    $('#cortina').click(function() {
+        $(this).fadeToggle(150);
+        $('ul.autores').fadeToggle(150);
+    });
+
 });
 
 $(window).bind('scroll', function(){

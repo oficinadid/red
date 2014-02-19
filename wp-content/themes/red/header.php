@@ -17,8 +17,6 @@
 
     <body <?php body_class(); ?>>
 
-        <div id="cortina"></div>
-
         <a class="menuside-trigger"></a>
 
         <nav id="side" class="panel" role="navigation">
@@ -126,17 +124,16 @@
 
         </header>
 
-         <?php if (wpmd_is_notdevice()): ?>
-
-            <!-- AddThis Button BEGIN -->
-<div class="addthis_toolbox addthis_floating_style addthis_32x32_style" style="left:50px;top:50px;">
-<a class="addthis_button_facebook"></a>
-<a class="addthis_button_email"></a>
-<a class="addthis_button_twitter"></a>
-<a class="addthis_button_print"></a>
-<a class="addthis_button_compact"></a>
-</div>
-<script type="text/javascript" src="http://s7.addthis.com/js/300/addthis_widget.js"></script>
-<!-- AddThis Button END -->
-
-        <?php else: endif ?>
+<!-- AddThis Smart Layers BEGIN -->
+<!-- Go to http://www.addthis.com/get/smart-layers to customize -->
+<script type="text/javascript" src="http://s7.addthis.com/js/300/addthis_widget.js#pubid=ra-5305138424d52b79"></script>
+<script type="text/javascript">
+  addthis.layers({
+    'theme' : 'transparent',
+    'share' : {
+      'position' : 'left',
+      'numPreferredServices' : 4
+    }   
+  });
+</script>
+<!-- AddThis Smart Layers END -->
