@@ -60,7 +60,7 @@ $(document).ready(function() {
     $('#iyp .filtros .lista a').click(function() {
         $(this).toggleClass('on');
     });
-	
+
 });
 
 $(window).bind('scroll', function(){
