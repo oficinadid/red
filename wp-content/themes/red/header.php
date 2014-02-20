@@ -66,17 +66,17 @@
 
             <div id="menu-mobile">
                 <ul>
-                    <li><a href="#">Home</a></li>
-                    <li><a href="#">About</a></li>
-                    <li><a href="#">Colaboradores</a></li>
-                    <li><a href="#">Ideas y Proyectos</a></li>
+                    <li><a href="<?php bloginfo('wpurl'); ?>">Home</a></li>
+                    <li><a href="<?php bloginfo('wpurl'); ?>/about/">About</a></li>
+                    <li><a href="<?php bloginfo('wpurl'); ?>/colaboradores/">Colaboradores</a></li>
+                    <li><a href="<?php bloginfo('wpurl'); ?>/ideas-y-proyectos/">Ideas y Proyectos</a></li>
                 </ul>
             </div>
 
             <div id="searchbox">
                 <div class="wrap">
-                    <form>
-                        <input type="text" id="field">
+                    <form action="<?php bloginfo('url'); ?>" method="get">
+                        <input type="text" id="field" name="s">
                     </form>
                 </div>
             </div>
@@ -85,9 +85,8 @@
 
         <header>
 
-            <?php if (is_home()) { ?>
-
-                <h1 id="logo-main"></h1>
+			<?php if (is_home()): ?>
+				<h1 id="logo-main"></h1>
 
                 <div class="wrap">
                     <div class="sep"></div>
@@ -98,9 +97,8 @@
 
                 </div>
 
-            <?php } else if (is_404()) { ?>
-
-                <div class="wrap">
+			<?php elseif (is_404()): ?>
+				<div class="wrap">
                     <h1>Lo sentimos; esta página no está disponible</h1>
                     <p>Es posible que el enlace que seguiste esté roto o se haya eliminado la página.</p>
 
@@ -109,7 +107,10 @@
 
                 </div>
 
-            <?php } else {} ?>
+			<?php else: ?>
+
+			<?php endif ?>
+
 
             <div id="header-shadow"></div>
 
