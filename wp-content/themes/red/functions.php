@@ -125,3 +125,12 @@ function custom_infinite_scroll_js() {
 	<?php
 }
 add_action( 'wp_footer', 'custom_infinite_scroll_js',100 );
+
+// modificamos resultados de búsqueda
+add_filter( 'pre_get_posts', 'modified_pre_get_posts' );
+function modified_pre_get_posts( $query ) {
+  if ( $query->is_search() ) {
+    $query->set( 'post_type', array( 'post' ) ); // should be a number; you have to replace that text with the actual ID
+  }
+  return $query;
+}
