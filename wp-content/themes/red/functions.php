@@ -112,13 +112,13 @@ function custom_infinite_scroll_js() {
 			speed: "fast"
 		},
 
-		"debug" : true,
+		// "debug" : true,
 		"bufferPx" : 5,
 		"behavior" : "twitter",
 		"nextSelector":"a.nextpostslink",
 		"navSelector":".wp-pagenavi",
-		"itemSelector":"li.post",
-		"contentSelector":"ul.post-list"
+		"itemSelector":".infscr-item",
+		"contentSelector":".infscr-content"
 	};
 	jQuery( infinite_scroll.contentSelector ).infinitescroll( infinite_scroll );
 	</script>
