@@ -42,7 +42,7 @@ $paged = (get_query_var('paged')) ? get_query_var('paged') : 1;
                 <div class="cf"></div>
             </div>
         </div>
-        <ul class="lista full picright post-list">
+        <ul class="lista full picright infscr-content">
         	<?php
         	$args = array(
         		'post_type' => 'post',
@@ -53,7 +53,7 @@ $paged = (get_query_var('paged')) ? get_query_var('paged') : 1;
 
         	if($iyp->have_posts()) : while($iyp->have_posts()): $iyp->the_post(); ?>
         		<?php $colaboradores = get_field('colaboradores'); ?>
-        		 <li class="post">
+        		 <li class="post infscr-item">
 	                <div class="pic">
 	                	<?php
 	                	// d($colaboradores);
