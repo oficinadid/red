@@ -17,20 +17,33 @@
     .wrap {
         width:768px;
     }
-    #toplayer menu#main {
-        a.logo {
-            margin:7px 0 0 20px;
-        }
-        ul {
-            &.nav {
-                li {
-                    a {
-                        margin:0 20px;
+    #toplayer {
+        menu#main {
+            a.logo {
+                margin:7px 0 0 20px;
+            }
+            ul {
+                &.nav {
+                    li {
+                        a {
+                            margin:0 20px;
+                        }
                     }
                 }
+                &.aux {
+                    float:left;
+                }
             }
-            &.aux {
-                float:left;
+        }
+        #searchbox {
+            top:40px;
+            form {
+                padding:5px;
+                input#field {
+                    padding:2px;
+                    width:310px;
+                    font-size:36px;
+                }
             }
         }
     }
