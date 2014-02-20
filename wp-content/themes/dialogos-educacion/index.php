@@ -5,124 +5,102 @@
     <div id="about" class="modulo first">
         <h2>Buscamos generar las bases ideológicas y político-prácticas que permita transformar Chile en una sociedad más justa, igualitaria y democrática.</h2>
     </div>
-    
+
     <div id="participacion" class="modulo">
         <h3>Participación de <strong>Diálogos Ciudadanos</strong></h3>
-        <h2>¿Pregunta o reflexión a contestar en Diálogos, responder en formulario ...?</h2>
-        <p>Está enfrentando y enfrentará en los próximos años. RED es un proyecto para pensar en el tipo de país y desarrollo que queremos y así transformar Chile en una sociedad más justa, igualitaria y democrática. Económicas que Chile está enfrentando y enfrentará en los próximos años.</p>
-        <form>
-            <input id="nombre" type="text" placeholder="| Nombre">
-            <input id="mail" type="text" placeholder="| Email">
-            <textarea placeholder="| Respuesta"></textarea>
-            <input id="submit" type="button" value="Danos tu Respuesta">
-        </form>
+        <?php
+        $args = array(
+        	'post_type' => 'preguntas',
+        	'posts_per_page' => 1,
+        	'no_found_rows' => true
+        );
+        $pregunta = new WP_Query($args);
+
+        if($pregunta->have_posts()) : while($pregunta->have_posts()): $pregunta->the_post(); ?>
+
+	        <h2><?php the_title(); ?></h2>
+	        <?php the_content(); ?>
+
+        <?php endwhile;
+        wp_reset_postdata();
+        endif; ?>
+
     </div>
 
     <div id="noticias" class="modulo">
         <div class="stream">
 
             <h3>Noticias de <strong>Diálogos Ciudadanos</strong></h3>
+			<?php
+			$args = array(
+				'posts_per_page' => '5',
+				'post_type' => 'post',
+				'category_name' => 'noticias'
+			);
+			$noticias = new WP_Query($args);
 
-            <div class="post">
-                <div class="top">
-                    <h2 class="title"><a href="#">Nueva versión disponible del Barómetro de Política y Equidad.</a></h2>
-                    <div class="meta">Diciembre 12, 2013 en categoría <a href="#">Noticias</a> fuente <a href="#">Gonzalo Durán</a>.</div>
-                </div>
-                <div class="texto">
-                    <p>Chile está enfrentando y enfrentará en los próximos años. RED es un proyecto para pensar en el tipo de país y desarrollo que queremos y así transformar. RED es un proyecto para pensar en el tipo de país y desarrollo que queremos y así transformar Chile en una sociedad más justa, igualitaria y democrática.</p>
-                </div>
-            </div>
+			if($noticias->have_posts()) : while($noticias->have_posts()): $noticias->the_post(); ?>
+				<div class="post">
+	                <div class="top">
+	                    <h2 class="title"><a href="#"><?php the_title(); ?></a></h2>
+	                    <div class="meta">Diciembre 12, 2013 en categoría <a href="#">Noticias</a> por <a href="#">Gonzalo Durán</a>.</div>
+	                </div>
+	                <div class="texto">
+	                    <p>Chile está enfrentando y enfrentará en los próximos años. RED es un proyecto para pensar en el tipo de país y desarrollo que queremos y así transformar. RED es un proyecto para pensar en el tipo de país y desarrollo que queremos y así transformar Chile en una sociedad más justa, igualitaria y democrática.</p>
+	                </div>
+	            </div>
 
-            <div class="cf"></div>
+	            <div class="cf"></div>
 
-            <div class="post">
-                <div class="top">
-                    <h2 class="title"><a href="#">Nueva versión disponible del Barómetro de Política y Equidad.</a></h2>
-                    <div class="meta">Diciembre 12, 2013 en categoría <a href="#">Noticias</a> fuente <a href="#">Gonzalo Durán</a>.</div>
-                </div>
-                <div class="texto">
-                    <p>Chile está enfrentando y enfrentará en los próximos años. RED es un proyecto para pensar en el tipo de país y desarrollo que queremos y así transformar. RED es un proyecto para pensar en el tipo de país y desarrollo que queremos y así transformar Chile en una sociedad más justa, igualitaria y democrática.</p>
-                </div>
-            </div>
+			<?php endwhile;
+			wp_reset_postdata();
+			endif; ?>
 
-            <div class="cf"></div>
-
-            <div class="post">
-                <div class="top">
-                    <h2 class="title"><a href="#">Nueva versión disponible del Barómetro de Política y Equidad.</a></h2>
-                    <div class="meta">Diciembre 12, 2013 en categoría <a href="#">Noticias</a> fuente <a href="#">Gonzalo Durán</a>.</div>
-                </div>
-                <div class="texto">
-                    <p>Chile está enfrentando y enfrentará en los próximos años. RED es un proyecto para pensar en el tipo de país y desarrollo que queremos y así transformar. RED es un proyecto para pensar en el tipo de país y desarrollo que queremos y así transformar Chile en una sociedad más justa, igualitaria y democrática.</p>
-                </div>
-            </div>
-            
             <a href="#" class="marco">Ver más <strong>Noticias</strong> &#9662;</a>
 
             <div class="cf"></div>
-            
+
         </div>
     </div>
 
     <div id="documentos" class="banda">
-        <div class="modulo">  
+        <div class="modulo">
             <h3>Documentos de <strong>Diálogos Ciudadanos</strong></h3>
 
             <div class="mosaico">
 
-                <div class="card pic">
-                    <a class="img" href="#"><img class="tn" src="<?php bloginfo('template_url'); ?>/img/ideasproyectos-img.jpg"></a>
-                    <div class="texto">
-                        <span class="fecha">Domingo 20 de Enero 2014</span>
-                        <h2><a href="#">Barómetro de Política y Equidad.</a></h2>
-                        <span class="autor">Por <a href="#">Guillermo Durán</a></span>
-                    </div>
-                </div>
+				<?php
+				$args = array(
+					'posts_per_page' => '6',
+					'post_type' => 'post',
+					'category_name' => 'documentos'
+				);
+				$documentos = new WP_Query($args);
+				$i = 1;
+				if($documentos->have_posts()) : while($documentos->have_posts()): $documentos->the_post(); ?>
 
-                <div class="card nopic">
-                    <div class="texto">
-                        <span class="fecha">Domingo 20 de Enero 2014</span>
-                        <h2><a href="#">Barómetro de Política y Equidad.</a></h2>
-                        <p>Chile está enfrentando y enfrentará en los próximos años. RED es un proyecto para pensar en el tipo de país y desarrollo que queremos y así transformar.</p>
-                        <span class="autor">Por <a href="#">Guillermo Durán</a></span>
-                    </div>
-                </div>
+					<div class="card <?php echo (has_post_thumbnail()) ? '' : 'no'; ?>pic <?php echo ($i%3 == 0) ? 'third' : ''; ?>">
+						<?php if (has_post_thumbnail()): ?>
+							<a class="img" href="<?php the_permalink(); ?>">
+		                    	<?php the_post_thumbnail('thumbnail'); ?>
+		                    </a>
 
-                <div class="card nopic third">
-                    <div class="texto">
-                        <span class="fecha">Domingo 20 de Enero 2014</span>
-                        <h2><a href="#">Barómetro de Política y Equidad.</a></h2>
-                        <p>Chile está enfrentando y enfrentará en los próximos años. RED es un proyecto para pensar en el tipo de país y desarrollo que queremos y así transformar.</p>
-                        <span class="autor">Por <a href="#">Guillermo Durán</a></span>
-                    </div>
-                </div>
+						<?php endif ?>
 
-                <div class="card nopic">
-                    <div class="texto">
-                        <span class="fecha">Domingo 20 de Enero 2014</span>
-                        <h2><a href="#">Barómetro de Política y Equidad.</a></h2>
-                        <p>Chile está enfrentando y enfrentará en los próximos años. RED es un proyecto para pensar en el tipo de país y desarrollo que queremos y así transformar.</p>
-                        <span class="autor">Por <a href="#">Guillermo Durán</a></span>
-                    </div>
-                </div>
+	                    <div class="texto">
+	                        <span class="fecha">Domingo 20 de Enero 2014</span>
+	                        <h2><a href="#"><?php the_title(); ?></a></h2>
+	                        <?php if (!has_post_thumbnail()): ?>
+	                        	<p>Chile está enfrentando y enfrentará en los próximos años. RED es un proyecto para pensar en el tipo de país y desarrollo que queremos y así transformar.</p>
+	                        <?php endif ?>
+	                        <span class="autor">Por <a href="#"><?php the_field('autor') ?></a></span>
+	                    </div>
+	                </div>
 
-                <div class="card pic">
-                    <a class="img" href="#"><img class="tn" src="<?php bloginfo('template_url'); ?>/img/ideasproyectos-img.jpg"></a>
-                    <div class="texto">
-                        <span class="fecha">Domingo 20 de Enero 2014</span>
-                        <h2><a href="#">Barómetro de Política y Equidad.</a></h2>
-                        <span class="autor">Por <a href="#">Guillermo Durán</a></span>
-                    </div>
-                </div>
+				<?php $i++; endwhile;
+				wp_reset_postdata();
+				endif; ?>
 
-                <div class="card nopic third">
-                    <div class="texto">
-                        <span class="fecha">Domingo 20 de Enero 2014</span>
-                        <h2><a href="#">Barómetro de Política y Equidad.</a></h2>
-                        <p>Chile está enfrentando y enfrentará en los próximos años. RED es un proyecto para pensar en el tipo de país y desarrollo que queremos y así transformar.</p>
-                        <span class="autor">Por <a href="#">Guillermo Durán</a></span>
-                    </div>
-                </div>
 
             </div>
 

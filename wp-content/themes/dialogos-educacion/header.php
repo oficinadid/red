@@ -10,8 +10,7 @@
         <link rel="stylesheet" href="<?php bloginfo('template_url'); ?>/css/main.css">
         <link href='http://fonts.googleapis.com/css?family=Pathway+Gothic+One' rel='stylesheet' type='text/css'>
 
-        <script src="http://code.jquery.com/jquery-1.10.2.min.js"></script>
-        <script src="<?php bloginfo('template_url'); ?>/js/main.js"></script>
+		<?php wp_head(); ?>
 
     </head>
 
@@ -47,7 +46,7 @@
         </nav>
 
         <div id="toplayer">
-            
+
             <menu id="main">
                 <div class="wrap">
 
@@ -81,17 +80,21 @@
                 <div class="wrap">
 
                     <h2 id="logo-dc"><a href="<?php bloginfo('wpurl'); ?>"></a></h2>
-                    
+
                     <ul class="nav">
                         <li><a href="#about">About</a></li>
-                        <li><a href="#participacion">Participación</a></li>
-                        <li><a href="#noticias">Noticias</a></li>
-                        <li><a href="#documentos">Documentos</a></li>
+                        <li><a href="#participacion" class="scroll-to">Participación</a></li>
+                        <li><a href="#noticias" class="scroll-to">Noticias</a></li>
+                        <li><a href="#documentos" class="scroll-to">Documentos</a></li>
                     </ul>
 
                     <div class="search">
-                        <input id="query" type="text" placeholder="| Búsqueda en Diálogos... ">
-                        <input id="button" type="submit" value="">
+                    	<form action="<?php bloginfo('url'); ?>" method="get">
+                        	<input type="text" id="query" name="s" placeholder="| Búsqueda en Diálogos... ">
+                        	<input id="button" type="submit" value="">
+                    	</form>
+
+
                     </div>
 
                     <div class="cf"></div>
