@@ -57,8 +57,8 @@
 
             <div id="searchbox">
                 <div class="wrap">
-                    <form>
-                        <input type="text" id="field">
+                    <form action="http://redparalademocracia.cl" method="get">
+                        <input type="text" id="field" name="s">
                     </form>
                 </div>
             </div>
