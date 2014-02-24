@@ -113,11 +113,3 @@
             <div id="header-shadow"></div>
 
         </header>
-
-         <?php if (wpmd_is_notdevice()): ?>
-
-            <!-- AddThis Button BEGIN -->
-
-			<!-- AddThis Button END -->
-
-        <?php else: endif ?>

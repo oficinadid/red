@@ -30,10 +30,11 @@
 	<script type="text/javascript">
 		addthis.layers({
 		'theme' : 'transparent',
+		'thankyou' : 'false',
 		'share' : {
-		'position' : 'left',
-		'numPreferredServices' : 5
-		}
+			'position' : 'left',
+			'numPreferredServices' : 5
+		},
 	});
 	</script>
 	<!-- AddThis Smart Layers END -->
