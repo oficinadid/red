@@ -30,9 +30,10 @@ if ($lista_temas) {
         		<?php $i++; endforeach ?></h3>
         	<?php endif ?>
 
+			<div class="infscr-content">
 			<?php if ( have_posts() ) : while ( have_posts() ) : the_post(); ?>
 				<?php $colaboradores = get_field('colaboradores'); ?>
-				<div class="post">
+				<div class="post infscr-item">
 	                <div class="top">
 	                    <h2 class="title"><a href="<?php the_permalink(); ?>"><?php the_title(); ?></a></h2>
 	                    <div class="meta"><?php the_time('F j, Y'); ?> por
@@ -64,6 +65,7 @@ if ($lista_temas) {
 			<?php endwhile; ?>
 			<?php else: ?>
 			<?php endif; ?>
+			</div>
 
 
             <?php wp_pagenavi() ?>
