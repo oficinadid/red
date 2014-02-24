@@ -6,9 +6,18 @@
         <h3><strong>Directorio</strong> RED</h3>
         <ul class="lista full">
         <?php
+        	$terms = get_terms('temas');
+
+			function terminos($t) {
+				return $t->term_id;
+			}
+			// obtenemos las ids de los temas
+			$term_ids = array_map("terminos", $terms);
+			// posts pertenecientes a los temas señalados, de los colaboradores
+
 			$args = array(
 				'no_found_rows' => true,
-	        	'post_type' => 'colaboradores',
+	        	'post_type' => 'guest-author',
 	        	'meta_query' => array(
 			       array(
 			           'key' => 'directorio',
@@ -17,54 +26,46 @@
 			       )
 			   )
 	        );
-        $directorio = new WP_Query($args);
+        $coautores = get_posts( $args ); ?>
 
-        if($directorio->have_posts()) : while($directorio->have_posts()): $directorio->the_post(); $exposts[] = get_the_ID(); ?>
-
-        <?php
-        	// posts colaboradores
+        <?php foreach ($coautores as $coautor): ?>
+        	<?php $exposts[] = $coautor->ID ?>
+        	<?php
+        	// posts coautores
+        	$user_login = get_post_meta($coautor->ID, 'cap-user_login', true );
         	$c_posts =
     			get_posts(
 					array (
 						'post_type'		=> 'post',
-						'meta_query'	=> array (
-							array (
-								'key' => 'colaboradores',
-								'value' => '"' . get_the_ID() . '"',
-								'compare' => 'LIKE'
-							)
-						)
+						'author_name' => $user_login
 				));
-         ?>
+        	?>
         	<li>
                 <div class="pic">
-                    <a href="<?php the_permalink(); ?>"><?php the_post_thumbnail('130x130'); ?></a>
+                    <a href="<?php echo bloginfo('wpurl'); ?>/?author_name=<?php echo get_post_meta($coautor->ID, 'cap-user_login', true); ?>"><?php echo get_the_post_thumbnail($coautor->ID, '130x130'); ?></a>
                 </div>
                 <div class="datos">
-                    <h5><a href="<?php the_permalink(); ?>"><?php the_title(); ?></a></h5>
-                    <h6><?php the_field('about') ?></h6>
+                    <h5><a href="<?php echo bloginfo('wpurl'); ?>/?author_name=<?php echo get_post_meta($coautor->ID, 'cap-user_login', true); ?>"><?php echo $coautor->post_title; ?></a></h5>
+                    <h6><?php the_field('about', $coautor->ID) ?></h6>
                     <div class="tags">
-                    	<?php  $terms = get_terms('temas'); foreach ($terms as $t): ?>
-	                    	<?php
-	                    		$posts_in_term = array_filter($c_posts, function($p) use ($t) {
-	                    			return has_term($t->term_id, 'temas', $p);
-	                    		}); ?>
+                    	<?php foreach ($terms as $t): ?>
+                    	<?php
+                    		$posts_in_term = array_filter($c_posts, function($p) use ($t) {
+                    			return has_term($t->term_id, 'temas', $p);
+                    		}); ?>
 
                     		<?php if ($posts_in_term): ?>
                     			<a class="<?php echo $t->slug ?>" href="<?php echo get_term_link( $t, 'temas' ) ?>"><?php echo $t->name ?></a>
 
                     		<?php endif ?>
 
-	                    <?php endforeach ?>
+                    <?php endforeach ?>
 
                     </div>
                 </div>
-                <a href="<?php the_permalink(); ?>" class="mas">Ver más...</a>
+                <a href="<?php echo bloginfo('wpurl'); ?>/?author_name=<?php echo get_post_meta($coautor->ID, 'cap-user_login', true); ?>" class="mas">Ver más...</a>
             </li>
-
-        <?php endwhile;
-        wp_reset_postdata();
-        endif; ?>
+        <?php endforeach ?>
 
         </ul>
     </div>
@@ -75,19 +76,21 @@
         <?php
         $args = array(
         		'no_found_rows' => true,
-        		'post_type' => 'colaboradores',
+        		'post_type' => 'guest-author',
         		'posts_per_page' => 8,
+        		'no_found_rows' => true,
         		'post__not_in' => $exposts
         	);
         $colaboradores = new WP_Query($args);
 
         if($colaboradores->have_posts()) : while($colaboradores->have_posts()): $colaboradores->the_post(); ?>
+
         	<li>
                 <div class="pic">
                     <a href="<?php the_permalink(); ?>"><?php the_post_thumbnail('130x130'); ?></a>
                 </div>
                 <div class="datos">
-                    <h5><a href="<?php the_permalink(); ?>"><?php the_title(); ?></a></h5>
+                    <h5><a href="<?php echo bloginfo('wpurl'); ?>/?author_name=<?php echo get_post_meta(get_the_ID(), 'cap-user_login', true); ?>"><?php the_title(); ?></a></h5>
                     <h6><?php the_field('about') ?></h6>
                 </div>
             </li>
@@ -105,18 +108,6 @@
             <h3><strong>Ideas y Proyectos</strong></h3>
 
             <div class="mosaico">
-
-            <?php
-            	// $args = array(
-            	// 	'post_type' => 'post',
-            	// 	'posts_per_page' => 1,
-            	// 	'no_found_rows' => true,
-            	// 	'meta_key' => 'es_destacado',
-            	// 	'meta_value' => true,
-            	// 	'fields' => 'ids'
-            	// 	);
-            	// $destacados = get_posts( $args );
-            ?>
 				<?php
 				$args = array(
             		'post_type' => 'post',
@@ -129,38 +120,40 @@
 
 				if($post_destacado->have_posts()) : while($post_destacado->have_posts()): $post_destacado->the_post(); $ex_destacado[] = get_the_ID(); ?>
 					<?php
-						$colaboradores = get_field('colaboradores');
+						$coautores = get_coauthors();
 						$fuente = get_field('fuente');
 					 ?>
-					<div class="card pic big">
-			    <a class="img" href="<?php the_permalink(); ?>"><?php the_post_thumbnail('medium'); ?></a>
-			    <?php if ($colaboradores): ?>
-							<div class="autor-pic">
-					<?php
-						if ( count($colaboradores) > 1): ?>
-						<!-- imagen varios autores -->
-							<a href="#"><img src="<?php bloginfo('template_url'); ?>/img/autor1.jpg"></a>
-						<?php elseif (count($colaboradores) == 1): ?>
-							<!-- imagen para un autor -->
-							<?php foreach ($colaboradores as $colaborador): ?>
-								<a href="<?php the_permalink(); ?>"><?php echo get_the_post_thumbnail( $colaborador, '130x130' ); ?></a>
-							<?php endforeach ?>
 
-						<?php endif ?>
-				    </div>
-						<?php endif ?>
+					 <?php foreach ($coautores as $coautor): ?>
+
+					 <?php endforeach ?>
+					<div class="card pic big">
+			    		<a class="img" href="<?php the_permalink(); ?>"><?php the_post_thumbnail('medium'); ?></a>
+
+			    		<?php if (!$fuente): ?>
+			    			<?php if ($coautores): ?>
+								<div class="autor-pic">
+									<?php if ( count($coautores) > 1): ?>
+										<!-- imagen varios autores -->
+										<a href="#"><img src="<?php bloginfo('template_url'); ?>/img/autor1.jpg"></a>
+									<?php elseif (count($coautores) == 1): ?>
+										<!-- imagen para un autor -->
+										<a href="<?php echo bloginfo('wpurl'); ?>/?author_name=<?php echo get_post_meta($coautores[0]->ID, 'cap-user_login', true); ?>"><?php echo get_the_post_thumbnail($coautores[0]->ID, '130x130' ); ?></a>
+
+									<?php endif ?>
+					    		</div>
+							<?php endif ?>
+			    		<?php endif ?>
+
 	                    <div class="texto">
 	                        <span class="fecha"><?php the_time('l j \d\e F Y'); ?></span>
-				<h2><a href="<?php the_permalink(); ?>"><?php the_title(); ?></a></h2>
-
-					<p><?php the_excerpt(); ?></p>
-
-
+							<h2><a href="<?php the_permalink(); ?>"><?php the_title(); ?></a></h2>
+							<p><?php the_excerpt(); ?></p>
 	                    </div>
 	                    <div class="tags">
 	                    	<?php $temas = get_the_terms(get_the_ID(), 'temas' ); ?>
 	                    	<?php foreach ($temas as $tema): ?>
-	                    		<a class="<?php echo $tema->slug ?>" href="<?php echo get_term_link( $t, 'temas' ) ?>"><?php echo $tema->name ?></a>
+	                    		<a class="<?php echo $tema->slug ?>" href="<?php echo get_term_link( $tema->term_id, 'temas' ) ?>"><?php echo $tema->name ?></a>
 	                    	<?php endforeach ?>
 
 	                    </div>
@@ -182,26 +175,30 @@
 				if($lista_posts->have_posts()) : while($lista_posts->have_posts()): $lista_posts->the_post(); ?>
 
 					<?php
-                    	$colaboradores = get_field('colaboradores');
+						$coautores = get_coauthors();
+
                     	$fuente = get_field('fuente');
+
                     ?>
 					<div class="card <?php echo (has_post_thumbnail()) ? 'pic' : 'nopic' ?> <?php echo (($i % 3 == 0) || ($i == 0)) ? 'third' : '' ?>">
 						<?php if (has_post_thumbnail()): ?>
 							<a class="img" href="<?php the_permalink(); ?>"><?php the_post_thumbnail('thumbnail'); ?></a>
 						<?php endif ?>
-						<?php if ($colaboradores): ?>
-							<div class="autor-pic">
-		                    	<?php if ( count($colaboradores) > 1): ?>
-		                    		<!-- imagen varios autores -->
-									<a href="#"><img src="http://placehold.it/90x90"></a>
-								<?php elseif (count($colaboradores) == 1): ?>
-									<!-- imagen para un autor -->
-									<?php foreach ($colaboradores as $colaborador): ?>
-										<a href="#"><?php echo get_the_post_thumbnail( $colaborador, '130x130' ); ?></a>
-									<?php endforeach ?>
+						<?php if (!$fuente): ?>
+							<?php if ($coautores): ?>
+								<div class="autor-pic">
+			                    	<?php if ( count($coautores) > 1): ?>
+			                    		<!-- imagen varios autores -->
+										<a href="#"><img src="http://placehold.it/90x90"></a>
+									<?php elseif (count($coautores) == 1): ?>
+										<!-- imagen para un autor -->
 
-		                    	<?php endif ?>
-		                    </div>
+											<a href="#"><?php echo get_the_post_thumbnail( $coautores[0]->ID, '130x130' ); ?></a>
+
+
+			                    	<?php endif ?>
+			                    </div>
+							<?php endif ?>
 						<?php endif ?>
 
 	                    <div class="texto">
@@ -211,20 +208,7 @@
 								<p><?php the_excerpt(); ?></p>
 							<?php endif ?>
 
-
-	                        <?php if ($colaboradores): ?>
-
-	                        	<?php if (count($colaboradores) > 1): ?>
-	                        		<span class="autor">Por: Varios Autores</span>
-	                        	<?php else: ?>
-	                        		<?php foreach ($colaboradores as $colaborador): ?>
-	                        			<span class="autor">Por: <a href="<?php echo get_permalink($colaborador); ?>"><?php echo get_the_title($colaborador); ?></a></span>
-	                        		<?php endforeach ?>
-	                        	<?php endif ?>
-
-
-	                        <?php elseif ($fuente): ?>
-
+	                        <?php if ($fuente): ?>
 	                        	<span class="autor">Fuente:
 		                        	<?php if (get_field('url_fuente')): ?>
 		                        		<a href="<?php the_field('url_fuente') ?>"><?php the_field('fuente') ?></a>
@@ -233,15 +217,24 @@
 		                        	<?php endif ?>
 
 	                        	</span>
+
+	                        <?php else: ?>
+	                        	<?php if (count($coautores) > 1): ?>
+	                        		<span class="autor">Por: Varios Autores</span>
+	                        	<?php else: ?>
+	                        			<span class="autor">Por: <a href="<?php echo get_permalink($coautores[0]->ID); ?>"><?php echo get_the_title($coautores[0]->ID); ?></a></span>
+
+	                        	<?php endif ?>
+
 	                        <?php endif ?>
 
 	                    </div>
+
 	                    <div class="tags">
 	                    	<?php $temas = get_the_terms(get_the_ID(), 'temas' ); ?>
 	                    	<?php foreach ($temas as $tema): ?>
-	                    		<a class="<?php echo $tema->slug ?>" href="<?php echo get_term_link( $t, 'temas' ) ?>"><?php echo $tema->name ?></a>
+	                    		<a class="<?php echo $tema->slug ?>" href="<?php echo get_term_link( $tema->term_id, 'temas' ) ?>"><?php echo $tema->name ?></a>
 	                    	<?php endforeach ?>
-
 	                    </div>
 	                </div>
 
@@ -309,7 +302,7 @@
         <div id="participacion">
             <h3>Participación de <strong>Diálogos Ciudadanos</strong></h3>
             <h1>¿Pregunta en Diálogos ...disponible del Barómetro de Política y Equidad?</h1>
-            <a href="#" class="respuesta">Danos tu respuesta</a>
+            <a href="http://dialogos.redparalademocracia.cl" class="respuesta">Danos tu respuesta</a>
         </div>
     </div>
 
