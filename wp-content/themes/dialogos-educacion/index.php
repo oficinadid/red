@@ -42,11 +42,11 @@
 			if($noticias->have_posts()) : while($noticias->have_posts()): $noticias->the_post(); ?>
 				<div class="post">
 	                <div class="top">
-	                    <h2 class="title"><a href="#"><?php the_title(); ?></a></h2>
-	                    <div class="meta">Diciembre 12, 2013 en categoría <a href="#">Noticias</a> por <a href="#">Gonzalo Durán</a>.</div>
+	                    <h2 class="title"><a href="<?php the_permalink(); ?>"><?php the_title(); ?></a></h2>
+	                    <div class="meta"><?php echo get_the_time('F j, Y', get_the_ID()); ?> en categoría <?php the_category(', '); ?> <?php echo (get_field('autor')) ? 'por <strong>'.get_field("autor").'</strong>' : '';?>.</div>
 	                </div>
 	                <div class="texto">
-	                    <p>Chile está enfrentando y enfrentará en los próximos años. RED es un proyecto para pensar en el tipo de país y desarrollo que queremos y así transformar. RED es un proyecto para pensar en el tipo de país y desarrollo que queremos y así transformar Chile en una sociedad más justa, igualitaria y democrática.</p>
+	                    <p><?php the_excerpt(); ?></p>
 	                </div>
 	            </div>
 
@@ -56,7 +56,7 @@
 			wp_reset_postdata();
 			endif; ?>
 
-            <a href="#" class="marco">Ver más <strong>Noticias</strong> &#9662;</a>
+            <a href="<?php echo esc_url(get_category_link( 1 )); ?>" class="marco">Ver más <strong>Noticias</strong> &#9662;</a>
 
             <div class="cf"></div>
 
@@ -89,11 +89,11 @@
 
 	                    <div class="texto">
 	                        <span class="fecha">Domingo 20 de Enero 2014</span>
-	                        <h2><a href="#"><?php the_title(); ?></a></h2>
+	                        <h2><a href="<?php the_permalink(); ?>"><?php the_title(); ?></a></h2>
 	                        <?php if (!has_post_thumbnail()): ?>
-	                        	<p>Chile está enfrentando y enfrentará en los próximos años. RED es un proyecto para pensar en el tipo de país y desarrollo que queremos y así transformar.</p>
+	                        	<p><?php the_excerpt(); ?></p>
 	                        <?php endif ?>
-	                        <span class="autor">Por <a href="#"><?php the_field('autor') ?></a></span>
+	                        <span class="autor"><?php echo (get_field('autor')) ? 'por <strong>'.get_field("autor").'</strong>' : '';?></span>
 	                    </div>
 	                </div>
 
@@ -106,7 +106,7 @@
 
             <div class="cf"></div>
 
-            <a href="#" class="marco">Ver más <strong>Documentos</strong> &#9662;</a>
+            <a href="<?php echo esc_url(get_category_link( 2 )); ?>" class="marco">Ver más <strong>Documentos</strong> &#9662;</a>
 
             <div class="cf"></div>
 
