@@ -14,6 +14,7 @@ $paged = (get_query_var('paged')) ? get_query_var('paged') : 1;
         <div class="filtros">
             <h6>Filtros por temas</h6>
             <ul class="lista">
+
                 <li><a>Todos los temas</a></li>
                 <li><a>Educación</a></li>
                 <li><a>Constitución y Reformas Políticas</a></li>
@@ -42,6 +43,7 @@ $paged = (get_query_var('paged')) ? get_query_var('paged') : 1;
                 <div class="cf"></div>
             </div>
         </div>
+        <?php echo do_shortcode( '[searchandfilter fields="temas" types="checkbox" hide_empty="0" post_types="post" class="filtros" submit_label="Iniciar búsqueda por filtro" operators="or"]' ); ?>
         <ul class="lista full picright infscr-content">
         	<?php
         	$args = array(
