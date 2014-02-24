@@ -1,4 +1,16 @@
-<?php get_header(); ?>
+<?php
+get_header();
+$lista_temas = get_queried_object()->slug;
+var_dump($lista_temas);
+if (isset($_GET['temas'])) {
+	$lista_temas = $_GET['temas'];
+}
+
+if ($lista_temas) {
+	$searchTemas = explode(',', $lista_temas);
+	var_dump($searchTemas);
+}
+?>
 
 <div id="content" class="search-results">
 
@@ -6,7 +18,17 @@
 
         <div id="posts-relacionados">
 
-            <h3>Tema: <strong><?php echo get_queried_object()->name; ?></strong></h3>
+
+
+        	<?php if (count($searchTemas) == 1): ?>
+        		<h3>Tema: <strong><?php echo get_queried_object()->name; ?></strong></h3>
+        	<?php else: ?>
+        		<h3>Temas:
+        		<?php $i=0; foreach ($searchTemas as $s): ?>
+        			<?php $t = get_term_by( 'slug', $s, 'temas'); ?>
+        			<strong><?php echo ($i == 0)? '' : ', ' ?><?php echo $t->name; ?></strong>
+        		<?php $i++; endforeach ?></h3>
+        	<?php endif ?>
 
 			<?php if ( have_posts() ) : while ( have_posts() ) : the_post(); ?>
 				<?php $colaboradores = get_field('colaboradores'); ?>
