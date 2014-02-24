@@ -11,11 +11,11 @@
 
         <link rel="stylesheet" href="<?php bloginfo('template_url'); ?>/css/main.css">
         <link href='http://fonts.googleapis.com/css?family=Pathway+Gothic+One&subset=latin,latin-ext' rel='stylesheet' type='text/css'>
-
 		<?php wp_head(); ?>
     </head>
 
     <body <?php body_class(); ?>>
+
 
         <a class="menuside-trigger"></a>
 
@@ -117,14 +117,7 @@
          <?php if (wpmd_is_notdevice()): ?>
 
             <!-- AddThis Button BEGIN -->
-			<div class="addthis_toolbox addthis_floating_style addthis_32x32_style" style="left:50px;top:50px;">
-			<a class="addthis_button_facebook"></a>
-			<a class="addthis_button_email"></a>
-			<a class="addthis_button_twitter"></a>
-			<a class="addthis_button_print"></a>
-			<a class="addthis_button_compact"></a>
-			</div>
-			<script type="text/javascript" src="http://s7.addthis.com/js/300/addthis_widget.js"></script>
+
 			<!-- AddThis Button END -->
 
         <?php else: endif ?>
