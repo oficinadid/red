@@ -1,4 +1,8 @@
-<?php get_header(); ?>
+<?php
+get_header();
+// variables de uso general
+$terms = get_terms('temas');
+?>
 
 <div id="content">
 
@@ -6,14 +10,6 @@
         <h3><strong>Directorio</strong> RED</h3>
         <ul class="lista full">
         <?php
-        	$terms = get_terms('temas');
-
-			function terminos($t) {
-				return $t->term_id;
-			}
-			// obtenemos las ids de los temas
-			$term_ids = array_map("terminos", $terms);
-			// posts pertenecientes a los temas señalados, de los colaboradores
 
 			$args = array(
 				'no_found_rows' => true,
