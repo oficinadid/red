@@ -126,11 +126,16 @@ function custom_infinite_scroll_js() {
 }
 add_action( 'wp_footer', 'custom_infinite_scroll_js',100 );
 
-// modificamos resultados de búsqueda
-add_filter( 'pre_get_posts', 'modified_pre_get_posts' );
-function modified_pre_get_posts( $query ) {
-  if ( $query->is_search() ) {
-    $query->set( 'post_type', array( 'post' ) ); // should be a number; you have to replace that text with the actual ID
-  }
-  return $query;
+function get_post_meta_all($post_id){
+    global $wpdb;
+    $data   =   array();
+    $wpdb->query("
+        SELECT `meta_key`, `meta_value`
+        FROM $wpdb->postmeta
+        WHERE `post_id` = $post_id
+    ");
+    foreach($wpdb->last_result as $k => $v){
+        $data[$v->meta_key] =   $v->meta_value;
+    };
+    return $data;
 }
