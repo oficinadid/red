@@ -102,10 +102,10 @@ Template Name: About
     <div id="dc" class="modulo">
 
         <h3>¿Qué es <strong>Diálogos Ciudadanos</strong>?</h3>
-	<?php the_field('que_es_dialogos', 'option') ?>
+		<?php the_field('que_es_dialogos', 'option') ?>
 
         <span class="conoce">Conoce el proyecto de participación de <strong>RED</strong></span>
-        <a href="#" class="ir">Ir a Diálogos Ciudadanos</a>
+        <a href="http://dialogos.redparalademocracia.cl" class="ir">Ir a Diálogos Ciudadanos</a>
 
     </div>
 
