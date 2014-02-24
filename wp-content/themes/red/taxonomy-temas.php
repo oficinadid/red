@@ -26,6 +26,15 @@
 	                <div class="texto">
 	                    <p><?php the_excerpt(); ?></p>
 	                </div>
+	                 <div class="tags">
+
+						<?php
+							$temas = get_the_terms(get_the_ID(), 'temas' );
+							foreach ($temas as $tema): ?>
+							<a class="<?php echo $tema->slug ?>" href="<?php echo get_term_link( $tema->term_id, 'temas' ) ?>"><?php echo $tema->name ?></a>
+						<?php endforeach ?>
+
+	                </div>
 	            </div>
 
 	            <div class="cf"></div>
