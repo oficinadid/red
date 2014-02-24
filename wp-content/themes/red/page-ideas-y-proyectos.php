@@ -54,29 +54,33 @@ $paged = (get_query_var('paged')) ? get_query_var('paged') : 1;
         	$iyp = new WP_Query($args);
 
         	if($iyp->have_posts()) : while($iyp->have_posts()): $iyp->the_post(); ?>
-        		<?php $colaboradores = get_field('colaboradores'); ?>
+        		<?php
+        			$fuente = get_field('fuente');
+        			$coautores = get_coauthors();
+        		?>
         		 <li class="post infscr-item">
 	                <div class="pic">
+	                <?php if (!$fuente): ?>
 	                	<?php
-	                	// d($colaboradores);
-						if ( count($colaboradores) > 1): ?>
+						if ( count($coautores) > 1): ?>
 						<!-- imagen varios autores -->
 							<a href="#"><img src="<?php bloginfo('template_url'); ?>/img/autor1.jpg"></a>
-						<?php elseif ( is_array($colaboradores) && count($colaboradores) == 1): ?>
+						<?php elseif ( is_array($coautores) && count($coautores) == 1): ?>
 							<!-- imagen para un autor -->
-							<?php foreach ($colaboradores as $colaborador): ?>
-								<a href="<?php echo get_permalink($colaborador); ?>"><?php echo get_the_post_thumbnail( $colaborador, '130x130' ); ?></a>
-							<?php endforeach ?>
-
+							<a href="<?php echo get_permalink($coautores[0]->ID); ?>"><?php echo get_the_post_thumbnail( $coautores[0]->ID, '130x130' ); ?></a>
 						<?php endif ?>
+
+	                <?php endif ?>
+
 
 	                </div>
 	                <div class="datos">
+
 	                    <h5><a href="#"><?php the_title(); ?></a></h5>
 	                    <div class="meta"><?php the_time('F j, Y'); ?> por
-						<?php if (is_array($colaboradores)): ?>
-							<?php $c = 0; foreach ($colaboradores as $colaborador): ?>
-								<?php echo ($c != 0) ? ', ' : ' '; ?><a href="<?php get_permalink($colaborador); ?>"><?php echo get_the_title($colaborador); ?></a>
+						<?php if (is_array($coautores) && !$fuente): ?>
+							<?php $c = 0; foreach ($coautores as $coautor): ?>
+								<?php echo ($c != 0) ? ', ' : ' '; ?><a href="<?php get_permalink($coautor->ID); ?>"><?php echo get_the_title($coautor->ID); ?></a>
 								<?php $c++; endforeach ?>
 						<?php else: ?>
 							<?php the_field('fuente') ?>
@@ -92,7 +96,7 @@ $paged = (get_query_var('paged')) ? get_query_var('paged') : 1;
 						<?php
 							$temas = get_the_terms(get_the_ID(), 'temas' );
 							foreach ($temas as $tema): ?>
-							<a class="<?php echo $tema->slug ?>" href="#"><?php echo $tema->name ?></a>
+							<a class="<?php echo $tema->slug ?>" href="<?php echo get_term_link( $tema->term_id, 'temas' ) ?>"><?php echo $tema->name ?></a>
 						<?php endforeach ?>
 
 	                </div>
@@ -112,7 +116,7 @@ $paged = (get_query_var('paged')) ? get_query_var('paged') : 1;
     <div id="banner-dc" class="banda">
         <div class="modulo">
             <div class="elements">
-                <a class="ir" href="#">Ir al sitio de Diálogos</a>
+                <a class="ir" href="http://dialogos.redparalademocracia.cl">Ir al sitio de Diálogos</a>
                 <span>Conoce el proyecto de participación de <strong>RED</strong></span>
             </div>
         </div>
