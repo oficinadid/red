@@ -22,26 +22,13 @@
             <h3>Bienvenido a <strong>RED</strong></h3>
             <h4>Temas</h4>
             <ul class="temas">
-                <li><a href="#"><span class="name">Educación</span><span class="count">104</span></a></li>
-                <li><a href="#"><span class="name">Constitución y Reformas Políticas</span><span class="count">70</span></a></li>
-                <li><a href="#"><span class="name">Sistema Tributario</span><span class="count">98</span></a></li>
-                <li><a href="#"><span class="name">Modelo de Desarrollo y Política Industrial</span><span class="count">54</span></a></li>
-                <li><a href="#"><span class="name">Desigualdad y Pobreza</span><span class="count">95</span></a></li>
-                <li><a href="#"><span class="name">Salud</span><span class="count">87</span></a></li>
-                <li><a href="#"><span class="name">Trabajo y Pensiones</span><span class="count">39</span></a></li>
-                <li><a href="#"><span class="name">Energía y Medioambiente</span><span class="count">48</span></a></li>
-                <li><a href="#"><span class="name">Comunicaciones y Tecnología</span><span class="count">31</span></a></li>
-                <li><a href="#"><span class="name">Ciudad, Territorio y Transporte</span><span class="count">72</span></a></li>
-                <li><a href="#"><span class="name">Género y Diversidad</span><span class="count">70</span></a></li>
-                <li><a href="#"><span class="name">Derechos Humanos</span><span class="count">90</span></a></li>
-                <li><a href="#"><span class="name">Ciencias</span><span class="count">7</span></a></li>
-                <li><a href="#"><span class="name">Cultura</span><span class="count">12</span></a></li>
-                <li><a href="#"><span class="name">Participación, Democracia y Desarrollo Local</span><span class="count">80</span></a></li>
-            </ul>
-            <ul class="medios">
-                <li><a href="#">Videos</a></li>
-                <li><a href="#">Audios</a></li>
-                <li><a href="#">Imágenes</a></li>
+            	<?php switch_to_blog( 1 ); $temas = get_terms('temas');  ?>
+            		<?php foreach ($temas as $tema): ?>
+            			<li><a href="<?php echo get_term_link( intval($tema->term_id), 'temas' ); ?>"><span class="name"><?php echo $tema->name ?></span><span class="count"><?php echo $tema->count ?></span></a></li>
+            		<?php endforeach ?>
+
+          		<?php restore_current_blog(); ?>
+
             </ul>
         </nav>
 
