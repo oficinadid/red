@@ -64,7 +64,7 @@ Template Name: About
         </ul>
     </div>
 
-    <div id="colaboradores" class="modulo">
+    <!-- <div id="colaboradores" class="modulo">
         <h3><strong>Equipo</strong></h3>
         <ul class="lista half">
         	<?php
@@ -93,7 +93,7 @@ Template Name: About
         </ul>
         <a href="#" class="marco">Ir a todos los <strong>Colaboradores</strong> &#9656;</a>
         <div class="cf"></div>
-    </div>
+    </div> -->
 
     <div id="banner-dc" class="banda">
         <img src="<?php bloginfo('template_url'); ?>/img/about-dc.png">
