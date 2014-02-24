@@ -12,8 +12,6 @@
         <link rel="stylesheet" href="<?php bloginfo('template_url'); ?>/css/main.css">
         <link href='http://fonts.googleapis.com/css?family=Pathway+Gothic+One&subset=latin,latin-ext' rel='stylesheet' type='text/css'>
 
-        <script src="http://code.jquery.com/jquery-1.10.2.min.js"></script>
-        <script src="<?php bloginfo('template_url'); ?>/js/main.js"></script>
 		<?php wp_head(); ?>
     </head>
 
