@@ -589,18 +589,16 @@ footer {
             font-weight:500;
             padding:8px 0 8px 25px;
         }
-        .lista {
+        ul {
             border-top:1px solid @bordergrey;
             padding:0;
             li {
-                .columna-break (avoid);
                 font-size:14px;
-                &:after{content: "."; display: block; height: 0; clear: both; visibility: hidden;}
                 span {
                     display:block;
                     float:left;
                 }
-                a {
+                label {
                     display:block;
                 }
             }
@@ -736,6 +734,15 @@ footer {
                 .autor-pic {
                     margin:-20px auto 0;
                 }
+                .texto {
+                    .fecha {
+                        margin:0 0 5px;
+                    }
+                    h2 {
+                        float:left;
+                        width:323px;
+                    }
+                }
             }
             &.big {
                 width:413px;
@@ -744,15 +751,18 @@ footer {
                     float:left;
                 }
                 .texto {
-                    padding:20px 20px 10px;
+                    padding:20px 20px 10px;  
+                    .fecha {
+                        margin:0 0 2px;
+                    }
                 }
             }
             &.third {
                 margin:0 0 22px;
             }
             .autor-pic {
-		position: relative;
-		z-index: 1;
+                position: relative;
+                z-index: 1;
                 margin:10px auto 5px;
                 text-align:center;
                 width:40px;
@@ -770,16 +780,22 @@ footer {
             }
             .texto {
                 padding:10px 20px;
+                .autor {
+                    display:block;
+                    margin:0;
+                    color:@grey;
+                    font-weight:500;
+                }
                 .fecha {
                     font-weight:300;
                     color:@grey;
                     display:block;
-                    margin:0 0 2px;
+                    margin:0 0 20px;
                 }
                 h2 {
                     font-size:17px;
                     font-weight:700;
-                    margin:0 0 15px;
+                    margin:0 0 5px;
                 }
                 p {
                     font-size:13px;
@@ -787,17 +803,6 @@ footer {
                     color:@grey;
                     font-weight:300;
                     margin:0 0 15px;
-                }
-                .autor {
-                    display:block;
-                    margin:20px 0 0;
-                    color:@grey;
-                    font-weight:300;
-                    position:absolute;
-                    bottom:45px;
-                    a {
-                        font-weight:500;
-                    }
                 }
             }
             .tags {
@@ -1621,29 +1626,47 @@ footer {
             h6 {
                 padding:8px 0 8px 20px;
             }
-            .lista {
-                .columna-gap (0);
-                .columna-count (3);
-                .columna-rule(1px solid @bordergrey);
+            ul {
+                width:100%;
+                border-top:none;
                 li {
-                    a {
-                        &:after{content: "."; display: block; height: 0; clear: both; visibility: hidden;}
-                        padding:6px 0 6px 20px;
-                        display:block;
-                        max-width:190px;
-                        font-weight:300;
-                        line-height:140%;
-                        background-position:8px 13px;
-                        background-repeat:no-repeat;
-                        background-image:url(../img/iyp-filtros-a-bg.png);
-                        &.on {
-                            background-image:url(../img/iyp-filtros-a-on-bg.png);
+                    width:100%;
+                    padding-right:0;
+                    ul {
+                        border-top:1px solid @bordergrey;
+                        border-bottom:1px solid @bordergrey;
+                        .columna-gap (0);
+                        .columna-count (3);
+                        .columna-rule(1px solid @bordergrey);
+                        li {
+                            .columna-break (avoid);
+                            display:block;
+                            width:auto;
+                            label {
+                                padding:6px 0 6px 10px;
+                                display:block;
+                                max-width:190px;
+                                font-weight:300;
+                                line-height:140%;
+                            }
                         }
+                    }
+                    input[type="submit"] {
+                        display:block;
+                        float:right;
+                        text-align:center;
+                        text-transform:uppercase;
+                        color:#fff;
+                        background:#a2b2b7;
+                        font-size:12px;
+                        width:210px;
+                        padding:10px 0;
+                        border:none;
+                        .colaborate;
                     }
                 }
             }
             .bottom {
-                border-top:1px solid @bordergrey;
                 border-bottom:1px solid @bordergrey;
                 span {
                     padding:10px;

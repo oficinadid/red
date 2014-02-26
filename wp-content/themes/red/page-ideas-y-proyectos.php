@@ -13,37 +13,14 @@ $paged = (get_query_var('paged')) ? get_query_var('paged') : 1;
         <a class="filtro">Filtrar por temas</a>
         <div class="filtros">
             <h6>Filtros por temas</h6>
-            <ul class="lista">
-
-                <li><a>Todos los temas</a></li>
-                <li><a>Educación</a></li>
-                <li><a>Constitución y Reformas Políticas</a></li>
-                <li><a>Sistema Tributario</a></li>
-                <li><a>Desigualdad y Pobreza</a></li>
-                <li><a>Modelo de Desarrollo y Política Industrial</a></li>
-                <li><a>Comunicaciones y Tecnología</a></li>
-                <li><a>Trabajo y Pensiones</a></li>
-                <li><a>Salud</a></li>
-                <li><a>Todos los temas</a></li>
-                <li><a>Educación</a></li>
-                <li><a>Constitución y Reformas Políticas</a></li>
-                <li><a>Sistema Tributario</a></li>
-                <li><a>Desigualdad y Pobreza</a></li>
-                <li><a>Modelo de Desarrollo y Política Industrial</a></li>
-                <li><a>Comunicaciones y Tecnología</a></li>
-                <li><a>Trabajo y Pensiones</a></li>
-                <li><a>Salud</a></li>
-                <li><a>Todos los temas</a></li>
-                <li><a>Educación</a></li>
-                <li><a>Constitución y Reformas Políticas</a></li>
-            </ul>
+            <?php echo do_shortcode( '[searchandfilter fields="temas" types="checkbox" hide_empty="0" post_types="post" submit_label="Iniciar búsqueda por filtro" operators="or"]' ); ?>
             <div class="bottom">
                 <span>* Escoge todos los campos con los que quieras filtrar tu búsqueda.</span>
                 <a href="#" class="send">Iniciar búsqueda por filtro</a>
                 <div class="cf"></div>
             </div>
         </div>
-        <?php echo do_shortcode( '[searchandfilter fields="temas" types="checkbox" hide_empty="0" post_types="post" class="filtros" submit_label="Iniciar búsqueda por filtro" operators="or"]' ); ?>
+       
         <ul class="lista full picright infscr-content">
         	<?php
         	$args = array(

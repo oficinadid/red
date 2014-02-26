@@ -285,12 +285,29 @@
                 width:280px;
                 padding:0 0 50px;
                 height:auto;
+                a.img {
+                    img {
+                        width:100%;
+                        height:auto;
+                    }
+                }
                 &.big {
                     width:280px;
                     .texto {
+                        .fecha {
+                            margin:10px 0 2px;
+                        }
                         h2 {
                             clear:both;
-                            margin:20px 0 15px;
+                            margin:10px 0 15px;
+                            width:auto;
+                        }
+                    }
+                }
+                &.pic {
+                    .texto {
+                        h2 {
+                            width:auto;
                         }
                     }
                 }
@@ -738,19 +755,38 @@
         .mosaico {
             .card {
                 width:210px;
-                padding:0 0 50px;
+                padding:0 0 30px;
                 margin:0 0 20px;
+                float:left;
+                a.img {
+                    img {
+                        width:100%;
+                        height:auto;
+                    }
+                }
                 &:nth-child(even) {
                     margin:0 20px 20px 0;
+                    float:left;
                 }
                 &.big {
                     width:440px;
                     height:auto;
                     margin:0 0 20px;
                     .texto {
+                        .fecha {
+                            margin:10px 0 2px;
+                        }
                         h2 {
                             clear:both;
-                            margin:20px 0 15px;
+                            margin:10px 0 15px;
+                            width:100%;
+                        }
+                    }
+                }
+                &.pic {
+                    .texto {
+                        h2 {
+                            width:100%;
                         }
                     }
                 }

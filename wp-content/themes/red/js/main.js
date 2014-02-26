@@ -65,23 +65,14 @@
 	        $('#searchbox input#field').select();
 	    });
 
-	    $('.filtros').hide();
-	    $('a.filtro').click(function() {
-	        $(this).toggleClass('on');
-	        $('.filtros').slideToggle(200);
-	    });
-
 	    $('a#mobilemenu-trigger').click(function() {
 	        $('#menu-mobile').slideToggle(400);
 	    });
 
-	    $('#iyp .filtros .lista a').click(function() {
+	    //$('.filtros').hide();
+	    $('a.filtro').click(function() {
 	        $(this).toggleClass('on');
-	    });
-
-	    $('#cortina').click(function() {
-	        $(this).fadeToggle(150);
-	        $('ul.autores').fadeToggle(150);
+	        $('.filtros').slideToggle(200);
 	    });
 
 	});

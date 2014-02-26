@@ -200,13 +200,8 @@ $terms = get_terms('temas');
 						<?php endif ?>
 
 	                    <div class="texto">
-	                        <span class="fecha"><?php the_time('l j \d\e F Y'); ?></span>
-	                        <h2><a href="<?php the_permalink(); ?>"><?php the_title(); ?></a></h2>
-							<?php if (!has_post_thumbnail()): ?>
-								<p><?php echo wp_trim_words( get_the_excerpt(), 20); ?></p>
-							<?php endif ?>
 
-	                        <?php if ($fuente): ?>
+	                    	<?php if ($fuente): ?>
 	                        	<span class="autor">Fuente:
 		                        	<?php if (get_field('url_fuente')): ?>
 		                        		<a href="<?php the_field('url_fuente') ?>"><?php the_field('fuente') ?></a>
@@ -218,13 +213,19 @@ $terms = get_terms('temas');
 
 	                        <?php else: ?>
 	                        	<?php if (count($coautores) > 1): ?>
-	                        		<span class="autor">Por: Varios Autores</span>
+	                        		<span class="autor">Varios Autores</span>
 	                        	<?php else: ?>
-	                        			<span class="autor">Por: <a href="<?php echo get_permalink($coautores[0]->ID); ?>"><?php echo get_the_title($coautores[0]->ID); ?></a></span>
+	                        			<span class="autor"><a href="<?php echo get_permalink($coautores[0]->ID); ?>"><?php echo get_the_title($coautores[0]->ID); ?></a></span>
 
 	                        	<?php endif ?>
 
 	                        <?php endif ?>
+	                        
+	                        <span class="fecha"><?php the_time('l j \d\e F Y'); ?></span>
+	                        <h2><a href="<?php the_permalink(); ?>"><?php the_title(); ?></a></h2>
+							<?php if (!has_post_thumbnail()): ?>
+								<p><?php echo wp_trim_words( get_the_excerpt(), 20); ?></p>
+							<?php endif ?>
 
 	                    </div>
 
