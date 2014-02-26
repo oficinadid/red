@@ -60,11 +60,7 @@
 /* - iPad Landscape - *///////////////////////////////////////////////////////////////////////////////////
 //////////////////////////////////////////////////////////////////////////////////////////////////////////
 
-@media only screen and (min-device-width : 768px) and (max-device-width : 1024px) and (orientation : landscape) {
-    
-    
-
-}
+@media only screen and (min-device-width : 768px) and (max-device-width : 1024px) and (orientation : landscape) {}
 
 //////////////////////////////////////////////////////////////////////////////////////////////////////////
 /* - iPhone Portrait - *//////////////////////////////////////////////////////////////////////////////////
@@ -186,6 +182,17 @@
             padding:0 40px;
             .columna {
                 margin:0 0 30px;
+                &:first-child {
+                    margin:0 0 30px;
+                }
+                h4 {
+                    margin:0 auto 10px;
+                }
+                ul {
+                    li {
+                        margin:0 0 10px;
+                    }
+                }
             }
         }
     }
@@ -226,8 +233,9 @@
                 &.half {
                     li {
                         width:auto;
-                        height:auto;
+                        height:90px;
                         float:none;
+                        margin:0;
                         .pic {
                             margin:0 10px 0 0;
                         }
@@ -328,6 +336,20 @@
             padding:0;
             a.marco {
                 margin:15px auto 0;
+            }
+        }
+        #content {
+            #banner-dc {
+                .modulo {
+                    h2#logo-main {
+                        height:95px;
+                    }
+                    .right {
+                        a {
+                            margin:0 auto 10px;
+                        }
+                    }
+                }
             }
         }
     }
@@ -602,8 +624,9 @@
     }
 
     header {
+        height:510px;
         .wrap {
-            width:280px;
+            width:440px;
         }
         .sep {
             width:auto;
@@ -611,8 +634,9 @@
         h1#logo-main {
             width:90%;
             background-size:100% auto;
-            height:50px;
-            margin:80px auto 0;
+            height:100px;
+            margin:70px auto 0;
+            background:url(../img/h1-logo-main-mobile.png) no-repeat top center;
         }
         .desc {
             padding:0;
@@ -622,7 +646,7 @@
     }
 
     footer {
-        padding:40px 0 20px;
+        padding:40px 0 60px;
         .wrap {
             width:480px;
             padding:0 20px;
@@ -671,8 +695,9 @@
                 &.half {
                     li {
                         width:auto;
-                        height:auto;
+                        height:90px;
                         float:none;
+                        margin:0;
                         .pic {
                             margin:0 10px 0 0;
                         }
@@ -772,6 +797,17 @@
             padding:0;
             a.marco {
                 margin:15px auto 0;
+            }
+        }
+        #content {
+            #banner-dc {
+                .modulo {
+                    .right {
+                        a {
+                            margin:0 auto 10px;
+                        }
+                    }
+                }
             }
         }
     }
