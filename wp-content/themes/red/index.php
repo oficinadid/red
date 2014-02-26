@@ -22,18 +22,21 @@ $terms = get_terms('temas');
 			       )
 			   )
 	        );
-        $coautores = get_posts( $args ); ?>
+        	$coautores = get_posts( $args );
+        ?>
 
         <?php foreach ($coautores as $coautor): ?>
         	<?php $exposts[] = $coautor->ID;
         	// posts coautores
         	$user_login = get_post_meta($coautor->ID, 'cap-user_login', true );
-        	$c_posts =
-    			get_posts(
-					array (
-						'post_type'		=> 'post',
-						'author_name' => $user_login
-				));
+
+        	$args = array(
+        		'post_type'		=> 'post',
+				'author_name' => $user_login
+        	);
+        	$myvar = new WP_Query($args);
+
+        	$c_posts = $myvar->posts
         	?>
         	<li>
                 <div class="pic">

@@ -8,6 +8,7 @@ Template Name: Single Colaborador
 get_header();
 global $wp_query;
 $curauth = $wp_query->get_queried_object();
+$exposts[] = $curauth->ID;
 ?>
 
 <div id="content" class="page-single-colaborador">
@@ -32,11 +33,10 @@ $curauth = $wp_query->get_queried_object();
         <div id="perfil" class="modulo post">
 
             <div class="pic">
-
-				<a href="#"><?php echo get_the_post_thumbnail($curauth->ID, '130x130'); ?></a>
+				<?php echo get_the_post_thumbnail($curauth->ID, '130x130'); ?>
             </div>
             <div class="datos">
-                <h5><a href="#"><?php echo $curauth->display_name ?></a></h5>
+                <h5><?php echo $curauth->display_name ?></h5>
                 <?php if (get_field('about', $curauth->ID)): ?>
                 	<h6><?php echo get_field('about', $curauth->ID) ?></h6>
                 <?php endif ?>
@@ -55,10 +55,14 @@ $curauth = $wp_query->get_queried_object();
 				// obtenemos las ids de los temas
 				$term_ids = array_map("terminos", $terms);
 				// posts pertenecientes a los temas señalados, de los colaboradores
-                $posts = get_posts(array(
-				    'post_type'	=> 'post',
-                	'author_name'	=> $curauth->user_nicename
-				));
+
+				$args = array(
+	        		'post_type'	  => 'post',
+					'author_name' => $curauth->user_nicename
+	        	);
+	        	$myvar = new WP_Query($args);
+
+	        	$posts = $myvar->posts;
 
 				if ($posts): ?>
 
@@ -71,7 +75,7 @@ $curauth = $wp_query->get_queried_object();
 
                     		<?php if ($posts_in_term): ?>
                     			<ul>
-			                        <div class="tags"><a class="<?php echo $t->slug ?>" href="#"><?php echo $t->name ?></a></div>
+			                        <div class="tags"><a class="<?php echo $t->slug ?>" href="<?php echo get_term_link( intval($t->term_id), 'temas' ) ?>"><?php echo $t->name ?></a></div>
 			                        <?php foreach ($posts_in_term as $post ): ?>
 										<li><a href="<?php get_permalink($post->ID); ?>"><?php echo $post->post_title ?></a></li>
 			                        <?php endforeach ?>
@@ -91,14 +95,16 @@ $curauth = $wp_query->get_queried_object();
 
         <div id="colaboradores" class="modulo">
         	<?php
+
 	            $args = array(
 	            	'post_type' => 'guest-author',
 	            	'posts_per_page' => 4,
-	            	'no_found_rows' => true
+	            	'no_found_rows' => true,
+	            	'post__not_in' => $exposts
 	            );
 	            $colaboradores = get_posts( $args );
+			?>
 
-	            ?>
             <h3><strong>Más Colaboradores</strong></h3>
             <ul class="lista half columnas">
 
@@ -106,12 +112,14 @@ $curauth = $wp_query->get_queried_object();
 
             	<?php
             		$user_login = get_post_meta($colaborador->ID, 'cap-user_login', true );
-            		$c_posts = get_posts(
-            			array (
-            				'post_type'	=> 'post',
-            				'author_name' => $user_login
-            			)
-            		);
+            		$args = array(
+		        		'post_type'	  => 'post',
+						'author_name' => $user_login
+		        	);
+		        	$myvar = new WP_Query($args);
+
+		        	$c_posts = $myvar->posts;
+
 
 				?>
             	<li>
@@ -129,7 +137,7 @@ $curauth = $wp_query->get_queried_object();
 	                    		}); ?>
 
 	                    		<?php if ($posts_in_term): ?>
-	                    			<a class="<?php echo $t->slug ?>" href="#"><?php echo $t->name ?></a>
+	                    			<a class="<?php echo $t->slug ?>" href="<?php echo get_term_link( intval($t->term_id), 'temas' ) ?>"><?php echo $t->name ?></a>
 
 	                    		<?php endif ?>
 
@@ -156,7 +164,7 @@ $curauth = $wp_query->get_queried_object();
         <div class="modulo">
             <h2 id="logo-main"></h2>
             <div class="right">
-                <a href="#">Ir al sitio de Diálogos</a>
+                <a href="http://dialogos.redparalademocracia.cl">Ir al sitio de Diálogos</a>
                 <span>Conoce el proyecto de participación de <strong>RED</strong></span>
             </div>
             <div class="cf"></div>

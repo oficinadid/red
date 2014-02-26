@@ -53,12 +53,13 @@
             <?php foreach ($colaboradores as $colaborador): ?>
             	<?php
             		$user_login = get_post_meta($colaborador->ID, 'cap-user_login', true );
-            		$c_posts = get_posts(
-            			array (
-            				'post_type'	=> 'post',
-            				'author_name' => $user_login
-            			)
-            		);
+            		$args = array(
+		        		'post_type'		=> 'post',
+						'author_name' => $user_login
+		        	);
+		        	$myvar = new WP_Query($args);
+
+		        	$c_posts = $myvar->posts
 
 				?>
             	<li>
@@ -91,7 +92,7 @@
 
 
         </ul>
-        <a href="#" class="marco">Ver más <strong>Colaboradores</strong> &#9662;</a>
+        <!-- <a href="#" class="marco">Ver más <strong>Colaboradores</strong> &#9662;</a> -->
         <div class="cf"></div>
     </div>
 

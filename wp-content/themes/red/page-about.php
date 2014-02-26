@@ -30,7 +30,8 @@ Template Name: About
         <ul class="lista full picright">
         <?php
         $args = array(
-        	'post_type' => 'colaboradores',
+			'no_found_rows' => true,
+        	'post_type' => 'guest-author',
         	'meta_query' => array(
 		       array(
 		           'key' => 'directorio',
@@ -47,7 +48,7 @@ Template Name: About
                     <a href="<?php the_permalink(); ?>"><?php the_post_thumbnail('130x130'); ?></a>
                 </div>
                 <div class="datos">
-                    <h5><a href="#"><?php the_title(); ?></a></h5>
+                    <h5><a href="<?php the_permalink(); ?>"><?php the_title(); ?></a></h5>
                     <h6><?php the_field('about') ?></h6>
                 </div>
                 <div class="texto">
