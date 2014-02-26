@@ -12,13 +12,9 @@ $paged = (get_query_var('paged')) ? get_query_var('paged') : 1;
         <h3><strong>Ideas y Proyectos</strong></h3>
         <a class="filtro">Filtrar por temas</a>
         <div class="filtros">
-            <h6>Filtros por temas</h6>
+            <h6>Filtros por temas<span>* Escoge todos los campos con los que quieras filtrar tu búsqueda.</span></h6>
             <?php echo do_shortcode( '[searchandfilter fields="temas" types="checkbox" hide_empty="0" post_types="post" submit_label="Iniciar búsqueda por filtro" operators="or"]' ); ?>
-            <div class="bottom">
-                <span>* Escoge todos los campos con los que quieras filtrar tu búsqueda.</span>
-                <a href="#" class="send">Iniciar búsqueda por filtro</a>
-                <div class="cf"></div>
-            </div>
+            <div class="cf"></div>
         </div>
        
         <ul class="lista full picright infscr-content">

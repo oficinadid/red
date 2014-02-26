@@ -69,7 +69,7 @@
 	        $('#menu-mobile').slideToggle(400);
 	    });
 
-	    //$('.filtros').hide();
+	    $('.filtros').hide();
 	    $('a.filtro').click(function() {
 	        $(this).toggleClass('on');
 	        $('.filtros').slideToggle(200);
