@@ -25,8 +25,7 @@ $terms = get_terms('temas');
         $coautores = get_posts( $args ); ?>
 
         <?php foreach ($coautores as $coautor): ?>
-        	<?php $exposts[] = $coautor->ID ?>
-        	<?php
+        	<?php $exposts[] = $coautor->ID;
         	// posts coautores
         	$user_login = get_post_meta($coautor->ID, 'cap-user_login', true );
         	$c_posts =
@@ -201,7 +200,7 @@ $terms = get_terms('temas');
 	                        <span class="fecha"><?php the_time('l j \d\e F Y'); ?></span>
 	                        <h2><a href="<?php the_permalink(); ?>"><?php the_title(); ?></a></h2>
 							<?php if (!has_post_thumbnail()): ?>
-								<p><?php the_excerpt(); ?></p>
+								<p><?php echo wp_trim_words( get_the_excerpt(), 20); ?></p>
 							<?php endif ?>
 
 	                        <?php if ($fuente): ?>
