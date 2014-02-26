@@ -1,14 +1,14 @@
 <?php
 get_header();
 $lista_temas = get_queried_object()->slug;
-var_dump($lista_temas);
+
 if (isset($_GET['temas'])) {
 	$lista_temas = $_GET['temas'];
 }
 
 if ($lista_temas) {
 	$searchTemas = explode(',', $lista_temas);
-	var_dump($searchTemas);
+
 }
 ?>
 
