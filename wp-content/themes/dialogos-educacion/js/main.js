@@ -27,6 +27,10 @@
       $('#searchbox input#field').select();
     });
 
+    $('a#mobilemenu-trigger').click(function() {
+        $('#menu-mobile').slideToggle(400);
+    });
+
     $('.scroll-to').click(function () {
       if (location.pathname.replace(/^\//, '') === this.pathname.replace(/^\//, '') || location.hostname === this.hostname) {
         var target = $(this.hash);

@@ -7,7 +7,7 @@
         <meta name="description" content="">
         <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
 
-         <link rel="shortcut icon" href="<?php bloginfo('wpurl'); ?>/favicon.jpg" />
+        <link rel="shortcut icon" href="<?php bloginfo('wpurl'); ?>/favicon.jpg" />
 
         <link rel="stylesheet" href="<?php bloginfo('template_url'); ?>/css/main.css">
         <link href='http://fonts.googleapis.com/css?family=Pathway+Gothic+One&subset=latin,latin-ext' rel='stylesheet' type='text/css'>

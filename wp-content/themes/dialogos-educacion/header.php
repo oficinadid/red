@@ -5,7 +5,7 @@
         <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
         <title><?php bloginfo('name'); ?></title>
         <meta name="description" content="">
-        <meta name="viewport" content="width=device-width">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
 
         <link rel="stylesheet" href="<?php bloginfo('template_url'); ?>/css/main.css">
         <link href='http://fonts.googleapis.com/css?family=Pathway+Gothic+One' rel='stylesheet' type='text/css'>
@@ -39,11 +39,19 @@
 
                     <a href="<?php bloginfo('wpurl'); ?>" class="logo"></a>
 
-                    <ul class="nav">
-                        <li><a href="#">About</a></li>
-                        <li><a href="#">Colaboradores</a></li>
-                        <li><a href="#">Ideas y Proyectos</a></li>
-                    </ul>
+                    <?php if (wpmd_is_notphone()): ?>
+
+                        <ul class="nav">
+                            <li><a href="<?php bloginfo('wpurl'); ?>/about/">About</a></li>
+                            <li><a href="<?php bloginfo('wpurl'); ?>/colaboradores/">Colaboradores</a></li>
+                            <li><a href="<?php bloginfo('wpurl'); ?>/ideas-y-proyectos/">Ideas y Proyectos</a></li>
+                        </ul>
+
+                    <?php elseif (wpmd_is_phone()): ?>
+
+                        <a id="mobilemenu-trigger">Menu</a>
+
+                    <?php endif ?>
 
                     <ul class="aux">
                         <li><a href="#" class="facebook"></a></li>
@@ -54,6 +62,15 @@
                 </div>
             </menu>
             <div id="main-shadow"></div>
+
+            <div id="menu-mobile">
+                <ul>
+                    <li><a href="<?php bloginfo('wpurl'); ?>">Home</a></li>
+                    <li><a href="<?php bloginfo('wpurl'); ?>/about/">About</a></li>
+                    <li><a href="<?php bloginfo('wpurl'); ?>/colaboradores/">Colaboradores</a></li>
+                    <li><a href="<?php bloginfo('wpurl'); ?>/ideas-y-proyectos/">Ideas y Proyectos</a></li>
+                </ul>
+            </div>
 
             <div id="searchbox">
                 <div class="wrap">
